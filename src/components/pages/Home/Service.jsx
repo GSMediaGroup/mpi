@@ -8,9 +8,7 @@ export default class Service extends Component {
                 Services
 
                 <div>
-                    <ServiceItem logo={"aaa"} title={"aaa"} options={["a1", "a2", "a3"]} />
-                    <ServiceItem logo={"aaa"} title={"aaa"} options={["a1", "a2", "a3"]} />
-                    <ServiceItem logo={"aaa"} title={"aaa"} options={["a1", "a2", "a3"]} />
+
                 </div>
             </div>
         );

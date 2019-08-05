@@ -1,20 +1,29 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import {
+    Navbar,
+    NavbarBrand,
+    NavbarToggler,
+    Collapse,
+    Nav,
+    NavItem} from 'reactstrap';
 
-export default class Navbar extends Component {
+export default class _Navbar extends Component {
     render () {
         return (
-            <nav>
-                <Link to="/">Home</Link>
-                <ul>
-                    <li>
-                        <Link to="/services">Services</Link>
-                    </li>
-                    <li>
-                        <Link to="about">About</Link>
-                    </li>
-                </ul>
-            </nav>
+            <div>
+                <Navbar color="light" light expand="md">
+                    <NavbarBrand href="/">MPI</NavbarBrand>
+                    <Nav navbar>
+                        <NavItem>
+                            <NavLink activeClassName="active" className="nav-link" to="/services">Services</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink activeClassName="active" className="nav-link" to="/about">About</NavLink>
+                        </NavItem>
+                    </Nav>
+                </Navbar>
+            </div>
         );
     }
 }
