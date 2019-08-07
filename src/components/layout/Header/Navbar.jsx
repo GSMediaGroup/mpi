@@ -12,16 +12,18 @@ export default class _Navbar extends Component {
     render () {
         return (
             <div>
-                <Navbar color="light" light expand="md">
+                <Navbar color="none" light expand="md">
                     <NavbarBrand href="/">MPI</NavbarBrand>
-                    <Nav navbar>
-                        <NavItem>
-                            <NavLink activeClassName="active" className="nav-link" to="/services">Services</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink activeClassName="active" className="nav-link" to="/about">About</NavLink>
-                        </NavItem>
-                    </Nav>
+                    <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <Nav navbar className="mr-0">
+                            <NavItem>
+                                <NavLink activeClassName="active" className="nav-link" to="/services">Services</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink activeClassName="active" className="nav-link" to="/about">About</NavLink>
+                            </NavItem>
+                        </Nav>
+                    </div>
                 </Navbar>
             </div>
         );

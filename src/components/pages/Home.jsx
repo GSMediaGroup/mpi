@@ -1,22 +1,17 @@
 import React, {Component} from "react";
 import {Container, Row, Col} from "reactstrap";
+import Particles from "react-particles-js"
+import Service from "./Home/Service";
+import PaginationLink from "reactstrap/es/PaginationLink";
 
-import Service from "./Home/Service"
+
 
 export default class Home extends Component {
     render() {
         return (
-            <Container fluid={true}>
-                Home
-
-                <Row>
-                    <Col >
-
-                    </Col>
-                </Row>
-
-                <Service />
-            </Container>
+            <>
+                <div className="text-center border">Home</div>
+            </>
         );
     }
 }
