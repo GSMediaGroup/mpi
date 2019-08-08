@@ -17,7 +17,7 @@ export default class Service extends Component {
 
         return (
             <div>
-                <img src={logo} />
+                <img src={logo} alt="Site Logo" />
 
                 <h4>{title}</h4>
                 <ul>
