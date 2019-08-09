@@ -9,6 +9,7 @@ footer {
   .contact span  {
     padding-right: 40px;
     transition:0.6s ease;
+    cursor:pointer;
 
     & svg {
       margin-right:10px;
@@ -54,6 +55,10 @@ footer {
         list-style: none;
         cursor: pointer;
 
+        &:hover a {
+          color:$color-yellow;
+        }
+
         &:before {
           content: "";
           display: inline-block;
@@ -67,19 +72,6 @@ footer {
         }
 
       }
-
-    }
-
-    &:nth-child(2)::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-style: solid;
-      border-width: 0 1px 0 1px;
-      border-color: #434343;
 
     }
   }

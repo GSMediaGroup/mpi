@@ -21,3 +21,14 @@ ul {
 ul li {
   list-style:none;
 }
+
+
+a {
+  color:inherit;
+
+  &:hover {
+    color:inherit;
+    text-decoration:none;
+  }
+}
+

@@ -9,6 +9,7 @@ import {faMapMarkedAlt, faPhoneAlt, faEnvelope} from '@fortawesome/free-solid-sv
 export default class TopSection extends Component {
     render () {
        return (
+           <Col>
                <Row className="align-items-center">
                    <Col md={2}>
                             <span className="siteLogo">
@@ -31,6 +32,7 @@ export default class TopSection extends Component {
 
                    </Col>
                </Row>
+           </Col>
        );
     }
 }

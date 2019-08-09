@@ -10,7 +10,7 @@ export default class Home extends Component {
     render() {
         return (
             <>
-                <div className="text-center border">Home</div>
+                <h3 className="text-center border">Home content</h3>
             </>
         );
     }
