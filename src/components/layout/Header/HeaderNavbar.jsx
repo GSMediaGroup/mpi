@@ -2,49 +2,20 @@ import React, {Component} from 'react';
 import { Link, NavLink } from "react-router-dom";
 import {
     Navbar,
-    NavbarBrand,
-    NavbarToggler,
-    Collapse,
     Nav,
     NavItem} from 'reactstrap';
 
-import {faCompass} from '@fortawesome/react-fontawesome';
-
 export default class HeaderNavbar extends Component {
     state = {
-        navbarClass:'bg-none',
-        navPos: "center",
         mobileMenuOpened: false,
     };
 
     constructor(props) {
         super(props);
 
-        this.handlePositionChange = this.handlePositionChange.bind(this);
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
     }
 
-    componentDidMount() {
-        window.addEventListener("scroll", this.handlePositionChange);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener("scroll", this.handlePositionChange);
-    }
-
-    handlePositionChange(event) {
-        if (window.scrollY === 0) {
-            this.setState({
-                navbarClass:'bg-none',
-                navPos: "center",
-            });
-        } else {
-            this.setState({
-                navbarClass:'navbarBg',
-                navPos: "end",
-            });
-        }
-    }
 
     toggleMobileMenu() {
         this.setState({
@@ -53,11 +24,11 @@ export default class HeaderNavbar extends Component {
     }
 
     render () {
-        const {navbarClass, navPos, mobileMenuOpened} = this.state;
+        const mobileMenuOpened = this.state.mobileMenuOpened;
         const mobileMenuClass = mobileMenuOpened ? "opened" : "closed";
 
         return (
-            <Navbar expand="md" className={`${navbarClass} fixed-top navbar-dark`}>
+            <Navbar expand="md" className="navbar-dark container">
                 <Link to='/' className="navbar-brand">MPI</Link>
 
                 <div className={`toggleButton d-md-none ${mobileMenuClass}`} onClick={this.toggleMobileMenu}>
@@ -66,7 +37,7 @@ export default class HeaderNavbar extends Component {
                     <span />
                 </div>
 
-                <div className={`navbar-collapse justify-content-${navPos} ${mobileMenuClass}`} id="navbarSupportedContent">
+                <div className={`navbar-collapse justify-content-${this.props.position} ${mobileMenuClass}`} id="navbarSupportedContent">
                     <Nav navbar className="mr-0">
                         <NavItem>
                             <NavLink activeClassName="active" className="nav-link" to="/about">ABOUT US</NavLink>

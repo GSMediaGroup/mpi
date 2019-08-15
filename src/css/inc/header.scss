@@ -1,10 +1,10 @@
 header {
+  &.headerBg {
+    background-color: rgba(30, 54, 60, 0.6);
+  }
+
   nav {
     transition: 0.6s ease-in-out;
-
-    &.navbarBg {
-      background: rgba(30, 54, 60, 0.6);
-    }
 
     ul li {
       position: relative;
