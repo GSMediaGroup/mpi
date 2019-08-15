@@ -1,10 +1,26 @@
-
+/**
+  * BOOTSTRAP version 4.3.1
+ */
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
+/**
+  * FONT BARLOW
+**/
 @import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
-
+/**
+  * FONT CANDAL
+**/
+@import url('https://fonts.googleapis.com/css?family=Candal&display=swap');
+/**
+  * SCSS VARIABLES
+**/
 @import "./variables";
-
+/**
+  * SCSS GLOBAL
+**/
 @import "./inc/global";
+/**
+  * SCSS SECTIONS
+**/
 @import "./inc/header";
+@import "./inc/hero";
 @import "./inc/footer";

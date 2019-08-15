@@ -12,7 +12,7 @@ import {faCompass} from '@fortawesome/react-fontawesome';
 
 export default class HeaderNavbar extends Component {
     state = {
-        navbarClass:'bg-none navbar-light',
+        navbarClass:'bg-none',
         navPos: "center",
         mobileMenuOpened: false,
     };
@@ -35,12 +35,12 @@ export default class HeaderNavbar extends Component {
     handlePositionChange(event) {
         if (window.scrollY === 0) {
             this.setState({
-                navbarClass:'bg-none navbar-light',
+                navbarClass:'bg-none',
                 navPos: "center",
             });
         } else {
             this.setState({
-                navbarClass:'navbarBg navbar-dark',
+                navbarClass:'navbarBg',
                 navPos: "end",
             });
         }
@@ -57,7 +57,7 @@ export default class HeaderNavbar extends Component {
         const mobileMenuClass = mobileMenuOpened ? "opened" : "closed";
 
         return (
-            <Navbar expand="md" className={`${navbarClass} fixed-top`}>
+            <Navbar expand="md" className={`${navbarClass} fixed-top navbar-dark`}>
                 <Link to='/' className="navbar-brand">MPI</Link>
 
                 <div className={`toggleButton d-md-none ${mobileMenuClass}`} onClick={this.toggleMobileMenu}>
