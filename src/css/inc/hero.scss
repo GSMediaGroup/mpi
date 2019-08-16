@@ -7,9 +7,8 @@ $hero_text_color:#fff;
 
   .heroTitle {
     position:relative;
-    padding: 24px 49px;
     transform:translateY(35%);
-    height:100%;
+    padding: 24px 49px;
     z-index: 1;
 
       &:after {
@@ -34,6 +33,50 @@ $hero_text_color:#fff;
           background:rgba(0,0,0,0.6);
         }
       }
+  }
+
+  .heroService {
+    width:350px;
+
+    .serviceItem {
+      height:33.3%;
+      opacity: 0.8;
+
+        &:first-child {
+          background:#52d3eb;
+        }
+
+        &:nth-child(2) {
+          background:#42bad0;
+        }
+
+        &:last-child {
+          background:#2d95a9;
+        }
+
+        &:hover {
+
+          > div {
+            margin:10px 0 !important;
+          }
+
+          .moreInfo {
+            display:block !important;
+          }
+        }
+
+         a {
+           border: 1px solid;
+           border-radius: 21px;
+           padding: 11px 64px;
+           transition:0.6s ease-in-out;
+
+           &:hover {
+             background:rgba(0,0,0,0.5);
+           }
+         }
+
+    }
   }
 
   .particles {
