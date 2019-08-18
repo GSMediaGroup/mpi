@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import Particles from 'react-particles-js';
 
-import {Row, Col, Container} from 'reactstrap';
-
 import HeroTitle from './Hero/HeroTitle';
 import HeroServices from './Hero/HeroServices';
 

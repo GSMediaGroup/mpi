@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Row, Col, Container} from "reactstrap";
+import {Container} from "reactstrap";
 import TopSection from '../layout/Footer/TopSection';
 import MiddleSection from '../layout/Footer/MiddleSection';
 import BottomSection from '../layout/Footer/BottomSection';

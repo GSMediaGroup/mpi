@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from  'react-router-dom';
-import {Container, Col} from 'reactstrap';
 
 export default class HeroTitle extends Component {
 

@@ -1,10 +1,6 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom'
-import {Row, Col, ListGroup, ListGroupItem, ListGroupItemHeading} from "reactstrap";
-import Logo from '../../../images/mpi.png';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faMapMarkedAlt, faPhoneAlt, faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import {Row, Col} from "reactstrap";
 
 
 export default class MiddleSection extends Component {

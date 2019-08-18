@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import Navbar from "./Header/HeaderNavbar";
-import {Container} from 'reactstrap';
 
 export default class Header extends Component {
 
