@@ -38,67 +38,47 @@ $hero_text_color:#fff;
       }
   }
 
-  .heroService {
-    width:350px;
+  .heroContent {
 
-    .serviceItem {
-      width:100%;
-      height:33.3%;
+    .heroService {
+      width:350px;
 
-      &:first-child {
-        background:#52d3eb;
-      }
+      .serviceItem {
+        width:100%;
+        height:33.3%;
 
-      &:nth-child(2) {
-        background:#42bad0;
-      }
-
-      &:last-child {
-        background:#2d95a9;
-      }
-
-      //&:hover {
-
-        //.iconService {
-        //  margin-top:10px !important;
-        //  margin-bottom:-12px !important;
-        //}
-        //
-        //.moreInfo {
-        //  display:block !important;
-        //}
-      //}
-
-      //.moreInfo {
-      //  transition:2s linear;
-      //}
-
-      .iconService {
-        transition:all 0.6s ease;
-      }
-
-      &:hover {
-        .iconService {
-          transform:scale(1.05);
+        &:first-child {
+          background:#52d3eb;
         }
 
-        .moreInfo {
-          display: block !important;
+        &:nth-child(2) {
+          background:#42bad0;
         }
+
+        &:last-child {
+          background:#2d95a9;
+        }
+
+        a {
+          border: 1px solid;
+          border-radius: 21px;
+          padding: 11px 64px;
+          transition:0.6s ease-in-out;
+
+          &:hover {
+            background:rgba(0,0,0,0.5);
+          }
+        }
+
+        &:hover {
+          .bottomPart {
+            display: block !important;
+          }
+        }
+
       }
-
-       a {
-         border: 1px solid;
-         border-radius: 21px;
-         padding: 11px 64px;
-         transition:0.6s ease-in-out;
-
-         &:hover {
-           background:rgba(0,0,0,0.5);
-         }
-       }
-
     }
+
   }
 
   .particles {
@@ -108,5 +88,40 @@ $hero_text_color:#fff;
     width:100%;
     height:100%;
     z-index:-1;
+  }
+
+  @media (max-width:992px) {
+    height:unset !important;
+
+    .heroTitle {
+      transform:none;
+      margin-top:15%;
+      margin-bottom: 15%;
+    }
+
+    .heroContent {
+      flex-wrap:wrap;
+    }
+
+    .heroService {
+      width:100% !important;
+
+
+      .serviceItem {
+        flex-direction: row;
+        flex-wrap:nowrap !important;
+        padding:10px;
+
+        .topPart img {
+          width:50px;
+        }
+
+
+        .bottomPart a {
+          padding: 10px 20px;
+        }
+      }
+
+    }
   }
 }

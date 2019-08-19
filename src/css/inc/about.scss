@@ -1,0 +1,28 @@
+$text-color: #353b5b;
+
+#about {
+  color: $text-color;
+
+  .workProcess {
+    font-size:24px;
+    font-weight:bold;
+
+    li {
+      margin-top:25px;
+    }
+
+      span {
+        color:#3dbad1;
+        padding-right: 50px;
+        font-weight:900;
+      }
+  }
+
+  .imgBlock {
+    transition:0.6s ease-in-out;
+
+    &:hover {
+      transform:rotate(3deg);
+    }
+  }
+}
