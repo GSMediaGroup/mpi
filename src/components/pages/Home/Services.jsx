@@ -4,12 +4,12 @@ import {Container} from 'reactstrap';
 
 import Title from './Services/Title';
 import ServiceIconList from './Services/ServiceIconList';
-import ServiceContentList, { MOBILE_DEVELOPMENT } from './Services/ServiceContentList';
+import ServiceContentList, { MOBILE_DEVELOPMENT , WEB_DEVELOPMENT} from './Services/ServiceContentList';
 
 
 export default class Services extends Component {
     state = {
-        serviceType: MOBILE_DEVELOPMENT,
+        serviceType: WEB_DEVELOPMENT,
     };
 
     constructor(props) {
@@ -30,7 +30,9 @@ export default class Services extends Component {
                 <Container>
                     <Title />
                     <ServiceIconList onServiceTypeChange={this.updateServiceType} />
-                    <ServiceContentList type={serviceType} />
+                    <div className="serviceContentList">
+                        <ServiceContentList type={serviceType} />
+                    </div>
                 </Container>
             </section>
         );

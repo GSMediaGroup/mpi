@@ -26,15 +26,15 @@ export default class ServiceIconList extends Component {
         };
 
         return (
-            <Row className="justify-content-center">
+            <div className="d-flex justify-content-around pt-5 pb-5">
                 {
                     Object.keys(images).map((type, i) => (
-                        <Col key={i} id={images[type].id} onClick={this.bgChange(type)} className="serviceIcon">
+                        <div key={i} id={images[type].id} onClick={this.bgChange(type)} className="serviceIcon">
                             <img src={images[type].src} alt={images[type].alt}/>
-                        </Col>
+                        </div>
                     ))
                 }
-            </Row>
+            </div>
         );
     }
 }

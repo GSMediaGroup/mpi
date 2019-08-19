@@ -5,10 +5,46 @@
   }
 
   .serviceIcon {
-    max-width:150px;
+    cursor:pointer;
 
       img {
-          width:100%;
+          width:100px;
+          height:100px;
+          object-fit:contain;
       }
+  }
+
+  .serviceContent {
+
+    .imgContent {
+      width:250px;
+      height:250px;
+      background:#2db9d1;
+      border-radius:100%;
+      padding:20px;
+
+      img {
+        width:100%;
+        height:100%;
+        object-fit:contain;
+      }
+    }
+
+    .deskContent {
+
+      .progTech {
+        min-width:100px;
+        max-width: 150px;
+        height:50px;
+        text-align:center;
+
+        img {
+          width:100%;
+          height:100%;
+          object-fit:contain;
+        }
+
+      }
+    }
   }
 }
