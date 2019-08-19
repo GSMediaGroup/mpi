@@ -18,9 +18,13 @@
   * SCSS GLOBAL
 **/
 @import "./inc/global";
+
 /**
   * SCSS SECTIONS
 **/
 @import "./inc/header";
 @import "./inc/hero";
 @import "./inc/footer";
+@import "./inc/slider";
+@import "./inc/popup.scss";
+@import "./inc/popup_view.scss";

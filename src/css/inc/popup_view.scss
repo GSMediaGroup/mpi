@@ -1,0 +1,17 @@
+.popupView{
+    text-align: center;
+    .prev, .next {
+        position: absolute;
+        top:50%;
+    }
+    .prev{
+        left: 0;
+    }
+    .next {
+        right: 0;
+    }
+    img{
+        max-width: 80%;
+    }
+    
+}
