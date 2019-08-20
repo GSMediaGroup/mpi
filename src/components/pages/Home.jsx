@@ -1,11 +1,13 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 import Hero from '../pages/Home/Hero';
 import About from '../pages/Home/About'
 import Services from '../pages/Home/Services'
 import Agile from '../pages/Home/Agile'
 
-
+import Slider from '../pages/Home/Slider';
+import HashTag from '../pages/Home/HashTag';
+import OurTechnologies from '../pages/Home/OurTechnologies';
 
 export default class Home extends Component {
     render() {
@@ -15,6 +17,10 @@ export default class Home extends Component {
                 <About />
                 <Services />
                 <Agile />
+                
+                <OurTechnologies/>
+                <Slider />
+                <HashTag/>
             </>
         );
     }
