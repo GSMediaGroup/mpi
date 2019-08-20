@@ -7,6 +7,10 @@ $text-color: #fff;
   background:$bg_color;
   color: $text-color;
 
+  h2 {
+    color:$text_color;
+  }
+
   @media (max-width:1200px) {
     padding-top:30%;
   }

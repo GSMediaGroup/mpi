@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Slider from "../../../react-slick";
 
-class Technologies extends React.Component {
+export default class Technologies extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         const { gallery } = this.props;
+
         const settings = {
             dots: true,
             infinite: true,
@@ -17,14 +18,16 @@ class Technologies extends React.Component {
             slidesToScroll: 3,
             autoplay: false,
         };
+
         return (
             <div className="slider-technologies">
                 <Slider {...settings}>
                     {
                         gallery.map((i, index) => {
-                            return (<div className="images-content">
-                                <img src={i} key={index} />
-                            </div>)
+                            return (
+                                <div className="images-content pt-5" key={index}>
+                                    <img src={i} key={index} />
+                                 </div>)
                         })
                     }
                 </Slider>
@@ -32,5 +35,3 @@ class Technologies extends React.Component {
         );
     }
 }
-
-export default Technologies;

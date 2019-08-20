@@ -9,7 +9,8 @@ export default class MultipleItems extends Component {
     state = {
         slidesToShow: 3,
         isOpen: false
-    }
+    };
+
     constructor(props) {
         super(props);
 
@@ -25,7 +26,6 @@ export default class MultipleItems extends Component {
      * @param {*} e 
      */
     windowSizeChange(e) {
-        console.log(window.innerWidth)
         if (window.innerWidth <= 630) {
             this.setState({
                 slidesToShow: 1
@@ -86,16 +86,17 @@ export default class MultipleItems extends Component {
                     <Slider {...settings}>
                         {
                             gallery.map((i, index) => {
-                                return (<div className="images-content">
-                                    <img  src={i} key={index} onClick={() => this.openImage(index, gallery)} />
-                                </div>)
+                                return (
+                                    <div className="images-content" key={index}>
+                                        <img  src={i} key={index} onClick={() => this.openImage(index, gallery)} />
+                                    </div>)
                             })
                         }
                     </Slider>
                 </div>
                 <Popup show={this.state.isOpen}
                     onClose={this.closeImage}>
-                    <PopupView images={this.state.images} index={this.state.index}></PopupView>
+                    <PopupView images={this.state.images} index={this.state.index} />
                 </Popup>
             </>
 

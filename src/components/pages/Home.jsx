@@ -17,10 +17,9 @@ export default class Home extends Component {
                 <About />
                 <Services />
                 <Agile />
-                
                 <OurTechnologies/>
-                <Slider />
                 <HashTag/>
+                <Slider />
             </>
         );
     }
