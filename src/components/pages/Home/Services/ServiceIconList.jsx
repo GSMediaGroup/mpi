@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
-import {Col, Row} from 'reactstrap';
+import {Row, Col} from 'reactstrap';
 
-import WebDev from '../../../../images/devServiceBg.png';
-import MobileDev from '../../../../images/mobileServiceBg.png';
-import Design from '../../../../images/designServiceBg.png';
+import webDev from '../../../../images/devService.png';
+import mobileDev from '../../../../images/mobileService.png';
+import design from '../../../../images/designService.png';
+
+import webDevBg from '../../../../images/devServiceBg.png';
+import mobileDevBg from '../../../../images/mobileServiceBg.png';
+import designBg from '../../../../images/designServiceBg.png';
+
 import {DESIGN, MOBILE_DEVELOPMENT, WEB_DEVELOPMENT} from "./ServiceContentList";
 
 export default class ServiceIconList extends Component {
@@ -19,22 +24,52 @@ export default class ServiceIconList extends Component {
     }
 
     render() {
+        const activeType = this.props.type;
+
         const images = {
-            [WEB_DEVELOPMENT]: {src : WebDev, alt : `Web Development`, id : `webDev`},
-            [MOBILE_DEVELOPMENT]: {src : MobileDev, alt : `Mobile Development`, id : `mobileDev`},
-            [DESIGN]: {src : Design, alt : `Design`, id : `design`},
+            [WEB_DEVELOPMENT]: {
+                srcMain: webDev,
+                srcActive: webDevBg,
+                alt: `Web Development`,
+                id: `webDev`
+            },
+            [MOBILE_DEVELOPMENT]: {
+                srcMain: mobileDev,
+                srcActive: mobileDevBg,
+                alt: `Mobile Development`,
+                id: `mobileDev`
+            },
+            [DESIGN]: {
+                srcMain: design,
+                srcActive: designBg,
+                alt: `Design`,
+                id: `design`
+            },
         };
 
         return (
-            <div className="d-flex justify-content-around pt-5 pb-5">
+            <Row className="justify-content-between pt-5 pb-5 text-center">
                 {
-                    Object.keys(images).map((type, i) => (
-                        <div key={i} id={images[type].id} onClick={this.bgChange(type)} className="serviceIcon">
-                            <img src={images[type].src} alt={images[type].alt}/>
-                        </div>
-                    ))
+                    Object.keys(images).map((type, i) => {
+                        let imgSrc = images[type].srcMain,
+                            bottomBorder = ``;
+
+                          if(activeType == type) {
+                              imgSrc = images[type].srcActive;
+                              bottomBorder = `bottomBorder`;
+                          }
+
+                          return (
+                              <Col key={i} id={images[type].id} onClick={this.bgChange(type)}>
+                                  <div className={`serviceIcon ${bottomBorder}`}>
+                                      <img draggable={false} src={imgSrc} alt={images[type].alt} />
+                                  </div>
+                              </Col>
+                          );
+                    })
+
                 }
-            </div>
+            </Row>
         );
     }
 }

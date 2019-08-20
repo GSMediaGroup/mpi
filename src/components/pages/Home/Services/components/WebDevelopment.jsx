@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Row, Col} from 'reactstrap';
+import {Container, Row, Col} from 'reactstrap';
 
-import WebDev from '../../../../../images/webDevDesk.png';
+import WebDesc from '../../../../../images/webDesc.png';
 
 import Android from '../../../../../images/Android.png';
 import Hybrid from '../../../../../images/Hybrid.png';
@@ -15,32 +15,37 @@ export default class WebDevelopment extends Component {
     render () {
         const programingTech = [
             {src: Android, alt: `Android Logo`, text: `Android Apps`},
-            {src: Hybrid, alt: `Hybrid Logo`, text: `Hybrid Apps`},
-            {src: IOS, alt: `IOS Logo`, text: `IOS Apps`},
-        ];
-        return (
-            <Row className="serviceContent">
-                <Col md={5} className="align-self-center col-12">
-                   <div className="imgContent mx-auto">
-                       <img src={WebDev} alt="Service Content Image"/>
-                   </div>
-                </Col>
-                <Col md={7} className="deskContent col-12">
-                    <h3 className="text-center ">WEB DEVELOPMENT</h3>
-                    <p>Smart phones are our guides, friends and even wallets. We make apps that easily integrate with what people need and expect from a trusted digital product. Depending on your needs, our tools are: Swift, Objective-C, Java, Flutter, React Native, and Ionic</p>
 
-                    <Row className="justify-content-between">
-                        {
-                            programingTech.map((val, index) => (
-                                <Col key={index} className="progTech">
-                                    <img src={val.src} alt={val.alt} className="" />
-                                    <p>{val.text}</p>
-                                </Col>
-                            ))
-                        }
-                    </Row>
-                </Col>
-            </Row>
+        ];
+
+        const title = `WEB DEVELOPMENT`;
+        const description = `The team of skilled  profesionalls of MPI  offer comprehensive and customized web development services for your projects. We develop solutions that streamline your business operations and deliver value to your customers and therefore will ensure the success of your web project.  We consider website maintenance as one of our core web development services, that is why our team engages in clear communication with the clients to keep the websites current and functional and to make all the changes that you need as often as you like.`;
+
+        return (
+            <div className="serviceContent">
+                <Row>
+                    <Col md={5} className="align-self-center col-12">
+                       <div className="imgContent mx-auto mt-4 mt-md-0">
+                           <img src={WebDesc} alt="Service Content Image"/>
+                       </div>
+                    </Col>
+                    <Col md={7} className="deskContent col-12">
+                        <h3 className="text-center pb-5 pt-3 pt-md-0">{title}</h3>
+                        <p className="p3-4">{description}</p>
+
+                        <Row className="flex-wrap">
+                            {
+                                programingTech.map((val, index) => (
+                                    <Col key={index} className="progTech">
+                                        <img src={val.src} alt={val.alt} />
+                                        <p>{val.text}</p>
+                                    </Col>
+                                ))
+                            }
+                        </Row>
+                    </Col>
+                </Row>
+            </div>
         );
     }
 }

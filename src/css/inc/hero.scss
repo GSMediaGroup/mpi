@@ -9,9 +9,9 @@ $hero_text_color:#fff;
 
   .heroTitle {
     position:relative;
-    transform:translateY(35%);
     padding: 24px 49px;
     margin-left:10%;
+    margin-top:35%;
     z-index: 1;
 
       &:after {
@@ -94,7 +94,6 @@ $hero_text_color:#fff;
     height:unset !important;
 
     .heroTitle {
-      transform:none;
       margin-top:15%;
       margin-bottom: 15%;
     }

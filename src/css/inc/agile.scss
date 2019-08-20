@@ -1,0 +1,17 @@
+$bg_color: #3db9d1;
+$text-color: #fff;
+
+#agile {
+  margin-top:13%;
+  padding-top:20%;
+  background:$bg_color;
+  color: $text-color;
+
+  @media (max-width:1200px) {
+    padding-top:30%;
+  }
+
+  @media (max-width:976px) {
+    padding-top:0;
+  }
+}

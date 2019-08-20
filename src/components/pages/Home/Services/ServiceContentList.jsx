@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Row, Col} from "reactstrap";
 
 import WebDevelopment from './components/WebDevelopment';
 import MobileDevelopment from './components/MobileDevelopment';
@@ -9,14 +10,21 @@ export const MOBILE_DEVELOPMENT = 'mobile-development';
 export const DESIGN = 'design';
 
 export default class ServiceContentList extends Component {
+    renderComponent(ComponentClass) {
+        return (
+
+            <ComponentClass />
+        );
+    }
+
     render () {
         switch (this.props.type) {
             case WEB_DEVELOPMENT:
-                return <WebDevelopment/>;
+                return this.renderComponent(WebDevelopment);
             case MOBILE_DEVELOPMENT:
-                return <MobileDevelopment/>;
+                return this.renderComponent(MobileDevelopment);
             case DESIGN:
-                return <Design/>;
+                return this.renderComponent(Design);
             default :
                 return null;
         }

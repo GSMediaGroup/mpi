@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import {Container} from 'reactstrap';
 
 
-import Title from './Services/Title';
+import ServiceBlockTitle from './Services/ServiceBlockTitle';
 import ServiceIconList from './Services/ServiceIconList';
-import ServiceContentList, { MOBILE_DEVELOPMENT , WEB_DEVELOPMENT} from './Services/ServiceContentList';
+import ServiceContentList, { MOBILE_DEVELOPMENT } from './Services/ServiceContentList';
 
 
 export default class Services extends Component {
     state = {
-        serviceType: WEB_DEVELOPMENT,
+        serviceType: MOBILE_DEVELOPMENT,
     };
 
     constructor(props) {
@@ -26,13 +26,11 @@ export default class Services extends Component {
     render() {
         const {serviceType} = this.state;
         return (
-            <section id="services" className="sectionPaddingTop pb-5">
-                <Container>
-                    <Title />
-                    <ServiceIconList onServiceTypeChange={this.updateServiceType} />
-                    <div className="serviceContentList">
-                        <ServiceContentList type={serviceType} />
-                    </div>
+            <section id="services" className="sectionPaddingTop">
+                <Container className="position-relative">
+                    <ServiceBlockTitle />
+                    <ServiceIconList type={serviceType} onServiceTypeChange={this.updateServiceType} />
+                    <ServiceContentList type={serviceType} />
                 </Container>
             </section>
         );
