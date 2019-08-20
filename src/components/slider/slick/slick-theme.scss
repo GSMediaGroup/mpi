@@ -94,7 +94,7 @@ $slick-opacity-not-active: 0.25 !default;
     }
     &:before {
         font-family: $slick-font-family;
-        font-size: 60px;
+        font-size: 30px;
         line-height: 1;
         color: $slick-arrow-color;
         opacity: $slick-opacity-default;
@@ -105,11 +105,11 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-prev {
     color: black;
-    left: -60px;
+    left: -5px;
     z-index: 10000;
     [dir="rtl"] & {
         left: auto;
-        right: -60px;
+        right:-5px;;
     }
     &:before {
         color: #19282f;
@@ -123,10 +123,10 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-next {
     // background: rgba(0,0,0,0.5);
     
-    right: -60px;
+    right: -5px;
     // background: black;
     [dir="rtl"] & {
-        left: -60px;
+        left:-5px;
         right: auto;
     }
     &:before {

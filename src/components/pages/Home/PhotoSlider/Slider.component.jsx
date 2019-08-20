@@ -26,10 +26,18 @@ export default class MultipleItems extends Component {
      */
     windowSizeChange(e) {
         console.log(window.innerWidth)
-        if (window.innerWidth <= 500) {
+        if (window.innerWidth <= 630) {
+            this.setState({
+                slidesToShow: 1
+            })
+        }else if(window.innerWidth <= 900 && window.innerWidth > 630){
             this.setState({
                 slidesToShow: 2
-            })
+            }) 
+        }else{
+            this.setState({
+                slidesToShow: 3
+            }) 
         }
     }
 
@@ -63,8 +71,10 @@ export default class MultipleItems extends Component {
             dots: false,
             infinite: true,
             speed: 500,
+            arrows: false,
             slidesToShow: this.state.slidesToShow,
-            slidesToScroll: 3
+            slidesToScroll: 3,
+            autoplay: true,
         };
         const { gallery } = this.props;
 
@@ -77,7 +87,7 @@ export default class MultipleItems extends Component {
                         {
                             gallery.map((i, index) => {
                                 return (<div className="images-content">
-                                    <img className="img-fluid" src={i} key={index} onClick={() => this.openImage(index, gallery)} />
+                                    <img  src={i} key={index} onClick={() => this.openImage(index, gallery)} />
                                 </div>)
                             })
                         }

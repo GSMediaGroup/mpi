@@ -1,0 +1,46 @@
+#Tags{
+    .container{
+        position: relative;
+    }
+    .main{
+        // height: 70vh;
+        .we-care-circle{
+            box-shadow: 0px 0px 18px grey;
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            background: #fbd70b;
+            display: flex;
+            align-items: center;
+            .circle{
+                width: 100%;
+                text-align: center;
+                .title{
+                   font-size: 60px;
+                   color: white 
+                }
+                .description {
+                    font-size: 25px;
+                    color: black;
+                }
+            }
+        }
+    
+        .hashTags{
+            width: 100%;
+            height: fit-content;
+            // border-radius: 50%;
+            // border:1px solid;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            .tags{
+                color: grey;
+                font-size: 20px;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+    }
+}

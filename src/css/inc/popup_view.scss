@@ -2,13 +2,26 @@
     text-align: center;
     .prev, .next {
         position: absolute;
-        top:50%;
+        top: calc(50% - 100px);
+        color: white;
+        font-size: 100px;
+        border: none;
+        /* display: flex; */
+        align-items: center;
+        /* height: 200px; */
+        outline: none;
+        width: 50px;
+        cursor: pointer;
     }
     .prev{
         left: 0;
     }
     .next {
         right: 0;
+    }
+    .prev:hover, .next:hover{
+        color: grey;
+        font-size: 103px;
     }
     img{
         max-width: 80%;
