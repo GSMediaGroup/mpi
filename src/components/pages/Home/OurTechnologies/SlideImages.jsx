@@ -2,7 +2,7 @@ import Js from '../../../../images/progTech/js.png';
 import NodeJs from '../../../../images/progTech/nodejs.png';
 import Express from '../../../../images/progTech/express .png';
 import ReactJs from '../../../../images/progTech/react.png';
-import AngularJs from '../../../../images/progTech/angularjs.png';
+import AngularJs from '../../../../images/progTech/angularJs.png';
 import VueJs from '../../../../images/progTech/vueJs.png';
 import Less from '../../../../images/progTech/less.png';
 import Sass from '../../../../images/progTech/sass.png';

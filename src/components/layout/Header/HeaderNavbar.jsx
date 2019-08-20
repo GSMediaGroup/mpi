@@ -40,16 +40,16 @@ export default class HeaderNavbar extends Component {
                 <div className={`navbar-collapse justify-content-${this.props.position} ${mobileMenuClass}`} id="navbarSupportedContent">
                     <Nav navbar className="mr-0">
                         <NavItem>
-                            <NavLink activeClassName="active" className="nav-link" to="/about">ABOUT US</NavLink>
+                            <NavLink activeClassName="active" className="nav-link" to="#about">ABOUT US</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink activeClassName="active" className="nav-link" to="/our-team">OUR TEAM</NavLink>
+                            <NavLink activeClassName="active" className="nav-link" to="#our-team">OUR TEAM</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink activeClassName="active" className="nav-link" to="/services">SERVICES</NavLink>
+                            <NavLink activeClassName="active" className="nav-link" to="#services">SERVICES</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink activeClassName="active" className="nav-link" to="/contact">CONTACT US</NavLink>
+                            <NavLink activeClassName="active" className="nav-link" to="#contact">CONTACT US</NavLink>
                         </NavItem>
                     </Nav>
                 </div>

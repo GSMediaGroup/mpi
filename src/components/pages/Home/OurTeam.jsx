@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {Container} from 'reactstrap';
 
 import SliderTitleComponent from './PhotoSlider/SliderTitle.component';
-import TechnologySlider from './OurTechnologies/TechnologySlider';
+import SliderComponent from './PhotoSlider/Slider.component';
 
-import Gallery from '../Home/OurTechnologies/SlideImages';
+import Gallery from './OurTeam/Gallery';
+
 
 export default class Slider extends Component {
 
@@ -13,7 +13,7 @@ export default class Slider extends Component {
     }
 
     render() {
-        const Title = "technologies we use";
+        const Title = "meet out team";
         const Description = `
                     the 1500s, when an unknown printer 
                     took a galley of type and scrambled it to make a 
@@ -22,13 +22,14 @@ export default class Slider extends Component {
                     It was popularised in the 1960s with the release of 
                 `;
 
+
         return (
-            <section id="our-tech" className="sectionPaddingTop">
+            <section id="our-team" className="sectionPaddingTop sectionPaddingBottom">
                 <div className="m-0 h-100">
-                    <Container >
+                    <div className="container">
                         <SliderTitleComponent title={Title} description={Description} />
-                        <TechnologySlider gallery={Gallery} currentClass="techSlideImage" />
-                    </Container>
+                        <SliderComponent gallery={Gallery} />
+                    </div>
                 </div>
             </section>
         );

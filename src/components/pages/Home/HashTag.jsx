@@ -25,7 +25,7 @@ class Tags extends Component {
             "clearcoding",
             "consulting"];
         return (
-            <section id="Tags" className="sectionPaddingTop">
+            <section id="tags" className="sectionPaddingTop">
                 <div className="m-0 h-100">
                     <HashTag tags={Tags} title={Title} description={Description} />
                 </div>
