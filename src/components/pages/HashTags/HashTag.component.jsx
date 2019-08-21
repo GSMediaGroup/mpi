@@ -1,6 +1,5 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import ReactContactForm from 'react-mail-form';
 
 
 
@@ -152,7 +151,7 @@ class HashTag extends React.Component {
 
                     {/* start hashtags area */}
                     <div className="hashTags">
-                    <ReactContactForm to="edgar.khachatryan95@gmail.com" />
+
                         {
                             /* 
                              * generateHash function here gives the tags and return hashtags array

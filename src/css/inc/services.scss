@@ -1,3 +1,4 @@
+@import "../variables";
 
 #services {
   position: relative;
@@ -35,8 +36,8 @@
 
   .serviceContent {
     position: absolute;
-    padding:10px;
-    height: 400px;
+    padding: 10px;
+    height: $service-list-height;
     box-shadow: 0 0 28px #9999999e;
     background: white;
     z-index: 12;
@@ -96,7 +97,7 @@
   @media (max-width: 976px) {
     .serviceContent {
       height: unset;
-      position:unset;
+      position: unset;
 
       .deskContent {
 
@@ -118,16 +119,25 @@
 
   .dots {
     position: absolute;
-    top:0;
+    margin-top: calc(#{$service-list-height} + 50px);
+    width: 100%;
 
     span {
-      width:20px;
-      height:20px;
-      border-radius:100%;
-      background: rgba(0,0,0,0.6);
+      display: inline-block;
+      margin-right:20px;
+      width: 11px;
+      height:11px;
+      border-radius: 100%;
+      background: #ffffffa1;
+      transition:0.3s ease-in-out;
+      cursor:pointer;
 
-      &:before {
-        content:'\2022';
+      &:hover {
+        background: rgba(0,0,0,0.6);
+      }
+
+      &.active {
+        background:#434343 !important;
       }
     }
   }

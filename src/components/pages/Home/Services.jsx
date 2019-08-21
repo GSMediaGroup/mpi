@@ -32,7 +32,7 @@ export default class Services extends Component {
                     <ServiceBlockTitle />
                     <ServiceIconList type={serviceType} onServiceTypeChange={this.updateServiceType} />
                     <ServiceContentList type={serviceType} />
-                    <Dots onServiceTypeChange={this.updateServiceType} />
+                    <Dots onServiceTypeChange={this.updateServiceType} type={serviceType} />
                 </Container>
             </section>
         );
