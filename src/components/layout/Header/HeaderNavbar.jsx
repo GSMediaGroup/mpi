@@ -45,7 +45,7 @@ class HeaderNavbar extends Component {
     }
 
     openModal(e) {
-
+        
     }
 
 
