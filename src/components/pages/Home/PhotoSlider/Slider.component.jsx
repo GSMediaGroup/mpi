@@ -67,10 +67,10 @@ export default class MultipleItems extends Component {
             dots: false,
             infinite: true,
             speed: 500,
-            arrows: false,
+            arrows: true,
             slidesToShow: this.state.slidesToShow,
             slidesToScroll: 3,
-            autoplay: true,
+            autoplay: false,
         };
         const { gallery } = this.props;
 

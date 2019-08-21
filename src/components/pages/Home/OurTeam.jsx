@@ -13,14 +13,8 @@ export default class Slider extends Component {
     }
 
     render() {
-        const Title = "meet out team";
-        const Description = `
-                    the 1500s, when an unknown printer 
-                    took a galley of type and scrambled it to make a 
-                    type specimen book. It has survived not only five centuries, 
-                    but also the leap into electronic typesetting, remaining essentially unchanged. 
-                    It was popularised in the 1960s with the release of 
-                `;
+        const Title = "PHOTO_SLIDER_TITLE";
+        const Description = `PHOTO_SLIDER_DESCRIPTION`;
 
 
         return (

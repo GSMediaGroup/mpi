@@ -3,8 +3,9 @@
         position: relative;
     }
     .main{
-        // height: 70vh;
+        height: 50vh;
         .we-care-circle{
+            
             box-shadow: 0px 0px 18px grey;
             margin: 0 auto;
             width: 300px;
@@ -13,11 +14,18 @@
             background: #fbd70b;
             display: flex;
             align-items: center;
+            .tags{
+                position: absolute;
+                color: grey;
+                font-size: 20px;
+                text-align: center;
+                font-weight: bold;
+            }
             .circle{
                 width: 100%;
                 text-align: center;
                 .title{
-                   font-size: 60px;
+                   font-size: 40px;
                    color: white 
                 }
                 .description {
@@ -25,6 +33,14 @@
                     color: black;
                 }
             }
+
+            
+        }
+
+        .we-care-circle:hover{
+            box-shadow: 0 1px 100px #fbd70b;
+            transition: box-shadow 0.3s ease-in-out;
+            cursor: pointer;
         }
     
         .hashTags{

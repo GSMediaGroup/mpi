@@ -2,15 +2,20 @@
 .ourTeamImage{
     height: 200px;
     width:300px;
-    padding-right:30px;
+    // padding-right:30px;
     //display: flex !important;
 
     img{
         cursor: pointer;
         margin: 0 auto;
         height: 100%;
-        width: 100%;
-        object-fit:contain;
+        width: 95%;
+    object-fit: cover;
+    object-position: 0px 0px;
+    }
+    img:hover{
+        box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+        transition: box-shadow 0.3s ease-in-out;
     }
 
 }

@@ -8,22 +8,18 @@ class Tags extends Component {
     }
 
     render() {
-        const Title = "we care";
-        const Description = `for your projects`;
+        const Title = "HASHTAGS_TITLE";
+        const Description = "HASHTAGS_DESCRIPTION";
         const Tags = [
             "helpfullteam",
             "responsibleattitude",
-            "loveourjob", 
-            "developingnewtechnologies", 
-            "carefultesting", 
+            "loveourjob",
+            "developingnewtechnologies",
+            "carefultesting",
             "clearcoding",
             "helpfullteam",
-            "responsibleattitude",
-            "loveourjob", 
-            "developingnewtechnologies", 
-            "carefultesting", 
-            "clearcoding",
-            "consulting"];
+            "responsibleattitude"
+        ];
         return (
             <section id="tags" className="sectionPaddingTop">
                 <div className="m-0 h-100">

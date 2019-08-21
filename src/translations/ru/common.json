@@ -1,8 +1,15 @@
 {
+    "NAVBAR_SECTION_1" : "about us",
+    "NAVBAR_SECTION_2" : "our team",
+    "NAVBAR_SECTION_3" : "services",
+    "NAVBAR_SECTION_4" : "contact us",
+    "NAVBAR_SECTION_5" : "contact us",
+    
     "TECHNOLOGIES_SLIDER_TITLE": "ruser",
     "TECHNOLOGIES_SLIDER_DESCRIPTION" : "ruseren",
+
     "PHOTO_SLIDER_TITLE" : "ruseren meet out team",
-    "PHOTO_SLIDER_DESCRIPTION" : "ruseren the 1500s, when an unknown printer took a galley of type",
+    "PHOTO_SLIDER_DESCRIPTION" : "ruseren the 1500s,cedfweufiweiofioewiofioewfioewiofhioewhiofhewoiufihwehfuhwe u9h uh u9i u9i hui9 hu hu when an unknown printer took a galley of type",
 
     "HERO_TITLE_HEADER" : "WE JUST DO THAT",
     "HERO_TITLE_DESCRIPTION" : "Your partner for stunning web and mobile ideas",
@@ -48,5 +55,8 @@
     "AGILE_DESCRIPTION" : "RUSSIAN",
     "AGILE_IMAGE_SRC" : "AGILE_IMAGE_RU",
     "AGILE_TITLE":"AGILE DEVELOPMENT",
-    "AGILE_IMAGE_ALT" : ""
+    "AGILE_IMAGE_ALT" : "",
+
+    "HASHTAGS_TITLE" : "WE CARE",
+    "HASHTAGS_DESCRIPTION" : "for your projects"
 }

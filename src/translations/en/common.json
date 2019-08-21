@@ -1,4 +1,10 @@
 {
+    "NAVBAR_SECTION_1" : "about us",
+    "NAVBAR_SECTION_2" : "our team",
+    "NAVBAR_SECTION_3" : "services",
+    "NAVBAR_SECTION_4" : "contact us",
+    "NAVBAR_SECTION_5" : "contact us",
+
     "TECHNOLOGIES_SLIDER_TITLE": "technologies we use",
     "TECHNOLOGIES_SLIDER_DESCRIPTION" : "angleren",
     "PHOTO_SLIDER_TITLE" : "meet out team",
@@ -48,5 +54,8 @@
     "AGILE_DESCRIPTION" : "Every smart solution begins with a perfectly - thought-out strategy. Our team of skilled professionals with its well-thought-out working technologies will provide solution for your any IT task and will ensure the success of your web project. It always takes lots of effort and expertise to deliver flawless web applications, and that’s in fact what you can and should expect from our web development team.",
     "AGILE_IMAGE_SRC" : "AGILE_IMAGE_EN",
     "AGILE_TITLE":"AGILE DEVELOPMENT",
-    "AGILE_IMAGE_ALT" : ""
+    "AGILE_IMAGE_ALT" : "",
+
+    "HASHTAGS_TITLE" : "we care",
+    "HASHTAGS_DESCRIPTION" : "for your projects"
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 class HashTag extends React.Component {
     constructor(props) {
@@ -28,15 +29,72 @@ class HashTag extends React.Component {
      */
     generateRandomSpacesForTags = (tagsArray) => {
         let spacesAndTags = [];
-
+        let status = '1';
         for (const tag of tagsArray) {
             // create options for each tag
             let currentTagOptions = {
                 tag: tag,
                 options: {}
             };
+
             // created the random margin for tags
-            currentTagOptions.options.margin =  this.generateRandomNumberFromGivenRange(0, 50) + 'px';
+            // currentTagOptions.options.left = this.generateRandomNumberFromGivenRange(0, 50) + 'px';
+
+            switch (status) {
+                case '1':
+                    currentTagOptions.options.left = '10%';
+                    currentTagOptions.options.top = '25%';
+                    currentTagOptions.options.fontSize = '15px';
+                    status = '2';
+                    break;
+                case '2':
+                    currentTagOptions.options.right = '5%';
+                    currentTagOptions.options.top = '30%';
+                    currentTagOptions.options.fontSize = '12px';
+                    status = '3';
+                    break;
+                case '3':
+                    currentTagOptions.options.left = '0';
+                    currentTagOptions.options.top = '50%';
+                    currentTagOptions.options.fontSize = '20px';
+                    currentTagOptions.options.color = '#9599ae';
+                    status = '4';
+                    break;
+                case '4':
+                    currentTagOptions.options.right = '0';
+                    currentTagOptions.options.top = '55%';
+                    currentTagOptions.options.fontSize = '18px';
+                    currentTagOptions.options.color = '#9599ae';
+                    status = '5';
+                    break;
+                case '5':
+                    currentTagOptions.options.left = `calc(50% - 150px)`;
+                    currentTagOptions.options.top = '70%';
+                    currentTagOptions.options.fontSize = '17px';
+                    status = '6';
+                    break;
+                case '6':
+                    currentTagOptions.options.left = `calc(50% - 300px)`;
+                    currentTagOptions.options.bottom = '20%';
+                    currentTagOptions.options.fontSize = '16px';
+                    status = '7';
+                    break;
+                case '7':
+                    currentTagOptions.options.left = `50%`;
+                    currentTagOptions.options.bottom = '0';
+                    currentTagOptions.options.fontSize = '19px';
+                    
+                    status = '8';
+                    break;
+                case '8':
+                    currentTagOptions.options.left = `70%`;
+                    currentTagOptions.options.bottom = '15%';
+                    currentTagOptions.options.fontSize = '18px';
+                    currentTagOptions.options.color = '#9599ae';
+                    status = '9';
+                default:
+                    break;
+            }
 
             spacesAndTags.push(currentTagOptions);
         }
@@ -52,8 +110,8 @@ class HashTag extends React.Component {
          */
         const [tags, title, description] = [
             this.props.tags,
-            this.props.title.toUpperCase(),
-            this.props.description.toUpperCase()
+            this.props.t(this.props.title).toUpperCase(),
+            this.props.t(this.props.description).toUpperCase()
         ];
 
         return (
@@ -62,9 +120,19 @@ class HashTag extends React.Component {
                 <div className="main">
                     {/* start circle area */}
                     <div className="we-care-circle">
+                        {
+                            this.generateRandomSpacesForTags(this.generateHash(tags)).map((hashTag, index) => {
+                                return (
+                                    <div key={index} className="tags" style={{ ...hashTag.options }}>
+                                        
+                                        {hashTag.tag}
+                                    </div>
+                                )
+                            })
+                        }
                         <div className="circle">
                             <div className="title">{title}</div>
-                            <div className="description"> {description}</div>
+                            <div className="description"> {this.props.t(description)}</div>
                         </div>
                     </div>
                     {/*    end circle are   */}
@@ -78,13 +146,13 @@ class HashTag extends React.Component {
                              * like this => [{tag : "hashTag", options : {html-css options}}]:
                              * after that will be render in html content
                              */
-                             this.generateRandomSpacesForTags(this.generateHash(tags)).map((hashTag, index) => {
-                                return (
-                                    <div key={index} className="tags" style={{ ...hashTag.options }}>
-                                        {hashTag.tag};
-                                    </div>
-                                )
-                            })
+                            // this.generateRandomSpacesForTags(this.generateHash(tags)).map((hashTag, index) => {
+                            //     return (
+                            //         <div key={index} className="tags" style={{ ...hashTag.options }}>
+                            //             {hashTag.tag}
+                            //         </div>
+                            //     )
+                            // })
                         }
                     </div>
                     {/* end hashtags area */}
@@ -94,4 +162,4 @@ class HashTag extends React.Component {
     }
 }
 
-export default HashTag;
+export default withTranslation()(HashTag);
