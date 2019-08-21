@@ -4,10 +4,13 @@ import Logo from '../../../images/mpi.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMapMarkedAlt, faPhoneAlt, faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import {withTranslation} from "react-i18next";
 
 
-export default class TopSection extends Component {
+class TopSection extends Component {
     render () {
+        const address = `FOOTER_TOP_SECTION_ADDRESS`;
+
        return (
            <Col>
                <Row className="align-items-center">
@@ -19,7 +22,7 @@ export default class TopSection extends Component {
                    <Col className="contact d-flex flex-column flex-md-row">
                             <span className="pt-3 pt-md-0">
                                 <FontAwesomeIcon icon={faMapMarkedAlt}/>
-                                IT Park Bussines Center, Abelyan 6/1, Erevan, Armenia
+                                {this.props.t(address)}
                             </span>
                        <span className="pt-3 pt-md-0">
                                 <FontAwesomeIcon icon={faPhoneAlt} />
@@ -36,3 +39,6 @@ export default class TopSection extends Component {
        );
     }
 }
+
+export default withTranslation()(TopSection);
+

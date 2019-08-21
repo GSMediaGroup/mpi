@@ -4,8 +4,13 @@ import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faFacebook, faGoogle, faInstagram, faYoutube, faTwitter} from '@fortawesome/free-brands-svg-icons';
 
-export default class BottomSection extends Component {
+import {withTranslation} from "react-i18next";
+
+class BottomSection extends Component {
+
     render () {
+        const copyright = `FOOTER_BOTTOM_SECTION_COPYRIGHT`;
+
         return (
             <>
             <div className="pt-5 socialBlock d-flex justify-content-center">
@@ -44,9 +49,11 @@ export default class BottomSection extends Component {
             </div>
 
             <div className="text-left top-border">
-                <p>Copyright © 2019. All Right Reserved.</p>
+                <p>{ this.props.t(copyright) }</p>
             </div>
             </>
         );
     }
 }
+
+export default withTranslation()(BottomSection);

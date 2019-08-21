@@ -23,7 +23,7 @@ class Tags extends Component {
             "clearcoding"
         ];
         return (
-            <section id="tags" className="sectionPaddingTop">
+            <section id="tags" className="sectionPaddingTop mt-5">
                 <div className="m-0 h-100">
                     <HashTag tags={Tags} title={Title} description={Description} />
                 </div>

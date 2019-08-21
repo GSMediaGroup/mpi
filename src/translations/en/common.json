@@ -58,5 +58,9 @@
     "AGILE_IMAGE_ALT" : "",
 
     "HASHTAGS_TITLE" : "we care",
-    "HASHTAGS_DESCRIPTION" : "for your projects"
+    "HASHTAGS_DESCRIPTION" : "for your projects",
+
+    "FOOTER_TOP_SECTION_ADDRESS" : "IT Park Bussines Center, Abelyan 6/1, Erevan, Armenia",
+    "FOOTER_MIDDLE_SECTION_TEXT" : "we develop perfect ideas",
+    "FOOTER_BOTTOM_SECTION_COPYRIGHT" : "Copyright © 2019. All Right Reserved."
 }

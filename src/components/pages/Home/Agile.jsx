@@ -26,13 +26,13 @@ import { withTranslation } from 'react-i18next';
         return (
             <section id="agile">
                 <Container>
-                    <h2 className="text-center pt-5 pt-md-0">{this.props.t(title)}</h2>
+                    <h2 className="text-center">{this.props.t(title)}</h2>
 
-                    <Row className="justify-content-between pt-5 align-items-top">
-                        <Col md={12} lg={5} className="">
+                    <Row className="justify-content-between pt-5 pb-5 align-items-top">
+                        <Col md={12} lg={4} className="">
                             <p>{this.props.t(text)}</p>
                         </Col>
-                        <Col md={12} lg={6}>
+                        <Col md={12} lg={8}>
                             <img src={enumsForImages[this.props.t('AGILE_IMAGE_SRC')]} alt={imageAlt} className="img-fluid"/>
                         </Col>
                     </Row>
