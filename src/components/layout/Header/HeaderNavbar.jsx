@@ -4,8 +4,9 @@ import {
     Navbar,
     Nav,
     NavItem} from 'reactstrap';
+import {withTranslation} from "react-i18next";
 
-export default class HeaderNavbar extends Component {
+class HeaderNavbar extends Component {
     state = {
         mobileMenuOpened: false,
     };
@@ -66,7 +67,7 @@ export default class HeaderNavbar extends Component {
                                              className={`nav-link ${row.customClass}`}
                                              onClick={this.scrollToSection(row.to)}
                                              to={`#${row.to}`}>
-                                                { row.translateKey }
+                                                { this.props.t(row.translateKey) }
                                     </NavLink>
                                 </NavItem>
                             ))
@@ -77,3 +78,5 @@ export default class HeaderNavbar extends Component {
         );
     }
 }
+
+export default withTranslation()(HeaderNavbar);
