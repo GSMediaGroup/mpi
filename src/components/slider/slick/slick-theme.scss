@@ -83,8 +83,8 @@ $slick-opacity-not-active: 0.3 !default;
     outline: none;
     &:hover, &:focus {
         outline: none;
-        // background: transparent;
-        // color: transparent;
+        background: transparent;
+        color: transparent;
         &:before {
             opacity: $slick-opacity-on-hover;
         }
@@ -112,7 +112,6 @@ $slick-opacity-not-active: 0.3 !default;
         right:-30px;;
     }
     &:before {
-        
         color: #19282f;
         content: $slick-prev-character;
         [dir="rtl"] & {

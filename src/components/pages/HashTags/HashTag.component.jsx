@@ -48,7 +48,7 @@ class HashTag extends React.Component {
                     status = '2';
                     break;
                 case '2':
-                    currentTagOptions.options.right = '5%';
+                    currentTagOptions.options.right = '10%';
                     currentTagOptions.options.top = '30%';
                     currentTagOptions.options.fontSize = '12px';
                     status = '3';
@@ -57,18 +57,17 @@ class HashTag extends React.Component {
                     currentTagOptions.options.left = '0';
                     currentTagOptions.options.top = '50%';
                     currentTagOptions.options.fontSize = '20px';
-                    currentTagOptions.options.color = '#9599ae';
                     status = '4';
                     break;
                 case '4':
                     currentTagOptions.options.right = '0';
                     currentTagOptions.options.top = '55%';
                     currentTagOptions.options.fontSize = '18px';
-                    currentTagOptions.options.color = '#9599ae';
+                    currentTagOptions.options.color = 'rgb(53, 59, 91)';
                     status = '5';
                     break;
                 case '5':
-                    currentTagOptions.options.left = `calc(50% - 150px)`;
+                    currentTagOptions.options.left = `50%`;
                     currentTagOptions.options.top = '70%';
                     currentTagOptions.options.fontSize = '17px';
                     status = '6';
@@ -83,15 +82,26 @@ class HashTag extends React.Component {
                     currentTagOptions.options.left = `50%`;
                     currentTagOptions.options.bottom = '0';
                     currentTagOptions.options.fontSize = '19px';
-                    
+
                     status = '8';
                     break;
                 case '8':
                     currentTagOptions.options.left = `70%`;
                     currentTagOptions.options.bottom = '15%';
                     currentTagOptions.options.fontSize = '18px';
-                    currentTagOptions.options.color = '#9599ae';
                     status = '9';
+                    break;
+                case '9':
+                    currentTagOptions.options.left = `15%`;
+                    currentTagOptions.options.bottom = '5%';
+                    currentTagOptions.options.fontSize = '18px';
+                    status = '10';
+                    break
+                case '10':
+                    currentTagOptions.options.left = `85%`;
+                    currentTagOptions.options.bottom = '5%';
+                    currentTagOptions.options.fontSize = '13px';
+                    status = '11';
                 default:
                     break;
             }
@@ -124,7 +134,7 @@ class HashTag extends React.Component {
                             this.generateRandomSpacesForTags(this.generateHash(tags)).map((hashTag, index) => {
                                 return (
                                     <div key={index} className="tags" style={{ ...hashTag.options }}>
-                                        
+
                                         {hashTag.tag}
                                     </div>
                                 )

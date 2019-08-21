@@ -11,14 +11,16 @@ class Tags extends Component {
         const Title = "HASHTAGS_TITLE";
         const Description = "HASHTAGS_DESCRIPTION";
         const Tags = [
-            "helpfullteam",
             "responsibleattitude",
+            "goodservice",
+            "responsivestaff",
+            "carefultesing",
             "loveourjob",
             "developingnewtechnologies",
-            "carefultesting",
-            "clearcoding",
-            "helpfullteam",
-            "responsibleattitude"
+            "meetingdeadlines",
+            "consulting",
+            "helfulteam",
+            "clearcoding"
         ];
         return (
             <section id="tags" className="sectionPaddingTop">
