@@ -14,6 +14,7 @@ export default class HeaderNavbar extends Component {
         super(props);
 
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
+        this.scrollToSection = this.scrollToSection.bind(this);
     }
 
 
@@ -23,9 +24,28 @@ export default class HeaderNavbar extends Component {
         });
     }
 
+    scrollToSection(id) {
+        return(e) => {
+            const elem = document.getElementById(id);
+            e.preventDefault();
+
+            elem.scrollIntoView();
+        };
+
+
+    }
+
     render () {
         const mobileMenuOpened = this.state.mobileMenuOpened;
         const mobileMenuClass = mobileMenuOpened ? "opened" : "closed";
+
+        const navbarItems = [
+            {translateKey : `NAVBAR_SECTION_1`, to : `about` , customClass : ``},
+            {translateKey : `NAVBAR_SECTION_2`, to : `services` , customClass : ``},
+            {translateKey : `NAVBAR_SECTION_3`, to : `technologies` , customClass : ``},
+            {translateKey : `NAVBAR_SECTION_4`, to : `our-team` , customClass : ``},
+            {translateKey : `NAVBAR_SECTION_5`, to : `contacts` , customClass : ``}
+        ];
 
         return (
             <Navbar expand="md" className="navbar-dark container">
@@ -39,18 +59,18 @@ export default class HeaderNavbar extends Component {
 
                 <div className={`navbar-collapse justify-content-${this.props.position} ${mobileMenuClass}`} id="navbarSupportedContent">
                     <Nav navbar className="mr-0">
-                        <NavItem>
-                            <NavLink activeClassName="active" className="nav-link" to="#about">ABOUT US</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink activeClassName="active" className="nav-link" to="#our-team">OUR TEAM</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink activeClassName="active" className="nav-link" to="#services">SERVICES</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink activeClassName="active" className="nav-link" to="#contact">CONTACT US</NavLink>
-                        </NavItem>
+                        {
+                            navbarItems.map((row, index) => (
+                                <NavItem key={index}>
+                                    <NavLink activeClassName="active"
+                                             className={`nav-link ${row.customClass}`}
+                                             onClick={this.scrollToSection(row.to)}
+                                             to={`#${row.to}`}>
+                                                { row.translateKey }
+                                    </NavLink>
+                                </NavItem>
+                            ))
+                        }
                     </Nav>
                 </div>
             </Navbar>
