@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { withTranslation } from "react-i18next";
 
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
@@ -8,8 +9,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Error404 from "./pages/Error404";
 
-
-export default class App extends Component {
+class App extends Component {
     state = {
         headerBg: "",
         headerText: "",
@@ -51,3 +51,5 @@ export default class App extends Component {
         )
     }
 }
+
+export default withTranslation()(App);

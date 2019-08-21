@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from  'react-router-dom';
 
-export default class HeroTitle extends Component {
+import { withTranslation } from 'react-i18next';
+
+class HeroTitle extends Component {
 
     constructor (props) {
         super(props);
@@ -10,10 +12,12 @@ export default class HeroTitle extends Component {
     render () {
         return (
             <div className="heroTitle h-100 ">
-                <h1>WE JUST DO THAT</h1>
-                <p className="pb-1 pb-md-4">Your partner for stunning web and mobile ideas</p>
-                <Link to="#">KNOW MORE</Link>
+                <h1>{this.props.t('HERO_TITLE_HEADER')}</h1>
+                <p className="pb-1 pb-md-4">{this.props.t('HERO_TITLE_DESCRIPTION')}</p>
+                <Link to="#">{this.props.t('HERO_TITLE_MORE_BUTTON')}</Link> 
             </div>
         );
     }
 }
+
+export default  withTranslation()(HeroTitle);

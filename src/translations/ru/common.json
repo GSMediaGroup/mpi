@@ -1,0 +1,52 @@
+{
+    "TECHNOLOGIES_SLIDER_TITLE": "ruser",
+    "TECHNOLOGIES_SLIDER_DESCRIPTION" : "ruseren",
+    "PHOTO_SLIDER_TITLE" : "ruseren meet out team",
+    "PHOTO_SLIDER_DESCRIPTION" : "ruseren the 1500s, when an unknown printer took a galley of type",
+
+    "HERO_TITLE_HEADER" : "WE JUST DO THAT",
+    "HERO_TITLE_DESCRIPTION" : "Your partner for stunning web and mobile ideas",
+    "HERO_TITLE_MORE_BUTTON": "KNOW MORE",
+    
+    "HERO_SERVICES_HEADER_1" : "WEB DEVELOPMENT",
+    "HERO_SERVICES_HEADER_2" : "MOBILE DEVELOPMENT",
+    "HERO_SERVICES_HEADER_3" : "PRODUCT DESIGN" ,
+
+    "HERO_SERVICES_text_1" : "text1 ruseren",
+    "HERO_SERVICES_text_2" : "text2",
+    "HERO_SERVICES_text_3" : "text3",
+
+    "HERO_SERVICES_DETAILS_BUTTON" : "Details",
+
+    "OUR_SERVICES_TITLE" : "RUSSIAN TITLE",
+    "OUR_SERVICES_DESCRIPTION" : "Russian",
+
+    "OUR_SERVICES_BLOCK_1_TITLE" : "WEB DEVELOPMENT",
+    "OUR_SERVICES_BLOCK_1_DESCRIPTION" : "The team of skilled  profesionalls of MPI  offer comprehensive and customized web development services for your projects. We develop solutions that streamline your business operations and deliver value to your customers and therefore will ensure the success of your web project.  We consider website maintenance as one of our core web development services, that is why our team engages in clear communication with the clients to keep the websites current and functional and to make all the changes that you need as often as you like.",
+    "OUR_SERVICES_BLOCK_1_LOGO_ALT" : "Android Logo",
+    "OUR_SERVICES_BLOCK_1_LOGO_DESCRIPTION" : "Android Apps",
+
+    "OUR_SERVICES_BLOCK_2_TITLE" : "Title",
+    "OUR_SERVICES_BLOCK_2_DESCRIPTION" : "Smart phones are our guides, friends and even wallets. We make apps that easily integrate with what people need and expect from a trusted digital product. Depending on your needs, our tools are: Swift, Objective-C, Java, Flutter, React Native, and Ionic",
+    "OUR_SERVICES_BLOCK_2_LOGO_1_ALT" : "Android Logo", 
+    "OUR_SERVICES_BLOCK_2_LOGO_1_DESCRIPTION" : "Android Apps",
+    "OUR_SERVICES_BLOCK_2_LOGO_2_ALT" : "Hybrid Logo", 
+    "OUR_SERVICES_BLOCK_2_LOGO_2_DESCRIPTION" : "Hybrid Apps",
+    "OUR_SERVICES_BLOCK_2_LOGO_3_ALT" : "IOS Logo", 
+    "OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION" : "IOS Apps",
+
+    "OUR_SERVICES_BLOCK_3_TITLE" : "DESIGN",
+    "OUR_SERVICES_BLOCK_3_DESCRIPTION" : "RUSSIAN",
+
+    "ABOUT_TITLE" : "WHO WE ARE",
+    "ABOUT_DESCRIPTION" : "MPI – a company delivering services for development and testing of software products. We have a full stack of skilled professionals, who are able to provide solution for any IT task and love technical challenges. Our goal is to create modern and high-tech systems for the successful development of our clients’ business.  ",
+    "ABOUT_LIST_OPTION_1" : "Detailed planners",
+    "ABOUT_LIST_OPTION_2" : "Quality coders",
+    "ABOUT_LIST_OPTION_3" : "Careful Testers",
+    "ABOUT_IMAGE_ALT" : "About Image",
+
+    "AGILE_DESCRIPTION" : "RUSSIAN",
+    "AGILE_IMAGE_SRC" : "AGILE_IMAGE_RU",
+    "AGILE_TITLE":"AGILE DEVELOPMENT",
+    "AGILE_IMAGE_ALT" : ""
+}

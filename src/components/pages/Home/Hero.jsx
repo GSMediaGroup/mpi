@@ -43,9 +43,9 @@ export default class Hero extends Component {
                         <Particles params={particlesOption} className="particles"/>
                     </div>
                     <div className="heroService pr-0">
-                        <HeroServices src={WebDev} alt="Web Development" header="WEB DEVELOPMENT" text="Best solutions for you!" link="#"/>
-                        <HeroServices src={MobileDev} alt="Mobile Development" header="MOBILE DEVELOPMENT" text="Best solutions for you!" link="#"/>
-                        <HeroServices src={ProductDesign} alt="Product Design" header="PRODUCT DESIGN" text="Best solutions for you!" link="#"/>
+                        <HeroServices src={WebDev} alt="Web Development" header="HERO_SERVICES_HEADER_1" text="HERO_SERVICES_text_1" link="#"/>
+                        <HeroServices src={MobileDev} alt="Mobile Development" header="HERO_SERVICES_HEADER_2" text="HERO_SERVICES_text_2" link="#"/>
+                        <HeroServices src={ProductDesign} alt="Product Design" header="HERO_SERVICES_HEADER_3" text="HERO_SERVICES_text_3" link="#"/>
                     </div>
                 </div>
             </section>

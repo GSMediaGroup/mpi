@@ -6,8 +6,9 @@ import DesignDesc from '../../../../../images/designDesc.png';
 import Android from '../../../../../images/Android.png';
 import Hybrid from '../../../../../images/Hybrid.png';
 import IOS from '../../../../../images/IOS.png';
+import { withTranslation } from 'react-i18next';
 
-export default class WebDevelopment extends Component {
+class WebDevelopment extends Component {
     constructor (props) {
         super(props);
     }
@@ -19,8 +20,8 @@ export default class WebDevelopment extends Component {
             {src: IOS, alt: `IOS Logo`, text: `IOS Apps`},
         ];
 
-        const title = `DESIGN`;
-        const description = `Good design not only determines the structure of the interface and the functionality of the website, but also assists users in organizing interaction with a site or program. Our design team will make a deep research to know your users, including understanding their goals, skills, preferences, and tendencies and accordingly will create simple and usable interface with purposeful page layout, common UI elements and strategical usage of colors and texture. By trusting your UX design task to our professionals you will get smooth and intuitive experience, logical functionality and the sense that interface efficiently serves up the information that users actually need.`;
+        const title = `OUR_SERVICES_BLOCK_3_TITLE`; 
+        const description = `OUR_SERVICES_BLOCK_3_DESCRIPTION`;
 
         return (
             <div className="serviceContent">
@@ -31,11 +32,13 @@ export default class WebDevelopment extends Component {
                         </div>
                     </Col>
                     <Col md={7} className="deskContent col-12">
-                        <h3 className="text-center pb-5 pt-3 pt-pd-0">{title}</h3>
-                        <p >{description}</p>
+                        <h3 className="text-center pb-5 pt-3 pt-pd-0">{this.props.t(title)}</h3>
+                        <p >{this.props.t(description)}</p>
                     </Col>
                 </Row>
             </div>
         );
     }
 }
+
+export default withTranslation()(WebDevelopment);

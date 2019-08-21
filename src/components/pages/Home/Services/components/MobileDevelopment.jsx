@@ -6,21 +6,22 @@ import MobileDesc from '../../../../../images/mobileDesc.png';
 import Android from '../../../../../images/Android.png';
 import Hybrid from '../../../../../images/Hybrid.png';
 import IOS from '../../../../../images/IOS.png';
+import { withTranslation } from 'react-i18next';
 
-export default class WebDevelopment extends Component {
+class WebDevelopment extends Component {
     constructor (props) {
         super(props);
     }
 
     render () {
         const programingTech = [
-            {src: Android, alt: `Android Logo`, text: `Android Apps`},
-            {src: Hybrid, alt: `Hybrid Logo`, text: `Hybrid Apps`},
-            {src: IOS, alt: `IOS Logo`, text: `IOS Apps`},
+            {src: Android, alt: `OUR_SERVICES_BLOCK_2_LOGO_1_ALT`, text: `OUR_SERVICES_BLOCK_2_LOGO_1_DESCRIPTION`},
+            {src: Hybrid, alt: `OUR_SERVICES_BLOCK_2_LOGO_2_ALT`, text: `OUR_SERVICES_BLOCK_2_LOGO_2_DESCRIPTION`},
+            {src: IOS, alt: `OUR_SERVICES_BLOCK_2_LOGO_3_ALT`, text: `OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION`},
         ];
 
-        const title = `MOBILE DEVELOPMENT`;
-        const description = `Smart phones are our guides, friends and even wallets. We make apps that easily integrate with what people need and expect from a trusted digital product. Depending on your needs, our tools are: Swift, Objective-C, Java, Flutter, React Native, and Ionic`;
+        const title = `OUR_SERVICES_BLOCK_2_TITLE`; 
+        const description = `OUR_SERVICES_BLOCK_2_DESCRIPTION`;
 
         return (
             <div className="serviceContent">
@@ -31,15 +32,15 @@ export default class WebDevelopment extends Component {
                         </div>
                     </Col>
                     <Col md={7} className="deskContent col-12">
-                        <h3 className="text-center pb-5 pt-3 pt-md-0">{title}</h3>
-                        <p className="pb-4">{description}</p>
+                        <h3 className="text-center pb-5 pt-3 pt-md-0">{this.props.t(title)}</h3>
+                        <p className="pb-4">{this.props.t(description)}</p>
 
                         <Row className="justify-content-between">
                             {
                                 programingTech.map((val, index) => (
                                     <Col key={index} className="progTech">
-                                        <img src={val.src} alt={val.alt} className="" />
-                                        <p>{val.text}</p>
+                                        <img src={val.src} alt={this.props.t(val.alt)} className="" />
+                                        <p>{this.props.t(val.text)}</p>
                                     </Col>
                                 ))
                             }
@@ -50,3 +51,5 @@ export default class WebDevelopment extends Component {
         );
     }
 }
+
+export default withTranslation()(WebDevelopment)
