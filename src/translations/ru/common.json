@@ -1,27 +1,27 @@
 {
-    "NAVBAR_SECTION_1" : "about us",
-    "NAVBAR_SECTION_2" : "our team",
-    "NAVBAR_SECTION_3" : "services",
-    "NAVBAR_SECTION_4" : "contact us",
-    "NAVBAR_SECTION_5" : "contact us",
+    "NAVBAR_SECTION_1" : "О НАС",
+    "NAVBAR_SECTION_2" : "НАША КОМАНДА",
+    "NAVBAR_SECTION_3" : "СЕРВИСЫ",
+    "NAVBAR_SECTION_4" : "СВЯЗАТЬСЯ С НАМИ",
+    "NAVBAR_SECTION_5" : "ТЕХНОЛОГИИ",
     
-    "TECHNOLOGIES_SLIDER_TITLE": "ruser",
-    "TECHNOLOGIES_SLIDER_DESCRIPTION" : "ruseren",
+    "TECHNOLOGIES_SLIDER_TITLE": "ТЕХНОЛОГИИ КОТОРЫЕ МЫ ИСПОЛЬЗУЕМ",
+    "TECHNOLOGIES_SLIDER_DESCRIPTION" : "Мы всегда рады сотрудничеству с компаниями, которые нуждаются в создании программных продуктов, способных улучшить качество обслуживания клиентов и автоматизировать внутренние процессы.",
 
-    "PHOTO_SLIDER_TITLE" : "ruseren meet out team",
-    "PHOTO_SLIDER_DESCRIPTION" : "ruseren the 1500s,cedfweufiweiofioewiofioewfioewiofhioewhiofhewoiufihwehfuhwe u9h uh u9i u9i hui9 hu hu when an unknown printer took a galley of type",
+    "PHOTO_SLIDER_TITLE" : "ВСТРЕЧАЙТЕ КОМАНДУ",
+    "PHOTO_SLIDER_DESCRIPTION" : "MPI - компания, предоставляющая услуги по разработке и тестированию программных продуктов. У нас есть полный набор квалифицированных специалистов, которые способны предоставить решение для любой ИТ-задачи и любят технические проблемы. Наша цель - создавать современные и высокотехнологичные системы для успешного развития бизнеса наших клиентов.",
 
-    "HERO_TITLE_HEADER" : "WE JUST DO THAT",
-    "HERO_TITLE_DESCRIPTION" : "Your partner for stunning web and mobile ideas",
-    "HERO_TITLE_MORE_BUTTON": "KNOW MORE",
+    "HERO_TITLE_HEADER" : "МЫ ПРОСТО ДЕЛАЕМ",
+    "HERO_TITLE_DESCRIPTION" : "Ваш партнер для потрясающих веб и мобильных идей",
+    "HERO_TITLE_MORE_BUTTON": "УЗНАТЬ БОЛЬШЕ",
     
-    "HERO_SERVICES_HEADER_1" : "WEB DEVELOPMENT",
-    "HERO_SERVICES_HEADER_2" : "MOBILE DEVELOPMENT",
-    "HERO_SERVICES_HEADER_3" : "PRODUCT DESIGN" ,
+    "HERO_SERVICES_HEADER_1" : "ВЕБ-РАЗРАБОТКА",
+    "HERO_SERVICES_HEADER_2" : "МОБИЛЬНОЕ РАЗВИТИЕ",
+    "HERO_SERVICES_HEADER_3" : "ДИЗАЙН ПРОДУКТА" ,
 
-    "HERO_SERVICES_text_1" : "text1 ruseren",
-    "HERO_SERVICES_text_2" : "text2",
-    "HERO_SERVICES_text_3" : "text3",
+    "HERO_SERVICES_text_1" : "ВЕБ-РАЗРАБОТКА",
+    "HERO_SERVICES_text_2" : "МОБИЛЬНОЕ РАЗВИТИЕ",
+    "HERO_SERVICES_text_3" : "ДИЗАЙН ПРОДУКТА" ,
 
     "HERO_SERVICES_DETAILS_BUTTON" : "Details",
 

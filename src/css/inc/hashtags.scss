@@ -2,8 +2,13 @@
     .container{
         position: relative;
     }
+    .m-0{
+        background: #353b5b;
+        padding: 50px;
+    }
     .main{
-        height: 50vh;
+        
+        height: 500px;
         .we-care-circle{
             
             box-shadow: 0px 0px 18px grey;
@@ -13,10 +18,14 @@
             border-radius: 100%;
             background: #fbd70b;
             display: flex;
+            flex-wrap: wrap;
+            justify-content: baseline;
             align-items: center;
             .tags{
                 position: absolute;
-                color: rgb(53, 59, 91);
+                // float: left;
+                // color: rgb(53, 59, 91);
+                color:#bbb06e;
                 font-size: 20px;
                 text-align: center;
                 font-weight: bold;

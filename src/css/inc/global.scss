@@ -46,6 +46,26 @@ a {
     text-decoration:none;
   }
 }
+.language-content{
+  display: flex;
+  align-items: center;
+  .language{
+    width: 30px;
+    max-width: 30px;
+    margin-right: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20px;
+    background-size: cover;
+    cursor: pointer;
+  }
+  .language:hover{
+    box-shadow: 0px 0px 50px #52d3eb;
+    transition: box-shadow 0.3s ease-in-out;
+            
+  }  
+}
 
 .sectionPaddingTop {
   padding-top:120px;
@@ -53,4 +73,14 @@ a {
 
 .sectionPaddingBottom {
   padding-bottom:120px;
+}
+
+.ReactModal__Overlay--after-open{
+  position: fixed;
+  z-index: 100000000000000000;
+  background: rgba(0,0,0,0.7)!important;
+}
+
+.form{
+  width: 500px;
 }

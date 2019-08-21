@@ -2,7 +2,8 @@ footer {
   color:$footer-text-color;
 
   &#footer {
-    background-image: url('../images/bg-footer.jpg');
+    // background-image: url('../images/bg-footer.jpg');
+    background-color: #353b5b;
     padding: 50px 0;
   }
 
@@ -30,24 +31,27 @@ footer {
       border-color: #434343;
       border-width: 0 0 1px 0;
       width: 100%;
-      margin-bottom:30px;
     }
   }
 
   .bottom-border {
-    &:after {
-      content: '';
-      display: block;
-      border-style: solid;
-      border-color: #434343;
-      border-width: 0 0 1px 0;
-      width: 100%;
-      margin-top:30px;
-    }
+    // &:after {
+    //   content: '';
+    //   display: block;
+    //   border-style: solid;
+    //   border-color: #434343;
+    //   border-width: 0 0 1px 0;
+    //   width: 100%;
+    //   margin-top:30px;
+    // }
+  }
+
+  .footer-row{
+    align-items: flex-end;
   }
 
   .option {
-
+    height: 10px;
     & ul {
       text-align: left;
 

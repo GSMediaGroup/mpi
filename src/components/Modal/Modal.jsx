@@ -1,27 +1,30 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-import {withTranslation} from "react-i18next";
+import { withTranslation } from "react-i18next";
+import { Button, Form, FormGroup, Label, Input, FormText, Col, Container, Row } from 'reactstrap';
+import { Link, NavLink } from "react-router-dom";
 
 const customStyles = {
-    content : {
-        top                   : '50%',
-        left                  : '50%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)'
+        
     }
 };
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
-ReactModal.setAppElement('modal');
+
+ReactModal.setAppElement(document.getElementById('hero'));
 
 class Modal extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
-            modalIsOpen: true
+            modalIsOpen: false
         };
 
         this.openModal = this.openModal.bind(this);
@@ -30,42 +33,71 @@ class Modal extends React.Component {
     }
 
     openModal() {
-        this.setState({modalIsOpen: true});
+        this.setState({ modalIsOpen: true });
     }
 
     afterOpenModal() {
         // references are now sync'd and can be accessed.
-        this.subtitle.style.color = '#f00';
+        // this.subtitle.style.color = '#f00';
     }
 
     closeModal() {
-        this.setState({modalIsOpen: false});
+        console.log("pakvav")
+        this.setState({ modalIsOpen: false });
     }
 
     render() {
         return (
-            <div id="modal">
-                <button onClick={this.openModal}>Open Modal</button>
-                <Modal
+            <>
+                <NavLink className="nav-link" onClick={this.openModal}>CONTACT US</NavLink>
+                <ReactModal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
-
-                    <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-                    <button onClick={this.closeModal}>close</button>
-                    <div>I am a modal</div>
-                    <form>
-                        <input />
-                        <button>tab navigation</button>
-                        <button>stays</button>
-                        <button>inside</button>
-                        <button>the modal</button>
-                    </form>
-                </Modal>
-            </div>
+                    <Container className="App">
+        <h2>Sign In</h2>
+        <Form className="form">
+        <Col>
+            <FormGroup>
+              <Label>Name</Label>
+              <Input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="john"
+              />
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>
+              <Label>Email</Label>
+              <Input
+                type="email"
+                name="email"
+                id="exampleEmail"
+                placeholder="myemail@email.com"
+              />
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>
+              <Label for="examplePassword">Text</Label>
+              <Input
+                type="textarea"
+                name="text"
+                id="text"
+                placeholder="your text here"
+              />
+            </FormGroup>
+          </Col>
+          <Button>Submit</Button>
+        </Form>
+      </Container>
+                </ReactModal>
+            </>
         );
     }
 }
