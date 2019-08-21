@@ -7,7 +7,7 @@ export default class Technologies extends Component {
     }
 
     render() {
-        const { gallery } = this.props;
+        const { gallery, currentClass } = this.props;
 
         const settings = {
             dots: true,
@@ -25,9 +25,8 @@ export default class Technologies extends Component {
                     {
                         gallery.map((i, index) => {
                             return (
-                                <div className="images-content pt-5" key={index}>
-                                    <img src={i} key={index} />
-                                 </div>)
+                                <img src={i} key={index} className={`${currentClass} pt-5`} />
+                            )
                         })
                     }
                 </Slider>

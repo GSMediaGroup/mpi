@@ -26,14 +26,10 @@ export default class MultipleItems extends Component {
      * @param {*} e 
      */
     windowSizeChange(e) {
-        if (window.innerWidth <= 630) {
+        if (window.innerWidth <= 992) {
             this.setState({
                 slidesToShow: 1
             })
-        }else if(window.innerWidth <= 900 && window.innerWidth > 630){
-            this.setState({
-                slidesToShow: 2
-            }) 
         }else{
             this.setState({
                 slidesToShow: 3
@@ -46,7 +42,7 @@ export default class MultipleItems extends Component {
      * And set state empty
      */
     closeImage = () => {
-        window.document.body.style.overflow = "scroll";
+        window.document.body.style.overflowY = "scroll";
         this.setState({
             isOpen: false,
             index: null, images: null
@@ -82,12 +78,12 @@ export default class MultipleItems extends Component {
 
         return (
             <>
-                <div className="slider-content">
+                <div className="slider-content pt-5">
                     <Slider {...settings}>
                         {
                             gallery.map((i, index) => {
                                 return (
-                                    <div className="images-content" key={index}>
+                                    <div className="ourTeamImage" key={index}>
                                         <img  src={i} key={index} onClick={() => this.openImage(index, gallery)} />
                                     </div>)
                             })

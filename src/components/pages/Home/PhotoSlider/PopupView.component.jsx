@@ -51,7 +51,7 @@ export default class PopupView extends Component {
         return (
             <div className="popupView">
                 <div className="prev" onClick={() => this.changeImage(false, index, images)}>&#8249;</div>
-                <img src={images[index]} />
+                <img src={images[index]}/>
                 <div className="next" onClick={() => this.changeImage(true, index, images)}>&#8250;</div>
             </div>
         );

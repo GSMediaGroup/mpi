@@ -18,11 +18,11 @@ import { withTranslation } from 'react-i18next';
         const Description = `TECHNOLOGIES_SLIDER_DESCRIPTION`;
 
         return (
-            <section id="Slider" className="sectionPaddingTop">
+            <section id="our-tech" className="sectionPaddingTop">
                 <div className="m-0 h-100">
                     <Container >
                         <SliderTitleComponent title={Title} description={Description} />
-                        <TechnologySlider gallery={Gallery} />
+                        <TechnologySlider gallery={Gallery} currentClass="techSlideImage" />
                     </Container>
                 </div>
             </section>

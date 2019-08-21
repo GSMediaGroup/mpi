@@ -1,4 +1,4 @@
-.popupView{
+.popupView {
     text-align: center;
     .prev, .next {
         position: absolute;
@@ -6,9 +6,7 @@
         color: white;
         font-size: 100px;
         border: none;
-        /* display: flex; */
         align-items: center;
-        /* height: 200px; */
         outline: none;
         width: 50px;
         cursor: pointer;
@@ -24,7 +22,8 @@
         font-size: 103px;
     }
     img{
-        max-width: 80%;
+        max-width: 600px;
+        object-fit:contain;
     }
     
 }

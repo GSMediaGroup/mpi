@@ -5,7 +5,7 @@ import About from '../pages/Home/About'
 import Services from '../pages/Home/Services'
 import Agile from '../pages/Home/Agile'
 
-import Slider from '../pages/Home/Slider';
+import Slider from './Home/OurTeam';
 import HashTag from '../pages/Home/HashTag';
 import OurTechnologies from '../pages/Home/OurTechnologies';
 
