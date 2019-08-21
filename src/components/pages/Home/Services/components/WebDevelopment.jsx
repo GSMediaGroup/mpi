@@ -33,17 +33,6 @@ class WebDevelopment extends Component {
                     <Col md={7} className="deskContent col-12">
                         <h3 className="text-center pb-5 pt-3 pt-md-0">{this.props.t(title)}</h3>
                         <p className="p3-4">{this.props.t(description)}</p>
-
-                        <Row className="flex-wrap">
-                            {
-                                programingTech.map((val, index) => (
-                                    <Col key={index} className="progTech">
-                                        <img src={val.src} alt={this.props.t(val.alt)} />
-                                        <p>{this.props.t(val.text)}</p>
-                                    </Col>
-                                ))
-                            }
-                        </Row>
                     </Col>
                 </Row>
             </div>

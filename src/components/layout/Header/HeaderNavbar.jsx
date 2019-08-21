@@ -38,16 +38,20 @@ class HeaderNavbar extends Component {
 
     }
 
+    openModal (e) {
+
+    }
+
     render () {
         const mobileMenuOpened = this.state.mobileMenuOpened;
         const mobileMenuClass = mobileMenuOpened ? "opened" : "closed";
 
         const navbarItems = [
-            {translateKey : `NAVBAR_SECTION_1`, to : `about` , customClass : ``},
-            {translateKey : `NAVBAR_SECTION_2`, to : `services` , customClass : ``},
-            {translateKey : `NAVBAR_SECTION_3`, to : `technologies` , customClass : ``},
-            {translateKey : `NAVBAR_SECTION_4`, to : `our-team` , customClass : ``},
-            {translateKey : `NAVBAR_SECTION_5`, to : `contacts` , customClass : ``}
+            {translateKey : `NAVBAR_SECTION_1`, to : `about` , customClass : ``, cb : this.scrollToSection},
+            {translateKey : `NAVBAR_SECTION_2`, to : `services` , customClass : ``, cb : this.scrollToSection},
+            {translateKey : `NAVBAR_SECTION_3`, to : `technologies` , customClass : ``, cb : this.scrollToSection},
+            {translateKey : `NAVBAR_SECTION_4`, to : `our-team` , customClass : ``, cb : this.scrollToSection},
+            {translateKey : `NAVBAR_SECTION_5`, to : `contacts` , customClass : ``, cb : this.openModal}
         ];
 
         return (
@@ -69,7 +73,7 @@ class HeaderNavbar extends Component {
                                 <NavItem key={index}>
                                     <NavLink activeClassName="active"
                                              className={`nav-link ${row.customClass}`}
-                                             onClick={this.scrollToSection(row.to)}
+                                             onClick={row.cb(row.to)}
                                              to={`#${row.to}`}>
                                                 { (this.props.t(row.translateKey)).toUpperCase() }
                                     </NavLink>
