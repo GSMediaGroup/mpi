@@ -6,6 +6,8 @@ import {
     NavItem} from 'reactstrap';
 import {withTranslation} from "react-i18next";
 
+import Logo from  '../../../images/mpi.png';
+
 class HeaderNavbar extends Component {
     state = {
         mobileMenuOpened: false,
@@ -50,7 +52,9 @@ class HeaderNavbar extends Component {
 
         return (
             <Navbar expand="md" className="navbar-dark container">
-                <Link to='/' className="navbar-brand">MPI</Link>
+                <Link to='/' className="navbar-brand siteLogo">
+                    <img src={Logo} alt="Brand Logo"/>
+                </Link>
 
                 <div className={`toggleButton d-md-none ${mobileMenuClass}`} onClick={this.toggleMobileMenu}>
                     <span />
@@ -67,7 +71,7 @@ class HeaderNavbar extends Component {
                                              className={`nav-link ${row.customClass}`}
                                              onClick={this.scrollToSection(row.to)}
                                              to={`#${row.to}`}>
-                                                { this.props.t(row.translateKey) }
+                                                { (this.props.t(row.translateKey)).toUpperCase() }
                                     </NavLink>
                                 </NavItem>
                             ))

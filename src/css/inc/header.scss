@@ -10,6 +10,11 @@ header {
       position: relative;
       margin-right: 15px;
 
+      .nav-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-weight: 600;
+      }
+
       &:before {
         content: "";
         display: block;
@@ -79,9 +84,6 @@ header {
             transform:rotate(0deg)
           }
 
-          //&:nth-child(2) {
-          //  display:block;
-          //}
         }
 
         &:not(:first-child) {

@@ -4,6 +4,7 @@ import {Container} from 'reactstrap';
 
 import ServiceBlockTitle from './Services/ServiceBlockTitle';
 import ServiceIconList from './Services/ServiceIconList';
+import Dots from './Services/Dots';
 import ServiceContentList, { MOBILE_DEVELOPMENT } from './Services/ServiceContentList';
 
 
@@ -31,6 +32,7 @@ export default class Services extends Component {
                     <ServiceBlockTitle />
                     <ServiceIconList type={serviceType} onServiceTypeChange={this.updateServiceType} />
                     <ServiceContentList type={serviceType} />
+                    <Dots onServiceTypeChange={this.updateServiceType} />
                 </Container>
             </section>
         );

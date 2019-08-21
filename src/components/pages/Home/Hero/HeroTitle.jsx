@@ -11,7 +11,7 @@ class HeroTitle extends Component {
 
     render () {
         return (
-            <div className="heroTitle h-100 ">
+            <div className="heroTitle d-flex flex-wrap align-content-center">
                 <h1>{this.props.t('HERO_TITLE_HEADER')}</h1>
                 <p className="pb-1 pb-md-4">{this.props.t('HERO_TITLE_DESCRIPTION')}</p>
                 <Link to="#">{this.props.t('HERO_TITLE_MORE_BUTTON')}</Link> 

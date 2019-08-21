@@ -10,21 +10,14 @@ export const MOBILE_DEVELOPMENT = 'mobile-development';
 export const DESIGN = 'design';
 
 export default class ServiceContentList extends Component {
-    renderComponent(ComponentClass) {
-        return (
-
-            <ComponentClass />
-        );
-    }
-
     render () {
         switch (this.props.type) {
             case WEB_DEVELOPMENT:
-                return this.renderComponent(WebDevelopment);
+                return <WebDevelopment />;
             case MOBILE_DEVELOPMENT:
-                return this.renderComponent(MobileDevelopment);
+                return <MobileDevelopment />;
             case DESIGN:
-                return this.renderComponent(Design);
+                return <Design />;
             default :
                 return null;
         }

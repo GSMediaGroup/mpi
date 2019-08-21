@@ -35,7 +35,7 @@
 
   .serviceContent {
     position: absolute;
-    padding:20px;
+    padding:10px;
     height: 400px;
     box-shadow: 0 0 28px #9999999e;
     background: white;
@@ -113,6 +113,21 @@
         height: 250px;
       }
 
+    }
+  }
+
+  .dots {
+    position: absolute;
+    
+    span {
+      width:20px;
+      height:20px;
+      border-radius:100%;
+      background: rgba(0,0,0,0.6);
+
+      &:before {
+        content:'\2022';
+      }
     }
   }
 }

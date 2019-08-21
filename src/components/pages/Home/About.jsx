@@ -26,12 +26,12 @@ class About extends Component {
         return (
             <section id="about" className="sectionPaddingTop">
                 <div className="container">
-                    <h2 className="text-left pb-4">{this.props.t(title)}</h2>
+                    <h2 className="text-left pb-5">{this.props.t(title)}</h2>
 
                     <Row className="">
                         <Col className="col-12 col-md pb-4 pb-md-0">
                             <p>{this.props.t(description)}</p>
-                            <ul className="workProcess">
+                            <ul className="workProcess pt-2">
                                 <li><span>1</span>{this.props.t(rows['1'])}</li>
                                 <li><span>2</span>{this.props.t(rows['2'])}</li>
                                 <li><span>3</span>{this.props.t(rows['3'])}</li>
