@@ -1,6 +1,6 @@
 import Js from '../../../../images/progTech/js.png';
 import NodeJs from '../../../../images/progTech/nodejs.png';
-import Express from '../../../../images/progTech/express .png';
+import Express from '../../../../images/progTech/express2.png';
 import ReactJs from '../../../../images/progTech/react.png';
 import AngularJs from '../../../../images/progTech/angularJs.png';
 import VueJs from '../../../../images/progTech/vueJs.png';

@@ -1,0 +1,42 @@
+#ContactUs{
+    padding: 50px 90px;
+    // display: flex;
+    // flex-direction: column;
+    .form{
+        width: 100%;
+    }
+    .labelName, .labelEmail, .labelTextarea{
+        position: absolute;
+        top: -15px;
+        left: 30px;
+        background: white;
+        padding: 0 1px;
+    }
+    .emailInput, .nameInput, .messageInput{
+        border-radius: 10px;
+        width: 100%;
+    }
+    .messageInput{
+        max-height: 144px;
+        min-height: 144px;
+        height: 144px;
+    }
+    .submit-btn{
+        border-radius: 100px;
+        background-color: white;
+        border: 2px solid #353b5b;
+        outline: none;
+        color: #353b5b;
+        width: 100%;
+    }
+
+    
+    // .submit-btn:hover {
+    //     background: white;
+    //     color: #3db9d1;
+    //     font-weight: 300;
+    //   }
+}
+.contact-information{
+    background-color: #353b5b;
+}

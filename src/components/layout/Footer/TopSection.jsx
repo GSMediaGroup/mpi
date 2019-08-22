@@ -24,11 +24,11 @@ class TopSection extends Component {
                                 <FontAwesomeIcon icon={faMapMarkedAlt}/>
                                 {this.props.t(address)}
                             </span>
-                       <span className="pt-3 pt-md-0">
+                       <span className="pt-3 pt-md-0 justify-content-end">
                                 <FontAwesomeIcon icon={faPhoneAlt} />
                                 +374 99 22 22 22
                             </span>
-                       <span className="pt-3 pt-md-0">
+                       <span className="pt-3 pt-md-0 justify-content-end">
                                 <FontAwesomeIcon icon={faEnvelope} />
                                 haruta@myperfectidea.net
                             </span>

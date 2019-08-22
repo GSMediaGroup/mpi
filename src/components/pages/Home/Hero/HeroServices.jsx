@@ -14,10 +14,10 @@ class HeroServices extends Component {
             <div className="serviceItem text-center d-flex flex-wrap align-content-center justify-content-center">
                 <div className="topPart">
                     <img className="pb-3" src={src} alt={alt}/>
-                    <h5>{this.props.t(header)}</h5>
+                    <h6>{this.props.t(header)}</h6>
                 </div>
-                <div className="d-none bottomPart">
-                    <p className="pb-2">{this.props.t(text)}</p>
+                <div className=" pt-4 d-none bottomPart">
+                    {/* <p className="pb-3 pt-3 inner-texts">{this.props.t(text)}</p> */}
                     <Link to={link}>{this.props.t('HERO_SERVICES_DETAILS_BUTTON')}</Link>
                 </div>
             </div>

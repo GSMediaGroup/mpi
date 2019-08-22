@@ -3,8 +3,9 @@
         position: relative;
     }
     .m-0{
-        background: #353b5b;
-        padding: 50px;
+        // background: #353b5b;
+        background: white;
+        padding: 0 50px 50px 50px;
     }
     .main{
         
@@ -24,8 +25,8 @@
             .tags{
                 position: absolute;
                 // float: left;
-                // color: rgb(53, 59, 91);
-                color:#bbb06e;
+                color: rgb(53, 59, 91);
+                // color:#bbb06e;
                 font-size: 20px;
                 text-align: center;
                 font-weight: bold;
@@ -34,12 +35,16 @@
                 width: 100%;
                 text-align: center;
                 .title{
-                   font-size: 40px;
-                   color: white 
+                    font-size: 50px;
+                    color: white;
+                    font-weight: bold;
+                    margin-top: -10px;
                 }
                 .description {
-                    font-size: 25px;
-                    color: black;
+                    font-size: 22px;
+                    color: rgb(53, 59, 91);
+                    font-weight: bold;
+                    margin-top: -10px;
                 }
             }
 

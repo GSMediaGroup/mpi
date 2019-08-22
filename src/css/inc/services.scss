@@ -35,21 +35,30 @@
   }
 
   .serviceContent {
+    .icons-mobile-development, .icons-web-development, .icons-design{
+      width: 88%;
+    }
+    .service-content-description{
+      width: 75%;
+      text-align: left;
+    }
     position: absolute;
     padding: 10px;
-    height: $service-list-height;
+    height: 430px;
     box-shadow: 0 0 28px #9999999e;
     background: white;
     z-index: 12;
     left: 15px;
     right: 15px;
+    display: flex;
+    align-items: center;
 
     .imgContent {
       width: 300px;
       height: 300px;
       background: #2db9d1;
       border-radius: 100%;
-      padding: 45px;
+      padding: 19px;
 
       img {
         width: 100%;
@@ -60,6 +69,10 @@
 
     .deskContent {
       min-height: 380px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
 
       .progTech {
         text-align: center;
@@ -86,7 +99,7 @@
 
   .dots {
     position: absolute;
-    margin-top: calc(#{$service-list-height} + 50px);
+    margin-top: calc(#{$service-list-height} + 110px);
     width: 100%;
 
     span {

@@ -33,10 +33,10 @@ class WebDevelopment extends Component {
                        </div>
                     </Col>
                     <Col md={7} className="deskContent col-12">
-                        <h3 className="text-center pb-5 pt-3 pt-md-0">{this.props.t(title)}</h3>
-                        <p className="p3-4">{this.props.t(description)}</p>
+                        <h3 className="text-center pb-4 pt-3 pt-md-0">{this.props.t(title)}</h3>
+                        <p className="p3-4 service-content-description">{this.props.t(description)}</p>
 
-                        <Row className="justify-content-between">
+                        <Row className="justify-content-between icons-web-development">
                             {
                                 programingTech.map((val, index) => (
                                     <Col key={index} className="progTech">

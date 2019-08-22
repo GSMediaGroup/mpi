@@ -13,7 +13,7 @@ class ServiceBlockTitle extends Component {
             text = 'OUR_SERVICES_DESCRIPTION';
         return (
             <Row>
-                <Col md={5} className="mx-auto text-center col-12">
+                <Col md={6} className="mx-auto text-center col-12">
                     <h2 className="pb-5">{this.props.t(title)}</h2>
                     <p>{this.props.t(text)}</p>
                 </Col>

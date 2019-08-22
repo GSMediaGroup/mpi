@@ -50,6 +50,7 @@ a {
   display: flex;
   align-items: center;
   .language{
+    color: white;
     width: 30px;
     max-width: 30px;
     margin-right: 10px;
@@ -58,10 +59,13 @@ a {
     background-repeat: no-repeat;
     height: 20px;
     background-size: cover;
+    /* border: 1px solid; */
     cursor: pointer;
+    margin-top: -5px;
+    text-align: center;
   }
   .language:hover{
-    box-shadow: 0px 0px 50px #52d3eb;
+    box-shadow: 0px 0px 10px #52d3eb;
     transition: box-shadow 0.3s ease-in-out;
             
   }  
@@ -83,4 +87,10 @@ a {
 
 .form{
   width: 500px;
+}
+.fixed-top{
+  .navbar{
+    justify-content: flex-end;
+    margin-right: 300px;
+  }
 }

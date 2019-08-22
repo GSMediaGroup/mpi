@@ -44,7 +44,7 @@
                 appendDots: $(element),
                 arrows: false,
                 asNavFor: null,
-                prevArrow: '<div class="prev"></div>',
+                prevArrow: '<i class="fas fa-angle-right"></i>',
                 nextArrow: '<div class="prev"></div>',
                 autoplay: false,
                 autoplaySpeed: 3000,

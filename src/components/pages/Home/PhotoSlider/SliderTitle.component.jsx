@@ -16,9 +16,9 @@ class SliderTitle extends Component {
         
         const [HEADER, DESC] = [this.props.title.toUpperCase() || "", this.props.description || ""];
         return (
-            <Col md={6} className="slider-container h-100 text-center mx-auto">
+            <Col md={7} lg={7} className="slider-container h-100 text-center mx-auto">
                 <h2 className="pb-5">{this.props.t(HEADER)}</h2>
-                <p>{this.props.t(DESC)}</p>
+                <p className="slider-description">{this.props.t(DESC)}</p>
             </Col>
         );
     }

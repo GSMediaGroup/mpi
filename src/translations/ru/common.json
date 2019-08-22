@@ -2,7 +2,7 @@
     "NAVBAR_SECTION_1" : "О НАС",
     "NAVBAR_SECTION_2" : "НАША КОМАНДА",
     "NAVBAR_SECTION_3" : "СЕРВИСЫ",
-    "NAVBAR_SECTION_4" : "СВЯЗАТЬСЯ С НАМИ",
+    "NAVBAR_SECTION_4" : "СВЯЗЬ",
     "NAVBAR_SECTION_5" : "ТЕХНОЛОГИИ",
     
     "TECHNOLOGIES_SLIDER_TITLE": "ТЕХНОЛОГИИ КОТОРЫЕ МЫ ИСПОЛЬЗУЕМ",
@@ -43,7 +43,7 @@
     "OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION" : "IOS Apps",
 
     "OUR_SERVICES_BLOCK_3_TITLE" : "DESIGN",
-    "OUR_SERVICES_BLOCK_3_DESCRIPTION" : "RUSSIAN",
+    "OUR_SERVICES_BLOCK_3_DESCRIPTION" : "Smart phones are our guides, friends and even wallets. We make apps that easily integrate with what people need and expect from a trusted digital product. Depending on your needs, our tools are: Swift, Objective-C, Java, Flutter, React Native, and Ionic",
 
     "ABOUT_TITLE" : "WHO WE ARE",
     "ABOUT_DESCRIPTION" : "MPI – a company delivering services for development and testing of software products. We have a full stack of skilled professionals, who are able to provide solution for any IT task and love technical challenges. Our goal is to create modern and high-tech systems for the successful development of our clients’ business.  ",

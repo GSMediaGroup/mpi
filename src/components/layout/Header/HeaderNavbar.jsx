@@ -17,6 +17,8 @@ import logoRu from '../../../images/ru.png';
 class HeaderNavbar extends Component {
     state = {
         mobileMenuOpened: false,
+        display: 'none',
+        activeLng: 'en'
     };
 
     constructor(props) {
@@ -24,7 +26,26 @@ class HeaderNavbar extends Component {
 
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.scrollToSection = this.scrollToSection.bind(this);
+        this.changeLanguage = this.changeLanguage.bind(this);
     }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll, true);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () => {
+        let styleObject = {};
+        if (window.scrollY <= 10) {
+            styleObject['display'] = 'none';
+        } else {
+            styleObject['display'] = 'block';
+        }
+        this.setState(styleObject)
+    };
 
 
     toggleMobileMenu() {
@@ -45,13 +66,19 @@ class HeaderNavbar extends Component {
     }
 
     openModal(e) {
-        
+
     }
 
 
     changeLanguage(name) {
+        this.setState({
+            activeLng: name
+        });
+
         i18next.changeLanguage(name, (err, t) => {
+
             if (err) return console.log('something went wrong loading', err);
+
             // t('key'); // -> same as i18next.t
         });
     }
@@ -75,7 +102,7 @@ class HeaderNavbar extends Component {
 
         return (
             <Navbar expand="md" className="navbar-dark container">
-                <Link to='/' className="navbar-brand siteLogo">
+                <Link style={{ display: this.state.display }} to='/' className="navbar-brand siteLogo">
                     <img src={Logo} alt="Brand Logo" />
                 </Link>
 
@@ -84,8 +111,8 @@ class HeaderNavbar extends Component {
                     <span />
                     <span />
                 </div>
-
-                <div className={`navbar-collapse justify-content-${this.props.position} ${mobileMenuClass}`} id="navbarSupportedContent">
+                {/* ${this.props.position} */}
+                <div className={`navbar-collapse justify-content-end ${mobileMenuClass}`} id="navbarSupportedContent">
                     <Nav navbar className="mr-0">
                         {
                             navbarItems.map((row, index) => (
@@ -108,8 +135,11 @@ class HeaderNavbar extends Component {
                         {
                             <div className="language-content">
                                 {languages.map((lng) => {
+                                    // style={{ backgroundImage: `url('${lng.imageSrc}')` }}
                                     return (
-                                        <div className="language" style={{ backgroundImage: `url('${lng.imageSrc}')` }} onClick={() => lng.cb(lng.name)} />
+                                        this.state.activeLng !== lng.name ? (
+                                            <div className="language" onClick={() => lng.cb(lng.name)}>{lng.name.toUpperCase()}</div>) : null
+
                                     )
                                 })}
                             </div>

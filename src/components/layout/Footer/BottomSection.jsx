@@ -19,37 +19,32 @@ class BottomSection extends Component {
                     <p>{this.props.t(copyright)}</p>
 
                 </Col>
-                <Col className="pt-3 socialBlock d-flex justify-content-center">
+                <Col className="pt-3 socialBlock d-flex justify-content-end">
 
                     <ul className="d-flex flex-column flex-md-row">
                         <li>
                             <Link to="#">
                                 <FontAwesomeIcon icon={faFacebook} />
-                                Facebook
                         </Link>
                         </li>
                         <li>
                             <Link to="#">
                                 <FontAwesomeIcon icon={faGoogle} />
-                                Google
                         </Link>
                         </li>
                         <li>
                             <Link to="#">
                                 <FontAwesomeIcon icon={faInstagram} />
-                                Instagram
                         </Link>
                         </li>
                         <li>
                             <Link to="#">
                                 <FontAwesomeIcon icon={faYoutube} />
-                                YouTube
                         </Link>
                         </li>
                         <li>
                             <Link to="#">
                                 <FontAwesomeIcon icon={faTwitter} />
-                                Twitter
                         </Link>
                         </li>
                     </ul>

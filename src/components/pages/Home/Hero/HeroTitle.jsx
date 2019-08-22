@@ -1,23 +1,56 @@
-import React, {Component} from 'react';
-import {Link} from  'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
+import Logo from '../../../../images/mpi.png';
 
 import { withTranslation } from 'react-i18next';
 
-class HeroTitle extends Component {
 
-    constructor (props) {
+class HeroTitle extends Component {
+    state = {
+        display : "block"
+    }
+    constructor(props) {
         super(props);
     }
 
-    render () {
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll, true);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () => {
+        let styleObject = {};
+        if (window.scrollY <= 10) {
+            styleObject['display'] = 'block';
+        } else {
+            styleObject['display'] = 'none';
+        }
+        this.setState(styleObject)
+    };
+
+    render() {
+
         return (
-            <div className="heroTitle d-flex flex-wrap align-content-center">
-                <h1>{this.props.t('HERO_TITLE_HEADER')}</h1>
-                <p className="pb-1 pb-md-4">{this.props.t('HERO_TITLE_DESCRIPTION')}</p>
-                <Link to="#">{this.props.t('HERO_TITLE_MORE_BUTTON')}</Link> 
-            </div>
+            <>
+                <div class="hero-main  d-flex flex-wrap">
+                    <Link style={{ display: this.state.display }} to='/' className="navbar-brand siteLogo">
+                        <img src={Logo} alt="Brand Logo" />
+                    </Link>
+                    <div className="heroTitle d-flex flex-wrap align-content-center">
+
+                        <h1>{this.props.t('HERO_TITLE_HEADER')}</h1>
+                        <p className="pb-1 pb-md-4">{this.props.t('HERO_TITLE_DESCRIPTION')}</p>
+                        <Link className="more" to="#">{this.props.t('HERO_TITLE_MORE_BUTTON')}</Link>
+                    </div>
+                </div>
+
+            </>
         );
     }
 }
 
-export default  withTranslation()(HeroTitle);
+export default withTranslation()(HeroTitle);
