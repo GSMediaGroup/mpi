@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+
+import ReactPLayer from 'react-player';
+
+import MPIVideo from '../../../videos/mpi-video.mp4';
+
 import { Row, Col } from 'reactstrap';
 
 import AboutImg from '../../../images/about.jpg';
@@ -37,8 +42,8 @@ class About extends Component {
                                 <li><span>3</span>{this.props.t(rows['3'])}</li>
                             </ul>
                         </Col>
-                        <Col className="col-12 col-md offset-md-1 imgBlock" >
-                            <img src={AboutImg} alt={this.props.t(imageAlt)} className="img-fluid" />
+                        <Col className="col-12 col-md offset-md-1" >
+                            <ReactPLayer url={ MPIVideo } />
                         </Col>
                     </Row>
                 </div>

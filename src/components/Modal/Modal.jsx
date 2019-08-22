@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import { withTranslation } from "react-i18next";
-import { Button, Form, FormGroup, Label, Input, FormText, Col, Container, Row } from 'reactstrap';
-import { Link, NavLink } from "react-router-dom";
+import { Button, Form, FormGroup, Label, Input, Col, Container } from 'reactstrap';
+import {  NavLink } from "react-router-dom";
 
 const customStyles = {
     content: {
@@ -42,8 +42,10 @@ class Modal extends React.Component {
     }
 
     closeModal() {
-        console.log("pakvav")
-        this.setState({ modalIsOpen: false });
+        setTimeout(() => {
+            this.setState({ modalIsOpen: false });
+        }, '3000')
+
     }
 
     render() {
@@ -93,7 +95,7 @@ class Modal extends React.Component {
               />
             </FormGroup>
           </Col>
-          <Button>Submit</Button>
+          <Button onClick={() => this.closeModal()}>Submit</Button>
         </Form>
       </Container>
                 </ReactModal>

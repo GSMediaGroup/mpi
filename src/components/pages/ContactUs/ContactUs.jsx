@@ -5,7 +5,7 @@ import ReactModal   from 'react-modal';
 
 class ContactUs extends Component {
 
-    serverUrl = "http://127.0.0.1:9876/sendMail.php";
+    serverUrl = "http://localhost:2525/sendMail.php";
 
     constructor(props) {
         super(props);
@@ -14,16 +14,29 @@ class ContactUs extends Component {
     }
 
     sendMail () {
-        const formData = {
+        const data = {
             name : `Name`,
             email : `example@example.com`,
         };
 
-        fetch(this.serverUrl)
-            .then(response => formData)
-            .then(data => (
-               console.log(data)
-            ));
+        let headers = new Headers();
+
+        // headers.append('Content-Type', 'application/json');
+        headers.append('Accept', 'application/json');
+
+        headers.append('Access-Control-Allow-Origin', 'http://localhost:2525/sendMail.php');
+        headers.append('Access-Control-Allow-Credentials', 'true');
+
+        headers.append('GET', 'POST', 'OPTIONS');
+
+        fetch(this.serverUrl, {
+            method: `POST`,
+            mode: 'no-cors',
+            credentials: 'include',
+            headers : headers,
+            body : JSON.stringify(data),
+        })
+            .then(response => console.log(response));
     }
 
     render() {

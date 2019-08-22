@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Container, Row, Col} from 'reactstrap';
+import { Row, Col} from 'reactstrap';
 
 import MobileDesc from '../../../../../images/mobileDesc.png';
 
@@ -40,7 +40,7 @@ class WebDevelopment extends Component {
                                 programingTech.map((val, index) => (
                                     <Col key={index} className="progTech">
                                         <img src={val.src} alt={this.props.t(val.alt)} className="" />
-                                        <p>{this.props.t(val.text)}</p>
+                                        <p className="pt-2">{this.props.t(val.text)}</p>
                                     </Col>
                                 ))
                             }

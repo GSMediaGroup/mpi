@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {Container, Row, Col} from 'reactstrap';
+import { Row, Col} from 'reactstrap';
 
 import WebDesc from '../../../../../images/webDesc.png';
 
-import Android from '../../../../../images/Android.png';
-import Hybrid from '../../../../../images/Hybrid.png';
-import IOS from '../../../../../images/IOS.png';
+import Frontend from '../../../../../images/services/frontend.png';
+import Backend from '../../../../../images/services/backend.png';
+import Optimize from '../../../../../images/services/optimize.png';
 import { withTranslation } from 'react-i18next';
 
 class WebDevelopment extends Component {
@@ -15,7 +15,9 @@ class WebDevelopment extends Component {
 
     render () {
         const programingTech = [
-            {src: Android, alt: `OUR_SERVICES_BLOCK_1_LOGO_ALT`, text: `OUR_SERVICES_BLOCK_1_LOGO_DESCRIPTION`},
+            {src: Frontend, alt: `OUR_SERVICES_BLOCK_1_LOGO_1_ALT`, text: `OUR_SERVICES_BLOCK_1_LOGO_1_DESCRIPTION`},
+            {src: Backend, alt: `OUR_SERVICES_BLOCK_1_LOGO_2_ALT`, text: `OUR_SERVICES_BLOCK_1_LOGO_2_DESCRIPTION`,},
+            {src: Optimize, alt: `OUR_SERVICES_BLOCK_1_LOGO_3_ALT`, text: `OUR_SERVICES_BLOCK_1_LOGO_3_DESCRIPTION`},
 
         ];
 
@@ -33,6 +35,17 @@ class WebDevelopment extends Component {
                     <Col md={7} className="deskContent col-12">
                         <h3 className="text-center pb-5 pt-3 pt-md-0">{this.props.t(title)}</h3>
                         <p className="p3-4">{this.props.t(description)}</p>
+
+                        <Row className="justify-content-between">
+                            {
+                                programingTech.map((val, index) => (
+                                    <Col key={index} className="progTech">
+                                        <img src={val.src} alt={this.props.t(val.alt)} />
+                                        <p className="pt-2">{this.props.t(val.text)}</p>
+                                    </Col>
+                                ))
+                            }
+                        </Row>
                     </Col>
                 </Row>
             </div>

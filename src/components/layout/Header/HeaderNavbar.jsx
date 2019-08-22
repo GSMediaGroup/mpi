@@ -109,7 +109,7 @@ class HeaderNavbar extends Component {
                             <div className="language-content">
                                 {languages.map((lng) => {
                                     return (
-                                        <div className="language" style={{ backgroundImage: `url('${lng.imageSrc}')` }} onClick={() => lng.cb(lng.name)}></div>
+                                        <div className="language" style={{ backgroundImage: `url('${lng.imageSrc}')` }} onClick={() => lng.cb(lng.name)} />
                                     )
                                 })}
                             </div>
