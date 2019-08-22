@@ -36,7 +36,7 @@ class HeroTitle extends Component {
 
         return (
             <>
-                <div class="hero-main  d-flex flex-wrap">
+                <div className="hero-main  d-flex flex-wrap">
                     <Link style={{ display: this.state.display }} to='/' className="navbar-brand siteLogo">
                         <img src={Logo} alt="Brand Logo" />
                     </Link>

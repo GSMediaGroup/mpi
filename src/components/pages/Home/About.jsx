@@ -1,21 +1,43 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import ReactPLayer from 'react-player';
+import VideoModal from '../../Modal/VideoModal';
 
-import MPIVideo from '../../../videos/mpi-video.mp4';
+import {Player, BigPlayButton, PlayToggle, ControlBar } from 'video-react';
 
-import { Row, Col } from 'reactstrap';
+import MPIVideoMp4 from '../../../videos/mpi-video.mp4';
+import MPIVideoWebM from '../../../videos/mpi-video.mp4';
+import MPIVideoOgg from '../../../videos/mpi-video.mp4';
 
-import AboutImg from '../../../images/about.jpg';
-import { withTranslation } from 'react-i18next';
 
+import MPIVideoBg from '../../../images/mpiVideoBg.jpg';
 
+import {Row, Col, Container} from 'reactstrap';
+
+import {withTranslation} from 'react-i18next';
 
 
 class About extends Component {
+    state = {
+        isOpen: false,
+    };
 
     constructor(props) {
         super(props);
+
+        this.playVideo = this.playVideo.bind(this);
+        this.onClose = this.onClose.bind(this);
+    }
+
+    playVideo() {
+        this.setState({
+            isOpen: true,
+        });
+    }
+
+    onClose() {
+        this.setState({
+            isOpen: false,
+        });
     }
 
     render() {
@@ -33,7 +55,7 @@ class About extends Component {
                 <div className="container">
                     <h2 className="text-left pb-5">{this.props.t(title)}</h2>
 
-                    <Row className="">
+                    <Row className="align-items-center">
                         <Col className="col-12 col-md pb-4 pb-md-0">
                             <p>{this.props.t(description)}</p>
                             <ul className="workProcess pt-2">
@@ -42,11 +64,29 @@ class About extends Component {
                                 <li><span>3</span>{this.props.t(rows['3'])}</li>
                             </ul>
                         </Col>
-                        <Col className="col-12 col-md offset-md-1" >
-                            <ReactPLayer url={ MPIVideo } />
+                        <Col className="col-12 col-md-7 offset-md-1 videoPlay p-0" onClick={this.playVideo}>
+                            <img src={MPIVideoBg} alt="MPI Video"/>
                         </Col>
                     </Row>
                 </div>
+                {this.state.isOpen && (
+                    <VideoModal isOpen={true} onClose={this.onClose}>
+                        <Container>
+                            <Player autoPlay
+                                    playsInline
+                                    onPlay={this.playVideo}
+                                    width={975}
+                                    height={550}
+                                    fluid={false}>
+                                <source src={MPIVideoMp4} type="video/mp4"/>
+                                <source src={MPIVideoWebM} type="video/webm"/>
+                                <source src={MPIVideoOgg} type="video/ogg"/>
+                                <BigPlayButton position="center"/>
+
+                            </Player>
+                        </Container>
+                    </VideoModal>
+                )}
             </section>
         );
     }

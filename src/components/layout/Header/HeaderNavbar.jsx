@@ -118,7 +118,7 @@ class HeaderNavbar extends Component {
                             navbarItems.map((row, index) => (
                                 <NavItem key={index}>
                                     {
-                                        row.to == "contacts" ? <Modal></Modal>
+                                        row.to == "contacts" ? <Modal />
                                             :
                                             <NavLink activeClassName="active"
                                                 className={`nav-link ${row.customClass}`}
@@ -134,11 +134,11 @@ class HeaderNavbar extends Component {
                         }
                         {
                             <div className="language-content">
-                                {languages.map((lng) => {
+                                {languages.map((lng, index) => {
                                     // style={{ backgroundImage: `url('${lng.imageSrc}')` }}
                                     return (
                                         this.state.activeLng !== lng.name ? (
-                                            <div className="language" onClick={() => lng.cb(lng.name)}>{lng.name.toUpperCase()}</div>) : null
+                                            <div key={index} className="language" onClick={() => lng.cb(lng.name)}>{lng.name.toUpperCase()}</div>) : null
 
                                     )
                                 })}

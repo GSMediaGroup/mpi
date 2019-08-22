@@ -1,3 +1,5 @@
+$contact_info_text_color: #fff;
+
 #ContactUs{
     padding: 50px 90px;
     // display: flex;
@@ -38,5 +40,17 @@
     //   }
 }
 .contact-information{
+    color:$contact_info_text_color;
     background-color: #353b5b;
+
+    ul {
+        margin-top:25px;
+        display:flex;
+        justify-content: space-between;
+
+        li {
+            border:1px solid;
+            border-radius:100%;
+        }
+    }
 }

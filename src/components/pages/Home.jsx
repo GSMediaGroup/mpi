@@ -8,9 +8,6 @@ import Agile from '../pages/Home/Agile'
 import Slider from './Home/OurTeam';
 import HashTag from '../pages/Home/HashTag';
 import OurTechnologies from '../pages/Home/OurTechnologies';
-import ContactUs from '../pages/ContactUs/ContactUs';
-
-// import Modal from '../Modal/Modal';
 
 export default class Home extends Component {
     render() {
@@ -23,7 +20,6 @@ export default class Home extends Component {
                 <OurTechnologies/>
                 <HashTag/>
                 <Slider />
-                <ContactUs />
             </>
         );
     }
