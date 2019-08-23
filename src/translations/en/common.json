@@ -1,15 +1,15 @@
 {
     "NAVBAR_SECTION_1" : "about us",
-    "NAVBAR_SECTION_2" : "our team",
-    "NAVBAR_SECTION_3" : "services",
-    "NAVBAR_SECTION_4" : "technologies",
+    "NAVBAR_SECTION_2" : "services",
+    "NAVBAR_SECTION_3" : "technologies",
+    "NAVBAR_SECTION_4" : "our team",
     "NAVBAR_SECTION_5" : "contact us",
 
     "TECHNOLOGIES_SLIDER_TITLE": "TECHNOLOGIES WE USE",
     "TECHNOLOGIES_SLIDER_DESCRIPTION" : "We are always happy to cooperate with companies that are in need of creating software products able to improve their customers experience and automate internal processes",
     
     "PHOTO_SLIDER_TITLE" : "MEET OUT TEAM",
-    "PHOTO_SLIDER_DESCRIPTION" : "MPI – a company delivering services for development and testing of software products. We have a full stack of skilled professionals, who are abe to provide solution for any IT task and love technical challenges. Our goal is to create modern and high tech systems for the successful development of our clients business.",
+    "PHOTO_SLIDER_DESCRIPTION" : "MPI team consists of skilled professionals, who are able to provide solution for any IT task and love technical challenges. All the members of the team share common goals, tasks and questions which are being worked out collectively. Every specialist is the face of our company, that is why we pay high attention to corporate culture and to business ethics. We think that strong team performance is the only key to success for every company striving to grow.",
     "-------------------" : "----------------------",
     "HERO_TITLE_HEADER" : "WE JUST DO THAT",
     "HERO_TITLE_DESCRIPTION" : "Your partner for stunning web and mobile ideas",
@@ -29,7 +29,7 @@
     "OUR_SERVICES_DESCRIPTION" : "We are always happy to cooperate with companies that are in need of creating software products able to improve their customers’ experience and automate internal processes.",
     "---------------" : "----------------------",
     "OUR_SERVICES_BLOCK_1_TITLE" : "WEB DEVELOPMENT",
-    "OUR_SERVICES_BLOCK_1_DESCRIPTION" : "The team of skilled profesionalls of MPI  offer comprehensive and customized web development services for your projects. We develop solutions that streamline your business operations and deliver value to your customers and therefore will ensure the success of your web project.",
+    "OUR_SERVICES_BLOCK_1_DESCRIPTION" : "The team of skilled professionals of MPI  offers comprehensive and customized web development services for your projects. We develop solutions that streamline your business operations and deliver value to your customers and therefore will ensure the success of your web project.",
     "OUR_SERVICES_BLOCK_1_LOGO_1_DESCRIPTION_ALT" : "Frontend Development",
     "OUR_SERVICES_BLOCK_1_LOGO_1_DESCRIPTION" : "Frontend Development",
     "OUR_SERVICES_BLOCK_1_LOGO_2_DESCRIPTION_ALT" : "Backend Development",
@@ -79,5 +79,7 @@
     "CONTACT_FORM_FIELD_EMAIL" : "Email",
     "CONTACT_FORM_FIELD_MESSAGE" : "Message",
     "CONTACT_FORM_BUTTON" : "SEND",
-    "CONTACT_INFO_TITLE" : "Contact Information"
+    "CONTACT_INFO_TITLE" : "Contact Information",
+    "FOOTER_SOCIAL_DESCRIPTION" : "We create perfect ideas",
+    "FOOTER_ADDRESS" : "IT Park Business Center Abelyan 6/1, Yerevan Armenia"
 }

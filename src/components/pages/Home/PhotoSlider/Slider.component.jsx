@@ -5,6 +5,10 @@ import PopupView from "./PopupView.component";
 import "../../../slider/slick/slick.scss";
 import "../../../slider/slick/slick-theme.scss";
 
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft, faChevronRight, faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+
 export default class MultipleItems extends Component {
     state = {
         slidesToShow: 3,
@@ -30,10 +34,10 @@ export default class MultipleItems extends Component {
             this.setState({
                 slidesToShow: 1
             })
-        }else{
+        } else {
             this.setState({
                 slidesToShow: 3
-            }) 
+            })
         }
     }
 
@@ -71,10 +75,14 @@ export default class MultipleItems extends Component {
             slidesToShow: this.state.slidesToShow,
             slidesToScroll: 3,
             autoplay: false,
+            nextArrow: <button> <FontAwesomeIcon icon={faChevronRight} /></button>,
+            prevArrow: <button> <FontAwesomeIcon icon={faChevronLeft} /></button>,
         };
         const { gallery } = this.props;
 
 
+        let elem = document.getElementsByClassName('slick-next');
+        console.log(elem);
 
         return (
             <>
@@ -84,7 +92,7 @@ export default class MultipleItems extends Component {
                             gallery.map((i, index) => {
                                 return (
                                     <div className="ourTeamImage" key={index}>
-                                        <img  src={i} key={index} onClick={() => this.openImage(index, gallery)} />
+                                        <img src={i} key={index} onClick={() => this.openImage(index, gallery)} />
                                     </div>)
                             })
                         }

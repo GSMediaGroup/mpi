@@ -3,9 +3,9 @@ import { Row, Col} from 'reactstrap';
 
 import MobileDesc from '../../../../../images/mobileDesc.png';
 
-import Android from '../../../../../images/Android.png';
-import Hybrid from '../../../../../images/Hybrid.png';
-import IOS from '../../../../../images/IOS.png';
+import Android from '../../../../../images/Android2.png';
+import Hybrid from '../../../../../images/Hybrid2.png';
+import IOS from '../../../../../images/IOS2.png';
 import { withTranslation } from 'react-i18next';
 
 class WebDevelopment extends Component {
