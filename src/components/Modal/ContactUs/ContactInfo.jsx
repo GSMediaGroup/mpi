@@ -16,7 +16,7 @@ class ContactInfo extends Component {
     }
 
     render () {
-        const address = "FOOTER_TOP_SECTION_ADDRESS",
+        const address = "FOOTER_ADDRESS",
                contactInfoTitle = `CONTACT_INFO_TITLE`;
 
         const socialIcons = [

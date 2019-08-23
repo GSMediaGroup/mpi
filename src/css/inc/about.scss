@@ -9,11 +9,14 @@ $text-color: #353b5b;
 
     li {
       margin-top:15px;
+      display: flex;
     }
-
-      span {
+    span{
+      display: inline;
+    }
+      .number {
         color:#3dbad1;
-        padding-right: 50px;
+        padding-right: 30px;
         font-weight:900;
       }
   }

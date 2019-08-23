@@ -40,7 +40,9 @@ export default class Header extends Component {
         const {navPos, headerBg } = this.state;
 
         return (
+            
             <header className={`${headerBg} fixed-top`} >
+                
                 <Navbar position={navPos} />
             </header>
         );

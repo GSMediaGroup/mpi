@@ -58,7 +58,7 @@ class Modal extends React.Component {
   render() {
     return (
       <>
-        <NavLink className="nav-link" onClick={this.openModal} to="#">CONTACT US</NavLink>
+        <NavLink className="nav-link" onClick={this.openModal} to="#">{this.props.t('NAVBAR_SECTION_5')}</NavLink>
         <ReactModal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

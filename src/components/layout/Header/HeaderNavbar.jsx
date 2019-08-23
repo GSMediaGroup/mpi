@@ -69,11 +69,58 @@ class HeaderNavbar extends Component {
 
     }
 
+    /**
+     * Change font family in
+     */
+    setCustomStyles(lng) {
+        let hElements = [...document.getElementsByTagName('h1'), ...document.getElementsByTagName('h2'), ...document.getElementsByTagName('h3'),
+        ...document.getElementsByTagName('h4', ...document.getElementsByTagName('h5'), ...document.getElementsByTagName('h6'))
+        ];
+
+        if (lng == 'en') {
+            //change ios button inner text style - break the word
+            document.getElementsByClassName('OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION')[0].style.width = '100%';
+            document.getElementsByClassName('OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION')[0].style.margin = 'none';
+            // change 3 options style in About component
+            [...document.getElementsByClassName('about-option')].map((i) => i.style.fontSize = '24px');
+            // change the text in h1 in heroTitle
+            document.getElementsByClassName('heroTitle')[0].firstChild.style.fontSize = '50px';
+            // change the we care big text size
+            (document.getElementsByClassName('circle')[0].firstChild).style.fontSize = '50px';
+            // change the we care big text and his description lineHeight size
+            document.getElementsByClassName('circle')[0].style.lineHeight = '';
+            // change the all h1, h2, ... h6 elements font family in page
+            hElements.map((i) => {
+                i.style.fontFamily = '"Candal", sans-serif';
+                i.style.fontWeight = '100';
+            });
+        } else {
+            // change the all h1, h2, ... h6 elements font family in page
+            hElements.map((i) => {
+                i.style.fontFamily = '"Roboto Condensed", sans-serif';
+                i.style.fontWeight = 'bold';
+            });
+            //change ios button inner text style - break the word
+            document.getElementsByClassName('OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION')[0].style.width = '72%';
+            document.getElementsByClassName('OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION')[0].style.margin = '0 auto';
+            // change the text in h1 in heroTitle
+            document.getElementsByClassName('heroTitle')[0].firstChild.style.fontSize = '40px';
+            // change the we care big text and his description lineHeight size
+            document.getElementsByClassName('circle')[0].style.lineHeight = '45px';
+            // change the we care big text size
+            document.getElementsByClassName('circle')[0].firstChild.style.fontSize = '42px';
+            // change 3 options style in About component
+            [...document.getElementsByClassName('about-option')].map((i) => i.style.fontSize = '20px')
+        }
+    }
 
     changeLanguage(name) {
+        this.setCustomStyles(name);
+
         this.setState({
             activeLng: name
         });
+
 
         i18next.changeLanguage(name, (err, t) => {
 
@@ -124,7 +171,7 @@ class HeaderNavbar extends Component {
                                                 className={`nav-link ${row.customClass}`}
                                                 onClick={row.cb(row.to)}
                                                 to={`#${row.to}`}>
-                                                {(this.props.t(row.translateKey)).toUpperCase()}
+                                                {(this.props.t(row.translateKey))}
                                             </NavLink>
                                     }
 

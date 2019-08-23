@@ -75,19 +75,15 @@ export default class MultipleItems extends Component {
             slidesToShow: this.state.slidesToShow,
             slidesToScroll: 3,
             autoplay: false,
-            nextArrow: <button> <FontAwesomeIcon icon={faChevronRight} /></button>,
-            prevArrow: <button> <FontAwesomeIcon icon={faChevronLeft} /></button>,
+            nextArrow: <div> <FontAwesomeIcon icon={faChevronRight} /></div>,
+            prevArrow: <div><FontAwesomeIcon icon={faChevronLeft} /></div>,
         };
         const { gallery } = this.props;
-
-
-        let elem = document.getElementsByClassName('slick-next');
-        console.log(elem);
 
         return (
             <>
                 <div className="slider-content pt-5">
-                    <Slider {...settings}>
+                    <Slider slideCount={Date.now()} currentSlide={null} {...settings }>
                         {
                             gallery.map((i, index) => {
                                 return (

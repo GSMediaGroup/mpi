@@ -59,9 +59,9 @@ class About extends Component {
                         <Col className="col-12 col-md pb-4 pb-md-0">
                             <p>{this.props.t(description)}</p>
                             <ul className="workProcess pt-2">
-                                <li><span>1</span>{this.props.t(rows['1'])}</li>
-                                <li><span>2</span>{this.props.t(rows['2'])}</li>
-                                <li><span>3</span>{this.props.t(rows['3'])}</li>
+                                <li><span className="number">1</span><span className="about-option">{this.props.t(rows['1'])}</span></li>
+                                <li><span className="number">2</span><span className="about-option">{this.props.t(rows['2'])}</span></li>
+                                <li><span className="number">3</span><span className="about-option">{this.props.t(rows['3'])}</span></li>
                             </ul>
                         </Col>
                         <Col className="col-12 col-md-7 offset-md-1 videoPlay p-0" onClick={this.playVideo}>
