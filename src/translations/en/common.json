@@ -2,7 +2,7 @@
     "NAVBAR_SECTION_1" : "about us",
     "NAVBAR_SECTION_2" : "our team",
     "NAVBAR_SECTION_3" : "services",
-    "NAVBAR_SECTION_4" : "contact us",
+    "NAVBAR_SECTION_4" : "technologies",
     "NAVBAR_SECTION_5" : "contact us",
 
     "TECHNOLOGIES_SLIDER_TITLE": "TECHNOLOGIES WE USE",
@@ -23,7 +23,7 @@
     "HERO_SERVICES_text_2" : "MOBILE DEVELOPMENT",
     "HERO_SERVICES_text_3" : "PRODUCT DESIGN",
     "----------------" : "----------------------",
-    "HERO_SERVICES_DETAILS_BUTTON" : "Details",
+    "HERO_SERVICES_DETAILS_BUTTON" : "DETAILS",
     "-----------" : "----------------------",
     "OUR_SERVICES_TITLE" : "OUR SERVICES",
     "OUR_SERVICES_DESCRIPTION" : "We are always happy to cooperate with companies that are in need of creating software products able to improve their customers’ experience and automate internal processes.",
@@ -72,5 +72,12 @@
 
     "FOOTER_TOP_SECTION_ADDRESS" : "IT Park Bussines Center, Abelyan 6/1, Erevan, Armenia",
     "FOOTER_MIDDLE_SECTION_TEXT" : "we develop perfect ideas",
-    "FOOTER_BOTTOM_SECTION_COPYRIGHT" : "Copyright © 2019. All Right Reserved."
+    "FOOTER_BOTTOM_SECTION_COPYRIGHT" : "Copyright © 2019. All Right Reserved.",
+
+    "CONTACT_FORM_TITLE" : "Send Us a Message",
+    "CONTACT_FORM_FIELD_NAME" : "Name",
+    "CONTACT_FORM_FIELD_EMAIL" : "Email",
+    "CONTACT_FORM_FIELD_MESSAGE" : "Message",
+    "CONTACT_FORM_BUTTON" : "SEND",
+    "CONTACT_INFO_TITLE" : "Contact Information"
 }

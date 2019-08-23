@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import { withTranslation } from "react-i18next";
-import { Button, Form, FormGroup, Label, Input, Col, Container, Row } from 'reactstrap';
+import { Row } from 'reactstrap';
 import { NavLink } from "react-router-dom";
 
 import ContactForm from './ContactUs/ContactForm';
@@ -11,12 +11,14 @@ const customStyles = {
   content: {
     top: '50%',
     left: '50%',
-    width: '70%',
+    width: '60%',
     right: 'auto',
     bottom: 'auto',
     padding: '0',
     marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
+    border: 'unset',
+    background : 'unset'
 
   }
 };
@@ -38,7 +40,8 @@ class Modal extends React.Component {
   }
 
   openModal(event) {
-      event.preventDefault();
+    event.preventDefault();
+    window.document.body.style.overflowY = "hidden";
     this.setState({ modalIsOpen: true });
   }
 
@@ -48,10 +51,8 @@ class Modal extends React.Component {
   }
 
   closeModal() {
-    setTimeout(() => {
+    window.document.body.style.overflowY = "scroll";
       this.setState({ modalIsOpen: false });
-    }, '3000')
-
   }
 
   render() {

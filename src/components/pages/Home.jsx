@@ -10,6 +10,15 @@ import HashTag from '../pages/Home/HashTag';
 import OurTechnologies from '../pages/Home/OurTechnologies';
 
 export default class Home extends Component {
+
+    constructor (props) {
+        super(props);
+    }
+
+    onServiceTypeChange (type) {
+
+    }
+
     render() {
         return (
             <>

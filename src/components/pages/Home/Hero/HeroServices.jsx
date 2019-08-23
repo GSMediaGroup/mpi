@@ -9,7 +9,9 @@ class HeroServices extends Component {
     }
 
     render () {
-        const {src, alt, header, text, link} = this.props;
+        const {src, alt, header, type} = this.props;
+        const btnText = 'HERO_SERVICES_DETAILS_BUTTON';
+
         return (
             <div className="serviceItem text-center d-flex flex-wrap align-content-center justify-content-center">
                 <div className="topPart">
@@ -17,8 +19,7 @@ class HeroServices extends Component {
                     <h6>{this.props.t(header)}</h6>
                 </div>
                 <div className=" pt-4 d-none bottomPart">
-                    {/* <p className="pb-3 pt-3 inner-texts">{this.props.t(text)}</p> */}
-                    <Link to={link}>{this.props.t('HERO_SERVICES_DETAILS_BUTTON')}</Link>
+                    <Link to="#" type={type}>{this.props.t(btnText)}</Link>
                 </div>
             </div>
         );
@@ -26,3 +27,5 @@ class HeroServices extends Component {
 }
 
 export default withTranslation()(HeroServices);
+
+{/*onClick={this.props.onTypeChange(type)}*/}

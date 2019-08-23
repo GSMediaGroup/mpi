@@ -5,7 +5,7 @@ import {Col, Row, Container} from 'reactstrap';
 import {withTranslation} from "react-i18next";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faMapMarkedAlt, faPhoneAlt, faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import {faMapMarkerAlt, faPhoneAlt, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 
 import { faFacebookF, faGoogle, faInstagram, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
@@ -16,7 +16,8 @@ class ContactInfo extends Component {
     }
 
     render () {
-        const address = "FOOTER_TOP_SECTION_ADDRESS";
+        const address = "FOOTER_TOP_SECTION_ADDRESS",
+               contactInfoTitle = `CONTACT_INFO_TITLE`;
 
         const socialIcons = [
             {page : `facebook`, icon : faFacebookF},
@@ -26,43 +27,44 @@ class ContactInfo extends Component {
             {page : `twitter`, icon : faTwitter},
         ];
 
+
+        const contactAddress = [
+            {icon : faMapMarkerAlt, text: this.props.t(address)},
+            {icon : faEnvelope, text: ` haruta@mtperfectidea.net`},
+            {icon : faPhoneAlt, text: ` +374 98 916 778`},
+        ];
+
+
         return (
             <Col md={4} lg={4} className="pt-5 contact-information">
-                <h6 className="pb-5">Contact Information</h6>
-                <Row>
-                    <Col md={2} lg={2}>
-                        <FontAwesomeIcon icon={ faMapMarkedAlt } />
-                    </Col>
-                    <Col md={10} lg={10}>
-                        { this.props.t(address) }
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={2} lg={2}>
-                        <FontAwesomeIcon icon={ faEnvelope } />
-                    </Col>
-                    <Col md={10} lg={10}>
-                        haruta@mtperfectidea.net
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={2} lg={2}>
-                        <FontAwesomeIcon icon={ faPhoneAlt } />
-                    </Col>
-                    <Col md={10} lg={10}>+374 98 916 778</Col>
-                </Row>
 
-                <ul>
-                    {
-                        socialIcons.map( (icon, index) => (
-                          <li key={index}>
-                              <Link to={icon.page}>
-                                  <FontAwesomeIcon icon={icon.icon} />
-                              </Link>
-                          </li>
-                        ))
-                    }
-                </ul>
+                <Container>
+                    <h6 className="pb-4 text-center">{this.props.t(contactInfoTitle)}</h6>
+
+                    <div className="d-flex flex-column contactAddress">
+                        {
+                            contactAddress.map((row, index) => (
+                                <div key={index} className="d-flex flex-row align-items-center">
+                                    <FontAwesomeIcon icon={ row.icon } />
+                                    <span>{ row.text }</span>
+                                </div>
+                            ))
+                        }
+                    </div>
+
+                    <ul>
+                        {
+                            socialIcons.map( (icon, index) => (
+                                <li key={index}>
+                                    <Link to={icon.page}>
+                                        <FontAwesomeIcon icon={icon.icon} />
+                                    </Link>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </Container>
+
             </Col>
         );
     }

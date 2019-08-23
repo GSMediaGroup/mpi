@@ -1,21 +1,26 @@
-$contact_info_text_color: #fff;
+$contact_color: #353b5b;
+$contact_info_text_color: #999;
+
 
 #ContactUs{
-    padding: 50px 90px;
+    padding: 50px 50px;
     // display: flex;
     // flex-direction: column;
     .form{
         width: 100%;
     }
-    .labelName, .labelEmail, .labelTextarea{
+    .labelName, .labelEmail, .labelTextarea {
         position: absolute;
-        top: -15px;
+        top: -12px;
         left: 30px;
         background: white;
         padding: 0 1px;
+        font-size:14px;
+        opacity:0.7;
+        z-index:4;
     }
     .emailInput, .nameInput, .messageInput{
-        border-radius: 10px;
+        border-radius: 7px;
         width: 100%;
     }
     .messageInput{
@@ -29,7 +34,24 @@ $contact_info_text_color: #fff;
         border: 2px solid #353b5b;
         outline: none;
         color: #353b5b;
-        width: 100%;
+        transition:0.3s ease-in-out;
+        padding: 5px 50px;
+        margin-top: 5px;
+
+      &:hover {
+        background:#353b5b;
+        color:#fff;
+      }
+    }
+
+    .form-control {
+      border-color: $contact_color;
+      opacity:0.2;
+      box-shadow:none;
+
+      &:focus {
+        opacity:1;
+      }
     }
 
     
@@ -41,16 +63,46 @@ $contact_info_text_color: #fff;
 }
 .contact-information{
     color:$contact_info_text_color;
-    background-color: #353b5b;
+    background-color: $contact_color;
+
+    h6 {
+      color:white;
+    }
+
+    .contactAddress {
+        div {
+          &:not(:first-child) {
+            margin-top:60px;
+          }
+
+          span {
+              margin-left:25px;
+              color:white;
+          }
+        }
+    }
 
     ul {
-        margin-top:25px;
+        margin-top:70px;
         display:flex;
         justify-content: space-between;
+        color:white;
 
         li {
-            border:1px solid;
-            border-radius:100%;
+          border: 1px solid;
+          border-radius: 100%;
+          width: 35px;
+          height: 35px;
+          line-height: 35px;
+          text-align: center;
+          cursor:pointer;
+          opacity:0.5;
+          transition:0.2s ease-in-out;
+
+          &:hover {
+            color: #fff;
+            opacity: 1;
+          }
         }
     }
 }
