@@ -3,8 +3,8 @@ import {Col, Row, Container, Form, FormGroup, Label, Input, Button} from 'reacts
 import {withTranslation} from "react-i18next";
 
 
-// const SEND_MAIL_URL = "/sendmail/sendmail.php";
-const SEND_MAIL_URL = "http://mpi.dev.com/sendmail/sendmail.php";
+const SEND_MAIL_URL = "/sendmail/sendmail.php";
+// const SEND_MAIL_URL = "http://mpi.dev.com/sendmail/sendmail.php";
 
 class ContactForm extends Component {
 

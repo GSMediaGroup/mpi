@@ -18,7 +18,7 @@ export default class Header extends Component {
         window.addEventListener('scroll', this.headerPositionChange);
     }
 
-    componentWillMount () {
+    componentWillUnmount () {
         window.removeEventListener('scroll', this.headerPositionChange);
     }
 
