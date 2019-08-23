@@ -48,7 +48,7 @@ export default class ServiceIconList extends Component {
         };
 
         return (
-            <Row className="justify-content-between pt-5 pb-5 text-center">
+            <Row className="justify-content-between pt-5 pb-5 text-center serviceIcon">
                 {
                     Object.keys(images).map((type, i) => {
                         let imgSrc = images[type].srcMain,

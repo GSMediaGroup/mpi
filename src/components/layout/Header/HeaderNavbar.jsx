@@ -56,7 +56,7 @@ class HeaderNavbar extends Component {
 
     scrollToSection(id) {
         return (e) => {
-            const elem = document.getElementById(id);
+            const elem = ( id !== 'services' ) ? document.getElementById(id) : document.getElementsByClassName(`serviceIcon`)[0];
             e.preventDefault();
 
             elem.scrollIntoView({ behavior: 'smooth' });

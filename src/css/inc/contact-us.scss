@@ -1,107 +1,117 @@
-$contact_color: #353b5b;
+$contact_color: #d5d7dd;
+$contact_color_focused: #353b5b;
 $contact_info_text_color: #999;
 
 
-#ContactUs{
-    padding: 50px 50px;
-    // display: flex;
-    // flex-direction: column;
-    .form{
-        width: 100%;
+#ContactUs {
+  padding: 50px 50px;
+  // display: flex;
+  // flex-direction: column;
+  .form {
+    width: 100%;
+  }
+
+  .labelName, .labelEmail, .labelTextarea {
+    position: absolute;
+    top: -12px;
+    left: 28px;
+    background: white;
+    color: #545454;
+    padding: 0 5px;
+    font-size: 14px;
+    z-index: 4;
+  }
+
+  .emailInput, .nameInput, .messageInput {
+    border-radius: 7px;
+    width: 100%;
+  }
+
+  .messageInput {
+    max-height: 144px;
+    min-height: 144px;
+    height: 144px;
+  }
+
+  .submit-btn {
+    border-radius: 100px;
+    background-color: white;
+    border: 2px solid #353b5b;
+    outline: none;
+    color: #353b5b;
+    transition: 0.3s ease-in-out;
+    padding: 5px 50px;
+
+
+    &:hover {
+      background: #353b5b;
+      color: #fff;
     }
-    .labelName, .labelEmail, .labelTextarea {
-        position: absolute;
-        top: -12px;
-        left: 30px;
-        background: white;
-        padding: 0 1px;
-        font-size:14px;
-        opacity:0.7;
-        z-index:4;
+  }
+
+  .form-control {
+    border-color: $contact_color;
+    box-shadow: none;
+
+    &:focus {
+      border-color: $contact_color_focused;
     }
-    .emailInput, .nameInput, .messageInput{
-        border-radius: 7px;
-        width: 100%;
+  }
+
+  .form-group span {
+    color: orangered;
+    font-size: 12px;
+  }
+
+  // .submit-btn:hover {
+  //     background: white;
+  //     color: #3db9d1;
+  //     font-weight: 300;
+  //   }
+}
+
+.contact-information {
+  color: $contact_info_text_color;
+  background-color: $contact_color_focused;
+
+  h6 {
+    color: white;
+  }
+
+  .contactAddress {
+    div {
+      &:not(:first-child) {
+        margin-top: 60px;
+      }
+
+      span {
+        margin-left: 25px;
+        color: white;
+      }
     }
-    .messageInput{
-        max-height: 144px;
-        min-height: 144px;
-        height: 144px;
-    }
-    .submit-btn{
-        border-radius: 100px;
-        background-color: white;
-        border: 2px solid #353b5b;
-        outline: none;
-        color: #353b5b;
-        transition:0.3s ease-in-out;
-        padding: 5px 50px;
+  }
+
+  ul {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+
+    li {
+      border: 1px solid;
+      border-radius: 100%;
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: 0.2s ease-in-out;
 
       &:hover {
-        background:#353b5b;
-        color:#fff;
+        color: #fff;
+        opacity: 1;
       }
     }
-
-    .form-control {
-      border-color: $contact_color;
-      opacity:0.2;
-      box-shadow:none;
-
-      &:focus {
-        opacity:1;
-      }
-    }
-
-    
-    // .submit-btn:hover {
-    //     background: white;
-    //     color: #3db9d1;
-    //     font-weight: 300;
-    //   }
-}
-.contact-information{
-    color:$contact_info_text_color;
-    background-color: $contact_color;
-
-    h6 {
-      color:white;
-    }
-
-    .contactAddress {
-        div {
-          &:not(:first-child) {
-            margin-top:60px;
-          }
-
-          span {
-              margin-left:25px;
-              color:white;
-          }
-        }
-    }
-
-    ul {
-        margin-top:70px;
-        display:flex;
-        justify-content: space-between;
-        color:white;
-
-        li {
-          border: 1px solid;
-          border-radius: 100%;
-          width: 35px;
-          height: 35px;
-          line-height: 35px;
-          text-align: center;
-          cursor:pointer;
-          opacity:0.5;
-          transition:0.2s ease-in-out;
-
-          &:hover {
-            color: #fff;
-            opacity: 1;
-          }
-        }
-    }
+  }
 }

@@ -25,7 +25,7 @@ export default class Home extends Component {
     onServiceTypeChange (type) {
         this.updateServiceType(type);
 
-        const serviceBlock = document.getElementsByClassName(`serviceTitle`)[0];
+        const serviceBlock = document.getElementsByClassName(`serviceIcon`)[0];
         serviceBlock.scrollIntoView({ behavior : `smooth` });
     }
 

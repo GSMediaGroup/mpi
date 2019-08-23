@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 
 import VideoModal from '../../Modal/VideoModal';
 
-import {Player, BigPlayButton, PlayToggle, ControlBar } from 'video-react';
+import {Player, BigPlayButton} from 'video-react';
 
 import MPIVideoMp4 from '../../../videos/mpi-video.mp4';
-import MPIVideoWebM from '../../../videos/mpi-video.mp4';
-import MPIVideoOgg from '../../../videos/mpi-video.mp4';
+import MPIVideoWebM from '../../../videos/mpi-video.webm';
+import MPIVideoOgg from '../../../videos/mpi-video.ogg';
 
 
 import MPIVideoBg from '../../../images/mpiVideoBg.jpg';
