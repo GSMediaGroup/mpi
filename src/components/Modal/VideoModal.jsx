@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import {withTranslation} from "react-i18next";
+import CloseBtn from "../../images/close.svg";
 
 const customStyles = {
     content: {
@@ -63,7 +64,10 @@ class VideoModal extends React.Component {
                 contentLabel="Example Modal"
                 ariaHideApp={false}
             >
-                <div className="closeButton d-flex justify-content-end" onClick={() => this.closeModal()}>X</div>
+                {/*<div className="closeButton d-flex justify-content-end" onClick={() => this.closeModal()}>X</div>*/}
+                <div className="closeBtn" onClick={() =>  this.closeModal() }>
+                    <img src={CloseBtn} alt="Close Button"/>
+                </div>
                 {this.props.children}
             </ReactModal>
 

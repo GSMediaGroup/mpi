@@ -98,3 +98,23 @@ a {
 .bg_white {
   background:#fff;
 }
+
+.closeBtn {
+  display: flex;
+  justify-content:flex-end;
+  width:100%;
+  margin-bottom: 10px;
+  cursor:pointer;
+
+  img {
+    width:30px;
+  }
+
+  .contact-us-close {
+    fill: red;
+  }
+
+  .svgIcon {
+    fill:red;
+  }
+}
