@@ -135,7 +135,6 @@ class HeaderNavbar extends Component {
                         {
                             <div className="language-content">
                                 {languages.map((lng, index) => {
-                                    // style={{ backgroundImage: `url('${lng.imageSrc}')` }}
                                     return (
                                         this.state.activeLng !== lng.name ? (
                                             <div key={index} className="language" onClick={() => lng.cb(lng.name)}>{lng.name.toUpperCase()}</div>) : null

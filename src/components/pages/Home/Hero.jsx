@@ -9,6 +9,8 @@ import HeroServices from './Hero/HeroServices';
 import WebDev from '../../../images/service_1.png';
 import MobileDev from '../../../images/service_2.png';
 import ProductDesign from '../../../images/service_3.png';
+import {withTranslation} from "react-i18next";
+import {WEB_DEVELOPMENT, MOBILE_DEVELOPMENT, DESIGN} from "./Services/ServiceContentList";
 
 const particlesOption = {
     "particles": {
@@ -78,20 +80,24 @@ const particlesOption = {
     "retina_detect": false
 };
 
-export default class Hero extends Component {
+class Hero extends Component {
 
     constructor(props) {
         super(props);
     }
 
 
-    typeChange () {
-
+    typeChange (type) {
+        return () => {
+            this.props.onServiceTypeChange(type);
+        };
     }
 
     render() {
         const heroService = [
-            // {src: WebDev, alt :`Web Development`, header:  },
+            {src: WebDev, alt :`Web Development`, header: `HERO_SERVICES_HEADER_1`,  type: WEB_DEVELOPMENT },
+            {src: MobileDev, alt :`Mobile Development`, header: `HERO_SERVICES_HEADER_2`,  type: MOBILE_DEVELOPMENT },
+            {src: ProductDesign, alt :`Product Design`, header: `HERO_SERVICES_HEADER_3`,  type: DESIGN },
         ];
 
         return (
@@ -102,12 +108,23 @@ export default class Hero extends Component {
                         <Particles params={particlesOption} className="particles" />
                     </div>
                     <div className="heroService pr-0">
-                        <HeroServices src={WebDev} alt="Web Development" header="HERO_SERVICES_HEADER_1" text="HERO_SERVICES_text_1" type="#" />  {/*onTypeChange={this.typeChange} */}
-                        <HeroServices src={MobileDev} alt="Mobile Development" header="HERO_SERVICES_HEADER_2" text="HERO_SERVICES_text_2" type="#" />
-                        <HeroServices src={ProductDesign} alt="Product Design" header="HERO_SERVICES_HEADER_3" text="HERO_SERVICES_text_3" type="#" />
+                        {
+                            heroService.map((service, index) => (
+                                <HeroServices
+                                    key={index}
+                                    src={service.src}
+                                    alt={service.alt}
+                                    header={service.header}
+                                    onTypeChange={this.typeChange(service.type) }
+                                />
+                            ))
+                        }
+
                     </div>
                 </div>
             </section>
         );
     }
 }
+
+export default withTranslation()(Hero);

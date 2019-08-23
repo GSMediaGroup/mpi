@@ -43,7 +43,7 @@ export default class PopupView extends Component {
         let {
             index, images
         } = this.props;
-        console.log(this.state)
+
         if(this.state.index !== null) {
             index = this.state.index;
         }

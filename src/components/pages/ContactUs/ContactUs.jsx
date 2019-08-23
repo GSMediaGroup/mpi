@@ -36,7 +36,7 @@ class ContactUs extends Component {
             headers : headers,
             body : JSON.stringify(data),
         })
-            .then(response => console.log(response));
+            .then(response => serviceTypeg(response));
     }
 
     render() {

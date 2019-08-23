@@ -9,7 +9,8 @@ import { withTranslation } from 'react-i18next';
 class HeroTitle extends Component {
     state = {
         display : "block"
-    }
+    };
+
     constructor(props) {
         super(props);
     }
@@ -32,6 +33,14 @@ class HeroTitle extends Component {
         this.setState(styleObject)
     };
 
+    scrollToAbout () {
+        const elem = document.getElementById(`about`);
+
+        elem.scrollIntoView({ behavior : "smooth" });
+    }
+
+
+
     render() {
 
         return (
@@ -44,7 +53,7 @@ class HeroTitle extends Component {
 
                         <h1>{this.props.t('HERO_TITLE_HEADER')}</h1>
                         <p className="pb-1 pb-md-4">{this.props.t('HERO_TITLE_DESCRIPTION')}</p>
-                        <Link className="more" to="#">{this.props.t('HERO_TITLE_MORE_BUTTON')}</Link>
+                        <Link className="more" to="#" onClick={this.scrollToAbout}>{this.props.t('HERO_TITLE_MORE_BUTTON')}</Link>
                     </div>
                 </div>
 

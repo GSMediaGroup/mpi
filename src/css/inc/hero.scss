@@ -34,14 +34,11 @@ $hero_text_color:#fff;
     width:350px;
     height:350px;
     margin-left:0;
-    // margin-top:25%;
     background:#3db9d1;
     border-radius:50%;
     white-space: nowrap;
     padding: 1px 80px 0 80px;
     z-index:2;
-
-    
     }
 
     h1 {
@@ -101,7 +98,7 @@ $hero_text_color:#fff;
         a {
           border: 1px solid;
           border-radius: 21px;
-          padding: 11px 64px;
+          padding: 9px 55px;
           transition:0.6s ease-in-out;
 
           &:hover {

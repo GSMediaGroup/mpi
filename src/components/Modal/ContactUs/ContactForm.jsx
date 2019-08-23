@@ -48,7 +48,7 @@ class ContactForm extends Component {
                             </Col>
                         </Row>
                         <Row>
-                            <Col lg={12} md={12} className="pb-5">
+                            <Col lg={12} md={12} className="pb-4">
                                 <FormGroup>
                                     <Label className="labelTextarea" for="text">{ this.props.t(contactFormFieldMessage) }</Label>
                                     <Input

@@ -9,7 +9,7 @@ class HeroServices extends Component {
     }
 
     render () {
-        const {src, alt, header, type} = this.props;
+        const {src, alt, header} = this.props;
         const btnText = 'HERO_SERVICES_DETAILS_BUTTON';
 
         return (
@@ -19,7 +19,7 @@ class HeroServices extends Component {
                     <h6>{this.props.t(header)}</h6>
                 </div>
                 <div className=" pt-4 d-none bottomPart">
-                    <Link to="#" type={type}>{this.props.t(btnText)}</Link>
+                    <Link to="#" onClick={this.props.onTypeChange}>{this.props.t(btnText)}</Link>
                 </div>
             </div>
         );
@@ -27,5 +27,3 @@ class HeroServices extends Component {
 }
 
 export default withTranslation()(HeroServices);
-
-{/*onClick={this.props.onTypeChange(type)}*/}
