@@ -45,7 +45,7 @@ class FooterContent extends Component {
                 <Row>
                     {
                         footerItems.map((item, index) =>
-                            <Col className="main-content hover-main-content" lg={{ size: 3 }} md={{ size: 3 }}>
+                            <Col className="main-content hover-main-content" lg={{ size: 3 }} md={{ size: 3 }} key={index}>
                                 <Row>
                                     <Col className="pb-1" lg={{ size: 12 }} md={{ size: 12 }}>
                                         <Link to='/' className={item.iconClassName}>
@@ -63,7 +63,7 @@ class FooterContent extends Component {
                         <Row>
                             {
                                 footerSocialItems.map((item, index) =>
-                                    <Col className="pl-0 pr-0 pb-2 for-hover-icon" sm={{size: 12}} lg={{ size: 2, offset: item.offset }} md={{ size: 2 , offset: item.offset}}>
+                                    <Col className="pl-0 pr-0 pb-2 for-hover-icon" sm={{size: 12}} lg={{ size: 2, offset: item.offset }} md={{ size: 2 , offset: item.offset}} key={index}>
                                         <Link to='/' >
                                             <img src={item.icon} alt="Brand Logo" />
                                         </Link>

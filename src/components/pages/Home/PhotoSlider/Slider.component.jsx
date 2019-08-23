@@ -82,7 +82,6 @@ export default class MultipleItems extends Component {
 
 
         let elem = document.getElementsByClassName('slick-next');
-        console.log(elem);
 
         return (
             <>

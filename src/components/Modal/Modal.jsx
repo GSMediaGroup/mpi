@@ -7,6 +7,8 @@ import { NavLink } from "react-router-dom";
 import ContactForm from './ContactUs/ContactForm';
 import ContactInfo from './ContactUs/ContactInfo';
 
+import CloseBtn from '../../images/close.svg';
+
 const customStyles = {
   content: {
     top: '50%',
@@ -67,6 +69,10 @@ class Modal extends React.Component {
           ariaHideApp={false}
           contentLabel="Example Modal"
         >
+          <div className="closeBtn" onClick={() =>  this.closeModal() }>
+            <img src={CloseBtn} alt="Close Button"/>
+            {/*<CloseBtn />*/}
+          </div>
           <Row className="m-0">
             <ContactForm />
             <ContactInfo />
