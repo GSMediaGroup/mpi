@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import {withTranslation} from "react-i18next";
-import CloseBtn from "../../images/close.svg";
+
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const customStyles = {
     content: {
@@ -27,16 +29,28 @@ class VideoModal extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state.modalIsOpen = props.isOpen;
 
         this.openModal = this.openModal.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+    }
 
+    static getDerivedStateFromProps (props, state) {
+        if (state.modalIsOpen != props.isOpenModal) {
+            return {
+                modalIsOpen : true,
+            }
+        }
+
+        return null;
     }
 
     openModal() {
-        this.setState({modalIsOpen: true});
+        window.body.style.overflowY = 'hidden';
+
+        this.setState({
+            modalIsOpen : true,
+        });
     }
 
     afterOpenModal() {
@@ -45,12 +59,11 @@ class VideoModal extends React.Component {
     }
 
     closeModal() {
-        this.setState({modalIsOpen: false});
+        document.body.style.overflowY = 'scroll';
 
-        const { onClose } = this.props;
-        if (typeof onClose == "function") {
-            onClose();
-        }
+        this.setState({
+            modalIsOpen: false
+        });
     }
 
     render() {
@@ -64,9 +77,8 @@ class VideoModal extends React.Component {
                 contentLabel="Example Modal"
                 ariaHideApp={false}
             >
-                {/*<div className="closeButton d-flex justify-content-end" onClick={() => this.closeModal()}>X</div>*/}
-                <div className="closeBtn" onClick={() =>  this.closeModal() }>
-                    <img src={CloseBtn} alt="Close Button"/>
+                <div className="closeBtn" onClick={this.closeModal} >
+                    <FontAwesomeIcon icon={ faTimes } size='2x' />
                 </div>
                 {this.props.children}
             </ReactModal>

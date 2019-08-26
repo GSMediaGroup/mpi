@@ -18,7 +18,7 @@ class HeroServices extends Component {
                     <img className="pb-3" src={src} alt={alt}/>
                     <h6>{this.props.t(header)}</h6>
                 </div>
-                <div className=" pt-4 d-none bottomPart">
+                <div className=" pt-4 bottomPart">
                     <Link to="#" onClick={this.props.onTypeChange}>{this.props.t(btnText)}</Link>
                 </div>
             </div>

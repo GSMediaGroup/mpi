@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+
+
 /**
  * This Component allow only title and his description near
  * ----- TITLE -----
@@ -50,9 +54,9 @@ export default class PopupView extends Component {
 
         return (
             <div className="popupView">
-                <div className="prev" onClick={() => this.changeImage(false, index, images)}>&#8249;</div>
-                <img src={images[index]}/>
-                <div className="next" onClick={() => this.changeImage(true, index, images)}>&#8250;</div>
+                <div className="prev " onClick={() => this.changeImage(false, index, images)}><FontAwesomeIcon icon={ faChevronLeft } /></div>
+                <div className=""><img src={images[index]} alt="Team Images" /></div>
+                <div className="next " onClick={() => this.changeImage(true, index, images)}><FontAwesomeIcon icon={ faChevronRight } /></div>
             </div>
         );
     }

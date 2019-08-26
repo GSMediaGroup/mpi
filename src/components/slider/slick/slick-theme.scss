@@ -111,11 +111,11 @@ $slick-opacity-not-active: 0.3 !default;
 
 .slick-prev {
     color: black;
-    left: -40px;
+    left: -20px;
     z-index: 10000;
     [dir="rtl"] & {
         left: auto;
-        right:-40px;;
+        right:-20px;;
     }
     // &:before {
     //     color: #19282f;
@@ -129,13 +129,13 @@ $slick-opacity-not-active: 0.3 !default;
 .slick-next {
     // background: rgba(0,0,0,0.5);
     
-    right: -40px;
+    right: -20px;
     // background: black;
     [dir="rtl"] & {
-        left:-40px;
+        left:-20px;
         right: auto;
     }
-    // &:before {
+    // &:befosre {
     //     color: #19282f;
     //     content: $slick-next-character;
     //     [dir="rtl"] & {

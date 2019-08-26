@@ -1,11 +1,11 @@
 $h2_color : #353b57;
 
-body {
+body .ru {
  font-family:'Barlow', sans-serif;
 }
 
 h1, h2, h3,
-h4, h5, h6 {
+h4, h5, h6 .ru {
   font-family: 'Candal', sans-serif;
 }
 
@@ -58,14 +58,12 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     height: 20px;
-    background-size: cover;
-    /* border: 1px solid; */
     cursor: pointer;
     margin-top: -5px;
     text-align: center;
   }
   .language:hover{
-    box-shadow: 0px 0px 10px #52d3eb;
+    box-shadow: 0 0 10px #52d3eb;
     transition: box-shadow 0.3s ease-in-out;
             
   }  
@@ -101,13 +99,22 @@ a {
 
 .closeBtn {
   display: flex;
-  justify-content:flex-end;
+  justify-content: flex-end;
   width:100%;
-  margin-bottom: 10px;
-  cursor:pointer;
+  color:white;
+  margin-bottom:2px;
 
-  img {
-    width:15px;
+  svg {
+    transition: 0.6s ease;
+    cursor:pointer;
+  }
+
+  &:hover {
+    color: #3db9d1;
+
+    svg {
+      color:#3db9d1;
+    }
   }
 
 }

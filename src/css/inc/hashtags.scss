@@ -12,7 +12,7 @@
         height: 500px;
         .we-care-circle{
             
-            box-shadow: 0px 0px 18px grey;
+            box-shadow: 0 0 18px grey;
             margin: 0 auto;
             width: 300px;
             height: 300px;
@@ -22,6 +22,8 @@
             flex-wrap: wrap;
             justify-content: baseline;
             align-items: center;
+            transition: all 0.6s ease-in-out;
+
             .tags{
                 position: absolute;
                 // float: left;
@@ -53,7 +55,6 @@
 
         .we-care-circle:hover{
             box-shadow: 0 1px 100px #fbd70b;
-            transition: box-shadow 0.3s ease-in-out;
             cursor: pointer;
         }
     

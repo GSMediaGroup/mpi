@@ -11,7 +11,7 @@ import {faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
 export default class MultipleItems extends Component {
     state = {
-        slidesToShow: 3,
+        slidesToShow: (window.innerWidth <= 992 ? 1 : 3),
         isOpen: false
     };
 
@@ -73,11 +73,12 @@ export default class MultipleItems extends Component {
             speed: 500,
             arrows: true,
             slidesToShow: this.state.slidesToShow,
-            slidesToScroll: 3,
+            slidesToScroll: 1,
             autoplay: false,
             nextArrow: <div><FontAwesomeIcon icon={faChevronRight}/></div>,
             prevArrow: <div><FontAwesomeIcon icon={faChevronLeft}/></div>,
         };
+
         const {gallery} = this.props;
 
         return (
@@ -87,9 +88,8 @@ export default class MultipleItems extends Component {
                         {
                             gallery.map((i, index) => {
                                 return (
-                                    <div className="ourTeamImage" key={index}>
-                                        <img src={i} key={index} onClick={() => this.openImage(index, gallery)}/>
-                                    </div>)
+                                        <img src={i} key={index} onClick={() => this.openImage(index, gallery)} alt="Team Images"/>
+                                    )
                             })
                         }
                     </Slider>

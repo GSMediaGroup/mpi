@@ -7,7 +7,8 @@ import {NavLink} from "react-router-dom";
 import ContactForm from './ContactUs/ContactForm';
 import ContactInfo from './ContactUs/ContactInfo';
 
-import CloseBtn from '../../images/close.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const customStyles = {
     content: {
@@ -70,8 +71,9 @@ class Modal extends React.Component {
                     contentLabel="Example Modal"
                 >
                     <div className="closeBtn" onClick={() => this.closeModal()}>
-                        <img src={CloseBtn} alt="Close Button" draggable={false}/>
+                        <FontAwesomeIcon icon={ faTimes } size='2x' />
                     </div>
+
                     <Row className="m-0">
                         <ContactForm closeHandler={this.closeModal}/>
                         <ContactInfo/>

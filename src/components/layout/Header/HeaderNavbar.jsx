@@ -23,7 +23,6 @@ class HeaderNavbar extends Component {
 
     constructor(props) {
         super(props);
-
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.scrollToSection = this.scrollToSection.bind(this);
         this.changeLanguage = this.changeLanguage.bind(this);
@@ -131,6 +130,7 @@ class HeaderNavbar extends Component {
     }
 
     render() {
+
         const mobileMenuOpened = this.state.mobileMenuOpened;
         const mobileMenuClass = mobileMenuOpened ? "opened" : "closed";
 

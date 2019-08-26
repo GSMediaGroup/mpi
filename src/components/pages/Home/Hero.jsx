@@ -11,6 +11,7 @@ import MobileDev from '../../../images/service_2.png';
 import ProductDesign from '../../../images/service_3.png';
 import {withTranslation} from "react-i18next";
 import {WEB_DEVELOPMENT, MOBILE_DEVELOPMENT, DESIGN} from "./Services/ServiceContentList";
+import i18next from 'i18next';
 
 const particlesOption = {
     "particles": {

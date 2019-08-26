@@ -14,17 +14,18 @@
             position: absolute;
             right: 10px;
             top: 10px;
-            position: absolute;
-            right: 10px;
-            top: 10px;
             border: none;
             background: rgba(0,0,0,-0.5);
             color: white;
             font-size: 30px;
             outline: none;
+            transition: 0.3s ease-in-out;
+            cursor:pointer;
+
+            &:hover{
+                color:#3db9d1;
+            }
         }
-        button:hover{
-            color: red;
-        }
+
     }
 }
