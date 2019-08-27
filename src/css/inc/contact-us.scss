@@ -115,3 +115,27 @@ $contact_info_text_color: #999;
     }
   }
 }
+
+.sendingAlert {
+  background: white;
+  padding:10px 40px;
+
+  h3 {
+    color: $contact_color_focused;
+  }
+
+  p {
+    font-size:14px;
+  }
+
+  .imageBlock {
+    width:130px;
+    margin:0 auto;
+
+
+    img {
+      width:100%;
+      object-fit:cover;
+    }
+  }
+}
