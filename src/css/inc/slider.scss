@@ -1,40 +1,26 @@
-//
-//.ourTeamImage{
-//    height: 300px;
-//    //width:300px;
-//    //display: flex !important;
-//    &:not(:last-child) {
-//        border:1px solid red;
-//    }
-//
-//    img{
-//        cursor: pointer;
-//        margin: 0 auto;
-//        height: 100%;
-//        width: 100%;
-//    object-fit: cover;
-//    object-position: 0 0;
-//    }
-//    img:hover{
-//        box-shadow: 0 1px 5px rgba(0,0,0,0.9);
-//        transition: box-shadow 0.3s ease-in-out;
-//    }
-//
-//}
+#our-team {
+    .slick-slide {
+        padding:2px 15px;
+        cursor:pointer;
+        //border:1px solid red;
 
-#our-team .slick-slide {
-    padding-right:15px;
-    padding-left:15px;
-
-    div {
-        height:250px;
+        div {
+            height:250px;
 
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit:cover;
-            object-position: left;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit:cover;
+                object-position: left;
+            }
+        }
+
+        &:hover {
+
+            div {
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            }
         }
     }
 }

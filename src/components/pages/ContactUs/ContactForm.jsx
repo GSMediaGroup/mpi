@@ -3,8 +3,9 @@ import {Col, Row, Container, Form, FormGroup, Label, Input, Button} from 'reacts
 import {withTranslation} from "react-i18next";
 
 
-const SEND_MAIL_URL = "/sendmail/sendmail.php";
-// const SEND_MAIL_URL = "http://mpi.dev.com/sendmail/sendmail.php";
+// const SEND_MAIL_URL = "http://mpi.dev.com/sendmail/sendmail.php";          // local
+const SEND_MAIL_URL = "http://myperfectidea.net/sendmail/sendmail.php";    // local to live
+// const SEND_MAIL_URL = "/sendmail/sendmail.php";                            // live
 
 class ContactForm extends Component {
 
@@ -40,7 +41,7 @@ class ContactForm extends Component {
 
         const data = await response.json();
         if (data.status == "success") {
-            this.props.closeHandler();
+            this.props.onClose();
         } else {
             const { errors } = data;
 
@@ -105,7 +106,7 @@ class ContactForm extends Component {
                             </Col>
                         </Row>
                         <Row>
-                            <Col lg={12} md={12} className="pb-4">
+                            <Col lg={12} md={12} className="pb-5">
                                 <FormGroup>
                                     <Label className="labelTextarea"
                                            for="text">{this.props.t(contactFormFieldMessage)}</Label>

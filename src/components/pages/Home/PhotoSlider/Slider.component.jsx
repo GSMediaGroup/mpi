@@ -21,10 +21,6 @@ export default class MultipleItems extends Component {
         this.windowSizeChange = this.windowSizeChange.bind(this);
     }
 
-    componentDidMount() {
-        window.addEventListener('resize', this.windowSizeChange);
-    }
-
     /**
      * Check and return responsive images view
      * @param {*} e
@@ -49,7 +45,8 @@ export default class MultipleItems extends Component {
         window.document.body.style.overflowY = "scroll";
         this.setState({
             isOpen: false,
-            index: null, images: null
+            index: null,
+            images: null
         });
 
     }
@@ -96,7 +93,10 @@ export default class MultipleItems extends Component {
                 </div>
                 <Popup show={this.state.isOpen}
                        onClose={this.closeImage}>
-                    <PopupView images={this.state.images} index={this.state.index}/>
+                    <PopupView images={this.state.images}
+                               index={this.state.index}
+                               isOpen={this.state.isOpen}
+                    />
                 </Popup>
             </>
 

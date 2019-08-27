@@ -12,12 +12,14 @@ import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons
 export default class PopupView extends Component {
 
     state  = {
-        index : null, images: null
+        index : null,
+        images: null
     }
 
     constructor(props) {
         super(props);
     }
+
 
     changeImage = (isNext, index, images) => {
         if (isNext) {
@@ -41,6 +43,7 @@ export default class PopupView extends Component {
                 })
             }
         }
+
     }
 
     render() {
@@ -53,9 +56,9 @@ export default class PopupView extends Component {
         }
 
         return (
-            <div className="popupView">
+            <div className="popupView" onClick={(e) => e.stopPropagation()}>
                 <div className="prev " onClick={() => this.changeImage(false, index, images)}><FontAwesomeIcon icon={ faChevronLeft } /></div>
-                <div className=""><img src={images[index]} alt="Team Images" /></div>
+                <div ><img src={images[index]} alt="Team Images" /></div>
                 <div className="next " onClick={() => this.changeImage(true, index, images)}><FontAwesomeIcon icon={ faChevronRight } /></div>
             </div>
         );

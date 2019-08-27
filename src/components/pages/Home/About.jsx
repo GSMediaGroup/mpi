@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import VideoModal from '../../Modal/VideoModal';
+import VideoModal from '../../Modal/Modal';
 
 import {Player, BigPlayButton} from 'video-react';
 

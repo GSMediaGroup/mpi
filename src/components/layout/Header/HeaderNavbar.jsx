@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+
 import { Link, NavLink } from "react-router-dom";
 import {
     Navbar,
     Nav,
     NavItem
 } from 'reactstrap';
-import { withTranslation } from "react-i18next";
+
 import i18next from 'i18next';
+import { withTranslation } from "react-i18next";
 
 import Modal from '../../Modal/Modal';
+import ContactUs from '../../pages/ContactUs';
 
 import Logo from '../../../images/mpi.png';
 import logoEn from '../../../images/en_.jpg';
@@ -18,11 +21,16 @@ class HeaderNavbar extends Component {
     state = {
         mobileMenuOpened: false,
         display: 'none',
-        activeLng: 'en'
+        activeLng: 'en',
+        isOpen : false,
     };
 
     constructor(props) {
         super(props);
+
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.scrollToSection = this.scrollToSection.bind(this);
         this.changeLanguage = this.changeLanguage.bind(this);
@@ -64,8 +72,16 @@ class HeaderNavbar extends Component {
 
     }
 
-    openModal(e) {
+    openModal() {
+        this.setState({
+            isOpen : true,
+        });
+    }
 
+    closeModal () {
+        this.setState({
+            isOpen : false,
+        });
     }
 
     /**
@@ -107,7 +123,7 @@ class HeaderNavbar extends Component {
             // change the we care big text and his description lineHeight size
             document.getElementsByClassName('circle')[0].style.lineHeight = '45px';
             // change the we care big text size
-            document.getElementsByClassName('circle')[0].firstChild.style.fontSize = '42px';
+            document.getElementsByClassName('circle')[0].firstChild.style.fontSize = '32px';
             // change 3 options style in About component
             [...document.getElementsByClassName('about-option')].map((i) => i.style.fontSize = '20px')
         }
@@ -131,6 +147,8 @@ class HeaderNavbar extends Component {
 
     render() {
 
+        const isOpen = this.state.isOpen;
+
         const mobileMenuOpened = this.state.mobileMenuOpened;
         const mobileMenuClass = mobileMenuOpened ? "opened" : "closed";
 
@@ -148,52 +166,64 @@ class HeaderNavbar extends Component {
         ];
 
         return (
-            <Navbar expand="md" className="navbar-dark container">
-                <Link style={{ display: this.state.display }} to='/' className="navbar-brand siteLogo">
-                    <img src={Logo} alt="Brand Logo" />
-                </Link>
+            <>
+                <Navbar expand="md" className="navbar-dark container">
+                    <Link style={{ display: this.state.display }} to='/' className="navbar-brand siteLogo">
+                        <img src={Logo} alt="Brand Logo" />
+                    </Link>
 
-                <div className={`toggleButton d-md-none ${mobileMenuClass}`} onClick={this.toggleMobileMenu}>
-                    <span />
-                    <span />
-                    <span />
-                </div>
-                {/* ${this.props.position} */}
-                <div className={`navbar-collapse justify-content-end ${mobileMenuClass}`} id="navbarSupportedContent">
-                    <Nav navbar className="mr-0">
-                        {
-                            navbarItems.map((row, index) => (
-                                <NavItem key={index}>
-                                    {
-                                        row.to == "contacts" ? <Modal />
-                                            :
-                                            <NavLink activeClassName="active"
-                                                className={`nav-link ${row.customClass}`}
-                                                onClick={row.cb(row.to)}
-                                                to={`#${row.to}`}>
-                                                {(this.props.t(row.translateKey))}
-                                            </NavLink>
-                                    }
+                    <div className={`toggleButton d-md-none ${mobileMenuClass}`} onClick={this.toggleMobileMenu}>
+                        <span />
+                        <span />
+                        <span />
+                    </div>
+                    {/* ${this.props.position} */}
+                    <div className={`navbar-collapse justify-content-end ${mobileMenuClass}`} id="navbarSupportedContent">
+                        <Nav navbar className="mr-0">
+                            {
+                                navbarItems.map((row, index) => {
 
-                                </NavItem>
+                                    const method = ( row.to === 'contacts' ) ? row.cb : row.cb( row.to );
 
-                            ))
-                        }
-                        {
-                            <div className="language-content">
-                                {languages.map((lng, index) => {
                                     return (
-                                        this.state.activeLng !== lng.name ? (
-                                            <div key={index} className="language" onClick={() => lng.cb(lng.name)}>{lng.name.toUpperCase()}</div>) : null
+                                        <NavItem key={index}>
+                                            {
+                                                <NavLink activeClassName="active"
+                                                         className={`nav-link ${row.customClass}`}
+                                                         onClick={method}
+                                                         to={`#${row.to}`}>
+                                                    {(this.props.t(row.translateKey))}
+                                                </NavLink>
+                                            }
 
+                                        </NavItem>
                                     )
-                                })}
-                            </div>
-                        }
-                    </Nav>
 
-                </div>
-            </Navbar>
+                                })
+                            }
+                            {
+                                <div className="language-content">
+                                    {languages.map((lng, index) => {
+                                        return (
+                                            this.state.activeLng !== lng.name ? (
+                                                <div key={index} className="language" onClick={() => lng.cb(lng.name)}>{lng.name.toUpperCase()}</div>) : null
+
+                                        )
+                                    })}
+                                </div>
+                            }
+                        </Nav>
+
+                    </div>
+                </Navbar>
+                {
+                    isOpen && (
+                        <Modal isOpen={true} onClose={this.closeModal}>
+                            <ContactUs onClose={this.closeModal} />
+                        </Modal>
+                    )
+                }
+            </>
         );
     }
 }

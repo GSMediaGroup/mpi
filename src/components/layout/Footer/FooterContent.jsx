@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Row, Col } from "reactstrap";
-import VideoModal from '../../Modal/VideoModal';
+
+import VideoModal from '../../Modal/Modal';
+import GoogleMap from '../../layout/Footer/GoogleMap';
+import ContactUs from '../../pages/ContactUs';
 
 import { withTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -19,67 +22,80 @@ class FooterContent extends Component {
 
     state = {
         openModal : false,
+        modalContent : ``,
     };
 
     constructor(props) {
         super(props);
 
         this.openMap = this.openMap.bind(this);
-        this.openContactUs = this.openContactUs.bind(this);
+        this.openContact = this.openContact.bind(this);
+        this.onClose = this.onClose.bind(this);
     }
 
     openMap () {
         this.setState({
-            openMapModal : true,
+            openModal : true,
+            modalContent : <GoogleMap />
         });
     }
 
-    openContactUs () {
-
+    openContact () {
+        this.setState({
+            openModal : true,
+            modalContent : <ContactUs onClose={this.onClose} />
+        });
     }
 
-    closeModal () {
+    onClose () {
         this.setState({
             openModal : false,
-        });
+            modalContent : ``,
+        })
     }
 
-
     render() {
+        const { openModal, modalContent } = this.state;
 
-        let footerItems = [
+        const footerItems = [
             { text: this.props.t('FOOTER_ADDRESS'), icon: marker, textClassName: "icon-description", iconClassName: "location", cb : this.openMap },
-            { text: "haruta@myperfectidea.net", icon: message, textClassName: "icon-description", iconClassName: "email", cb : this.openContactUs },
+            { text: "haruta@myperfectidea.net", icon: message, textClassName: "icon-description", iconClassName: "email", cb : this.openContact},
             { text: "+374 98 91 67 78", icon: phone, textClassName: "icon-description", iconClassName: "phone"},
         ];
 
-        let footerSocialItems = [
+        const footerSocialItems = [
             { icon: fb, offset: 1 },
             { icon: twitter, offset: 0 },
             { icon: instagram, offset: 0 },
             { icon: google, offset: 0 },
             { icon: youtube, offset: 0 },
         ];
-
         return (
             <>
                 <Col className="mx-auto">
                     <Row>
                         {
-                            footerItems.map((item, index) =>
-                                <Col className="main-content hover-main-content" lg={{ size: 3 }} md={{ size: 3 }} key={index} onClick={item.cb} >
-                                    <Row>
-                                        <Col className="pb-1" lg={{ size: 12 }} md={{ size: 12 }}>
-                                            <Link to='/' className={item.iconClassName}>
-                                                <img src={item.icon} alt="Brand Logo" />
-                                            </Link>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className={item.textClassName} lg={{ size: 12 }} md={{ size: 12 }}>{item.text}</Col>
-                                    </Row>
-                                </Col>
-                            )
+                            footerItems.map((item, index) => {
+                                let text = ( item.iconClassName === 'phone' ) ? <a href={`tel:${item.text}`}>{ item.text }</a> : item.text;
+
+                                return (
+                                    <Col className="main-content hover-main-content" lg={{size: 3}} md={{size: 3}}
+                                         key={index} onClick={item.cb}>
+                                        <Row>
+                                            <Col className="pb-1" lg={{size: 12}} md={{size: 12}}>
+                                                <Link to='/' className={item.iconClassName}>
+                                                    <img src={item.icon} alt="Brand Logo"/>
+                                                </Link>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col className={item.textClassName} lg={{size: 12}}
+                                                 md={{size: 12}}>{ text }
+                                            </Col>
+                                        </Row>
+                                    </Col>
+                                )
+                            })
                         }
                         <Col className="main-content social-content" lg={{ size: 3 }} md={{ size: 3 }}>
                             <Row>
@@ -101,21 +117,13 @@ class FooterContent extends Component {
                     </Row>
                 </Col>
                 {/*MAP MODAL*/}
-                <VideoModal isOpenModal={this.state.openMapModal}>
-                    <div className="mapouter">
-                        <div className="gmap_canvas">
-                            <iframe width="600"
-                                    height="500"
-                                    id="gmap_canvas"
-                                    src="https://maps.google.com/maps?q=IT%20Park%20Business%20Center%20Abelyan%206%2F1%2C%20Yerevan%20Armenia&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                    frameBorder="0"
-                                    scrolling="no"
-                                    marginHeight="0"
-                                    marginWidth="0"
-                            />
-                        </div>
-                    </div>
-                </VideoModal>
+                {
+                    openModal && (
+                        <VideoModal isOpen={true} onClose={this.onClose}>
+                            { modalContent }
+                        </VideoModal>
+                    )
+                }
             </>
         );
     }

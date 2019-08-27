@@ -78,9 +78,9 @@ a {
 }
 
 .ReactModal__Overlay--after-open{
-  position: fixed;
+  position: fixed !important;
   z-index: 100000000000000000;
-  background: rgba(0,0,0,0.7)!important;
+  background: rgba(0,0,0,0.8) !important;
 }
 
 .form{
