@@ -15,9 +15,9 @@ class WebDevelopment extends Component {
 
     render() {
         const programingTech = [
-            { src: Android, alt: `OUR_SERVICES_BLOCK_2_LOGO_1_ALT`, text: `OUR_SERVICES_BLOCK_2_LOGO_1_DESCRIPTION`, className:"pt-2 OUR_SERVICES_BLOCK_2_LOGO_1_DESCRIPTION" },
-            { src: Hybrid, alt: `OUR_SERVICES_BLOCK_2_LOGO_2_ALT`, text: `OUR_SERVICES_BLOCK_2_LOGO_2_DESCRIPTION`, className: "pt-2 OUR_SERVICES_BLOCK_2_LOGO_2_DESCRIPTION" },
-            { src: IOS, alt: `OUR_SERVICES_BLOCK_2_LOGO_3_ALT`, text: `OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION`, className:"pt-2 OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION" }
+            { src: Android, alt: `OUR_SERVICES_BLOCK_2_LOGO_1_ALT`, text: `OUR_SERVICES_BLOCK_2_LOGO_1_DESCRIPTION`, className:"pt-2 androidTitle" },
+            { src: Hybrid, alt: `OUR_SERVICES_BLOCK_2_LOGO_2_ALT`, text: `OUR_SERVICES_BLOCK_2_LOGO_2_DESCRIPTION`, className: "pt-2 hybridTitle" },
+            { src: IOS, alt: `OUR_SERVICES_BLOCK_2_LOGO_3_ALT`, text: `OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION`, className:"pt-2 iosTitle" }
         ];
 
         const title = `OUR_SERVICES_BLOCK_2_TITLE`;

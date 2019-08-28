@@ -61,10 +61,6 @@ class Modal extends React.Component {
     render() {
         return (
             <>
-                <div className="closeBtn" onClick={this.closeModal} >
-                    <FontAwesomeIcon icon={ faTimes } size='2x' />
-                </div>
-
                 <ReactModal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
@@ -74,6 +70,9 @@ class Modal extends React.Component {
                     ariaHideApp={false}
                     openModal={this.openModal}
                 >
+                    <div className="closeBtn" onClick={this.closeModal} >
+                        <FontAwesomeIcon icon={ faTimes } size='1x' />
+                    </div>
                     {this.props.children}
                 </ReactModal>
             </>

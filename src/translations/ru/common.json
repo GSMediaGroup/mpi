@@ -77,5 +77,8 @@
     "CONTACT_FORM_BUTTON" : "ОТПРАВИТЬ",
     "CONTACT_INFO_TITLE" : "Контакты",
     "FOOTER_SOCIAL_DESCRIPTION" : "We create perfect ideas",
-    "FOOTER_ADDRESS" : "IT Парк Бизнес-Центр, Армения Ереван ул. Абелян, 6/1"
+    "FOOTER_ADDRESS" : "IT Парк Бизнес-Центр, Армения Ереван ул. Абелян, 6/1",
+
+    "SENDING_ALERT_TITLE" : "СПАСИБО",
+    "SENDING_ALERT_TEXT" : "Ваше письмо отправлено"
 }

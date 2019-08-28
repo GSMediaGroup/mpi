@@ -11,16 +11,17 @@
     .popup{
         margin: 0 auto;
         .popup-close{
-            position: absolute;
-            right: 10px;
-            top: 10px;
+            display: flex;
             border: none;
-            background: rgba(0,0,0,-0.5);
+            background: rgba(0, 0, 0, 0);
             color: white;
-            font-size: 30px;
+            font-size: 20px;
             outline: none;
             transition: 0.3s ease-in-out;
-            cursor:pointer;
+            cursor: pointer;
+            justify-content: flex-end;
+            margin-right: -36px;
+            margin-bottom: -8px;
 
             &:hover{
                 color:#3db9d1;

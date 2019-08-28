@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import { Link, NavLink } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {
     Navbar,
     Nav,
@@ -8,7 +8,7 @@ import {
 } from 'reactstrap';
 
 import i18next from 'i18next';
-import { withTranslation } from "react-i18next";
+import {withTranslation} from "react-i18next";
 
 import Modal from '../../Modal/Modal';
 import ContactUs from '../../pages/ContactUs';
@@ -22,7 +22,7 @@ class HeaderNavbar extends Component {
         mobileMenuOpened: false,
         display: 'none',
         activeLng: 'en',
-        isOpen : false,
+        isOpen: false,
     };
 
     constructor(props) {
@@ -37,6 +37,14 @@ class HeaderNavbar extends Component {
     }
 
     componentDidMount() {
+        const lang = localStorage.getItem(`lang`);
+
+        if(lang) {
+           this.setState({
+               activeLng : lang,
+           }) ;
+        }
+
         window.addEventListener('scroll', this.handleScroll, true);
     }
 
@@ -63,24 +71,26 @@ class HeaderNavbar extends Component {
 
     scrollToSection(id) {
         return (e) => {
-            const elem = ( id !== 'services' ) ? document.getElementById(id) : document.getElementsByClassName(`serviceIcon`)[0];
+            const elem = (id !== 'services') ? document.getElementById(id) : document.getElementsByClassName(`serviceIcon`)[0];
             e.preventDefault();
 
-            elem.scrollIntoView({ behavior: 'smooth' });
+            elem.scrollIntoView({behavior: 'smooth'});
         };
 
 
     }
 
-    openModal() {
+    openModal(e) {
+        e.preventDefault();
+
         this.setState({
-            isOpen : true,
+            isOpen: true,
         });
     }
 
-    closeModal () {
+    closeModal() {
         this.setState({
-            isOpen : false,
+            isOpen: false,
         });
     }
 
@@ -88,45 +98,10 @@ class HeaderNavbar extends Component {
      * Change font family in
      */
     setCustomStyles(lng) {
-        let hElements = [...document.getElementsByTagName('h1'), ...document.getElementsByTagName('h2'), ...document.getElementsByTagName('h3'),
-        ...document.getElementsByTagName('h4', ...document.getElementsByTagName('h5'), ...document.getElementsByTagName('h6'))
-        ];
+        document.body.classList.remove("lang-ru");
+        document.body.classList.remove("lang-en");
 
-        if (lng == 'en') {
-            //change ios button inner text style - break the word
-            document.getElementsByClassName('OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION')[0].style.width = '100%';
-            document.getElementsByClassName('OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION')[0].style.margin = 'none';
-            // change 3 options style in About component
-            [...document.getElementsByClassName('about-option')].map((i) => i.style.fontSize = '24px');
-            // change the text in h1 in heroTitle
-            document.getElementsByClassName('heroTitle')[0].firstChild.style.fontSize = '50px';
-            // change the we care big text size
-            (document.getElementsByClassName('circle')[0].firstChild).style.fontSize = '50px';
-            // change the we care big text and his description lineHeight size
-            document.getElementsByClassName('circle')[0].style.lineHeight = '';
-            // change the all h1, h2, ... h6 elements font family in page
-            hElements.map((i) => {
-                i.style.fontFamily = '"Candal", sans-serif';
-                i.style.fontWeight = '100';
-            });
-        } else {
-            // change the all h1, h2, ... h6 elements font family in page
-            hElements.map((i) => {
-                i.style.fontFamily = '"Roboto Condensed", sans-serif';
-                i.style.fontWeight = 'bold';
-            });
-            //change ios button inner text style - break the word
-            document.getElementsByClassName('OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION')[0].style.width = '72%';
-            document.getElementsByClassName('OUR_SERVICES_BLOCK_2_LOGO_3_DESCRIPTION')[0].style.margin = '0 auto';
-            // change the text in h1 in heroTitle
-            document.getElementsByClassName('heroTitle')[0].firstChild.style.fontSize = '40px';
-            // change the we care big text and his description lineHeight size
-            document.getElementsByClassName('circle')[0].style.lineHeight = '45px';
-            // change the we care big text size
-            document.getElementsByClassName('circle')[0].firstChild.style.fontSize = '32px';
-            // change 3 options style in About component
-            [...document.getElementsByClassName('about-option')].map((i) => i.style.fontSize = '20px')
-        }
+        document.body.classList.add(`lang-${lng}`);
     }
 
     changeLanguage(name) {
@@ -138,6 +113,7 @@ class HeaderNavbar extends Component {
 
 
         i18next.changeLanguage(name, (err, t) => {
+            localStorage.setItem(`lang`, name);
 
             if (err) return console.log('something went wrong loading', err);
 
@@ -153,37 +129,39 @@ class HeaderNavbar extends Component {
         const mobileMenuClass = mobileMenuOpened ? "opened" : "closed";
 
         const navbarItems = [
-            { translateKey: `NAVBAR_SECTION_1`, to: `about`, customClass: ``, cb: this.scrollToSection },
-            { translateKey: `NAVBAR_SECTION_2`, to: `services`, customClass: ``, cb: this.scrollToSection },
-            { translateKey: `NAVBAR_SECTION_3`, to: `technologies`, customClass: ``, cb: this.scrollToSection },
-            { translateKey: `NAVBAR_SECTION_4`, to: `our-team`, customClass: ``, cb: this.scrollToSection },
-            { translateKey: `NAVBAR_SECTION_5`, to: `contacts`, customClass: ``, cb: this.openModal }
+            {translateKey: `NAVBAR_SECTION_1`, to: `about`, customClass: ``, cb: this.scrollToSection},
+            {translateKey: `NAVBAR_SECTION_2`, to: `services`, customClass: ``, cb: this.scrollToSection},
+            {translateKey: `NAVBAR_SECTION_3`, to: `technologies`, customClass: ``, cb: this.scrollToSection},
+            {translateKey: `NAVBAR_SECTION_4`, to: `our-team`, customClass: ``, cb: this.scrollToSection},
+            {translateKey: `NAVBAR_SECTION_5`, to: `contacts`, customClass: ``, cb: this.openModal},
         ];
 
         const languages = [
-            { imageSrc: logoEn, name: "en", cb: this.changeLanguage },
-            { imageSrc: logoRu, name: "ru", cb: this.changeLanguage },
+            {imageSrc: logoEn, name: "en", cb: this.changeLanguage},
+            {imageSrc: logoRu, name: "ru", cb: this.changeLanguage},
         ];
 
         return (
             <>
                 <Navbar expand="md" className="navbar-dark container">
-                    <Link style={{ display: this.state.display }} to='/' className="navbar-brand siteLogo">
-                        <img src={Logo} alt="Brand Logo" />
+                    <Link style={{display: this.state.display}} to='/' className="navbar-brand siteLogo">
+                        <img src={Logo} alt="Brand Logo"/>
+                        <small className="pl-2">+1 (678) 534 8794</small>
                     </Link>
 
                     <div className={`toggleButton d-md-none ${mobileMenuClass}`} onClick={this.toggleMobileMenu}>
-                        <span />
-                        <span />
-                        <span />
+                        <span/>
+                        <span/>
+                        <span/>
                     </div>
-                    {/* ${this.props.position} */}
-                    <div className={`navbar-collapse justify-content-end ${mobileMenuClass}`} id="navbarSupportedContent">
+
+                    <div className={`navbar-collapse justify-content-end ${mobileMenuClass}`}
+                         id="navbarSupportedContent">
                         <Nav navbar className="mr-0">
                             {
                                 navbarItems.map((row, index) => {
 
-                                    const method = ( row.to === 'contacts' ) ? row.cb : row.cb( row.to );
+                                    const method = (row.to === 'contacts') ? row.cb : row.cb(row.to);
 
                                     return (
                                         <NavItem key={index}>
@@ -206,7 +184,8 @@ class HeaderNavbar extends Component {
                                     {languages.map((lng, index) => {
                                         return (
                                             this.state.activeLng !== lng.name ? (
-                                                <div key={index} className="language" onClick={() => lng.cb(lng.name)}>{lng.name.toUpperCase()}</div>) : null
+                                                <div key={index} className="language"
+                                                     onClick={() => lng.cb(lng.name)}>{lng.name.toUpperCase()}</div>) : null
 
                                         )
                                     })}
@@ -219,7 +198,7 @@ class HeaderNavbar extends Component {
                 {
                     isOpen && (
                         <Modal isOpen={true} onClose={this.closeModal}>
-                            <ContactUs onClose={this.closeModal} />
+                            <ContactUs onClose={this.closeModal}/>
                         </Modal>
                     )
                 }

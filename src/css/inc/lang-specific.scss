@@ -1,0 +1,66 @@
+$title : h1, h2, h3, h4, h5, h6;
+
+
+.lang-en {
+  #{$title} {
+    font-family: "Candal", sans-serif;
+    font-weight: 100;
+  }
+
+  .hero-title {
+     &:first-child {
+        font-size:50px;
+     }
+  }
+
+  .circle {
+      line-height: unset;
+
+      :first-child {
+        font-size: 50px !important;
+      }
+
+  }
+
+  .about-option {
+    font-size:24px;
+  }
+
+  .iosTitle {
+    width:100%;
+    margin:0;
+  }
+}
+
+.lang-ru {
+  #{$title} {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+  }
+
+  .hero-title {
+    h1 {
+      //not working
+      font-size: 40px !important;
+    }
+  }
+
+  .circle {
+    line-height: 45px;
+
+    :first-child {
+      font-size: 30px !important;
+    }
+
+  }
+
+  .about-option {
+      font-size:20px;
+  }
+
+  .iosTitle {
+    width:72%;
+    margin:0 auto;
+  }
+}
+

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { withTranslation } from "react-i18next";
+import i18next from 'i18next';
 
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
@@ -20,6 +21,17 @@ class App extends Component {
 
         this.setHeaderInfo = this.setHeaderInfo.bind(this);
         this.renderComponent = this.renderComponent.bind(this);
+
+        let lang = localStorage.getItem("lang");
+
+        if (!lang) {
+            lang = "en";
+            localStorage.getItem(lang)
+        }
+
+
+        i18next.changeLanguage(lang);
+        document.body.classList.add(`lang-${lang}`);
     }
 
     setHeaderInfo(image, text) {
@@ -29,24 +41,33 @@ class App extends Component {
         });
     }
 
-    renderComponent(Component) {
-        return (props) => <Component {...props} />;
+    renderComponent(Component, hasLayout) {
+        return (props) => {
+            const { headerBg, headerText } = this.state;
+
+            if (!hasLayout) {
+                return <Component {...props} />;
+            } else {
+                return (
+                    <>
+                        <Header image={headerBg} text={headerText} />
+                        <Component {...props} />
+                        <Footer />
+                    </>
+                );
+            }
+        };
     }
 
     render() {
-        const { headerBg, headerText } = this.state;
 
         return (
             <BrowserRouter>
-                <Header image={headerBg} text={headerText} />
-
                 <Switch>
-                    <Route exact={true} path="/" render={this.renderComponent(Home)} />
-                    <Route exact={true} path="/services" render={this.renderComponent(Services)} />
-                    <Route path="*" render={this.renderComponent(Error404)} />
+                    <Route exact={true} path="/" render={this.renderComponent(Home, true)} />
+                    <Route exact={true} path="/services" render={this.renderComponent(Services, true)} />
+                    <Route path="*" render={this.renderComponent(Error404, false)} />
                 </Switch>
-
-                <Footer />
             </BrowserRouter>
         )
     }

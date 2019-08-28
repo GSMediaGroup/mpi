@@ -118,7 +118,8 @@ $contact_info_text_color: #999;
 
 .sendingAlert {
   background: white;
-  padding:10px 40px;
+  padding: 20px 80px;
+  box-shadow: 0 0 22px rgba(0,255,255,0.1);
 
   h3 {
     color: $contact_color_focused;
@@ -126,6 +127,7 @@ $contact_info_text_color: #999;
 
   p {
     font-size:14px;
+    color:#999;
   }
 
   .imageBlock {

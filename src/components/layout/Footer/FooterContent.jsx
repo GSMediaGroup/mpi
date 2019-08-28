@@ -60,7 +60,7 @@ class FooterContent extends Component {
         const footerItems = [
             { text: this.props.t('FOOTER_ADDRESS'), icon: marker, textClassName: "icon-description", iconClassName: "location", cb : this.openMap },
             { text: "haruta@myperfectidea.net", icon: message, textClassName: "icon-description", iconClassName: "email", cb : this.openContact},
-            { text: "+374 98 91 67 78", icon: phone, textClassName: "icon-description", iconClassName: "phone"},
+            { text: "+1 (678) 534 8794", icon: phone, textClassName: "icon-description", iconClassName: "phone"},
         ];
 
         const footerSocialItems = [

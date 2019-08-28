@@ -13,6 +13,7 @@ class ContactInfo extends Component {
 
     constructor (props) {
         super(props);
+
     }
 
     render () {
@@ -31,7 +32,7 @@ class ContactInfo extends Component {
         const contactAddress = [
             {icon : faMapMarkerAlt, text: this.props.t(address)},
             {icon : faEnvelope, text: ` haruta@mtperfectidea.net`},
-            {icon : faPhoneAlt, text: ` +374 98 916 778`},
+            {icon : faPhoneAlt, text: `+1 (678) 534 8794` },
         ];
 
 

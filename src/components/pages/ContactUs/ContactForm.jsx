@@ -15,7 +15,8 @@ class ContactForm extends Component {
         email: "",
         emailErr: ``,
         message: "",
-        messageErr: ``
+        messageErr: ``,
+        disabled: false
     };
 
     constructor(props) {
@@ -25,34 +26,39 @@ class ContactForm extends Component {
         this.changeInputVal = this.changeInputVal.bind(this);
     }
 
-     sendMail(e) {
+    async sendMail(e) {
+        this.setState({
+            disabled: true,
+        });
+
         e.preventDefault();
 
-        // const {name, email, message} = this.state;
-        // const response = await fetch(SEND_MAIL_URL, {
-        //     method: "POST",
-        //     // mode:'no-cors',
-        //     body: `name=${name}&email=${email}&message=${message}`,
-        //     headers: {
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'application/x-www-form-urlencoded',
-        //     },
-        // });
-        //
-        // const data = await response.json();
-        // if (data.status == "success") {
-        //     this.props.onClose();
-        // } else {
-        //     const { errors } = data;
-        //
-        //     const stateItems = {};
-        //     Object.keys(errors).forEach(error => {
-        //         stateItems[error + "Err"] = errors[error];
-        //     });
-        //
-        //     this.setState(stateItems);
-        // }
-        this.props.msgSending();
+        const {name, email, message} = this.state;
+        const response = await fetch(SEND_MAIL_URL, {
+            method: "POST",
+            body: `name=${name}&email=${email}&message=${message}`,
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+        });
+
+        const data = await response.json();
+        if (data.status == "success") {
+            this.props.msgSending();
+        } else {
+            this.setState({
+                disabled:false
+            });
+            const { errors } = data;
+
+            const stateItems = {};
+            Object.keys(errors).forEach(error => {
+                stateItems[error + "Err"] = errors[error];
+            });
+
+            this.setState(stateItems);
+        }
 
     }
 
@@ -129,6 +135,7 @@ class ContactForm extends Component {
                             <Col className="pl-0 pr-0" lg={{size: 4, offset: 4}} md={{size: 4, offset: 4}}>
                                 <Button className="submit-btn"
                                         onClick={this.sendMail}
+                                        disabled={this.state.disabled}
                                 >
                                     {this.props.t(contactFormButton)}
                                 </Button>
