@@ -48,7 +48,7 @@ class HeroTitle extends Component {
                 <div className="hero-main  d-flex flex-wrap">
                     <Link style={{ display: this.state.display }} to='/' className="navbar-brand siteLogo">
                         <img src={Logo} alt="Brand Logo" />
-                        <small className="pl-2">+1 (678) 534 8794</small>
+                        <small className="pl-4">+1 (678) 534 8794</small>
                     </Link>
                     <div className="heroTitle d-flex flex-wrap align-content-center">
 

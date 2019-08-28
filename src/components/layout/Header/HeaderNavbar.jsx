@@ -136,17 +136,12 @@ class HeaderNavbar extends Component {
             {translateKey: `NAVBAR_SECTION_5`, to: `contacts`, customClass: ``, cb: this.openModal},
         ];
 
-        const languages = [
-            {imageSrc: logoEn, name: "en", cb: this.changeLanguage},
-            {imageSrc: logoRu, name: "ru", cb: this.changeLanguage},
-        ];
-
         return (
             <>
                 <Navbar expand="md" className="navbar-dark container">
                     <Link style={{display: this.state.display}} to='/' className="navbar-brand siteLogo">
                         <img src={Logo} alt="Brand Logo"/>
-                        <small className="pl-2">+1 (678) 534 8794</small>
+                        <small className="pl-4">+1 (678) 534 8794</small>
                     </Link>
 
                     <div className={`toggleButton d-md-none ${mobileMenuClass}`} onClick={this.toggleMobileMenu}>

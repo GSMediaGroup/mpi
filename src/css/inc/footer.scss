@@ -2,65 +2,33 @@ footer {
   color:$footer-text-color;
 
   &#footer {
-    // background-image: url('../images/bg-footer.jpg');
     background-color: #353b5b;
 
     .main-content{
       cursor: pointer;
       margin: 40px 0;
       text-align: center;
-      // border-left: .2px solid rgba(173, 171, 171, 0.5);
       border-right: .5px solid rgba(173, 171, 171, 0.5);
-      .phone, .email, .location{
-       img{
-         width: 30px;
-         height: 30px;
-         opacity: 0.5;
 
-       }
+      .phone,
+      .email,
+      .location {
+         img{
+           width: 30px;
+           height: 30px;
+           opacity: 0.5;
+
+         }
       }
       .icon-description{
         font-size: 13px;
         color: rgba(173, 171, 171, 0.7);
       }
     }
-    
-    .social-content{
-        color: rgba(173, 171, 171, 0.7);
-        border-right: 0;
-        font-size: 14px;
-        img{
-          width: 30px;
-          height: 30px;
-          opacity: 0.5;
-        }
-        .for-hover-icon:hover{
-          img{
-            opacity: 1;
-          }
-        }
-        
-    }
-    .social-content:hover{
-      .for-hover-description{
-        color: white;
-      }
-      // border-left: .2px solid rgba(173, 171, 171, 1);
-      // border-right: .2px solid rgba(173, 171, 171, 1);
-    }
 
-    .hover-main-content:hover{
-      color: white;
-      // border-left: .2px solid rgba(173, 171, 171, 1);
-      // border-right: .2px solid rgba(173, 171, 171, 1);
-      .icon-description{
-        color: white;
-      }
-      img{
-        opacity: 1;
-      }
+    .changeLng {
+
     }
-    
     
   }
 
