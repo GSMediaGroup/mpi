@@ -13,22 +13,6 @@ h2 {
   color:$h2_color;
 }
 
-.siteLogo {
-  display: flex;
-  width: 70px;
-  object-fit: contain;
-  transition:0.6s ease;
-
-  img {
-    width:100%;
-    height:auto;
-  }
-  &:hover {
-    transform:scale(1.1);
-  }
-
-}
-
 ul {
   padding-left:0;
 }
@@ -83,6 +67,7 @@ a {
   background: rgba(0,0,0,0.8) !important;
 }
 
+
 .form{
   width: 500px;
 }
@@ -99,7 +84,7 @@ a {
 
 .closeBtn {
   position: absolute;
-  top: 0;
+  top: 2px;
   right: 0;
   color: white;
   z-index: 1;

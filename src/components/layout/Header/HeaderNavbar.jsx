@@ -7,15 +7,12 @@ import {
     NavItem
 } from 'reactstrap';
 
-import i18next from 'i18next';
 import {withTranslation} from "react-i18next";
 
 import Modal from '../../Modal/Modal';
 import ContactUs from '../../pages/ContactUs';
 
 import Logo from '../../../images/mpi.png';
-import logoEn from '../../../images/en_.jpg';
-import logoRu from '../../../images/ru.png';
 
 class HeaderNavbar extends Component {
     state = {
@@ -33,37 +30,29 @@ class HeaderNavbar extends Component {
 
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.scrollToSection = this.scrollToSection.bind(this);
-        this.changeLanguage = this.changeLanguage.bind(this);
     }
 
-    componentDidMount() {
-        const lang = localStorage.getItem(`lang`);
+    // componentDidMount() {
+    //     console.log('sda');
+    //
+    //     const lang = localStorage.getItem(`lang`);
+    //
+    //     if(lang) {
+    //        this.setState({
+    //            activeLng : lang,
+    //        }) ;
+    //     }
+    //
+    //     if(this.state.mobileMenuOpened) {
+    //         window.addEventListener('click', this.toggleMobileMenu);
+    //     }
+    // }
+    //
+    // componentWillUnmount() {
+    //     window.removeEventListener('click', this.toggleMobileMenu);
+    // }
 
-        if(lang) {
-           this.setState({
-               activeLng : lang,
-           }) ;
-        }
-
-        window.addEventListener('scroll', this.handleScroll, true);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    }
-
-    handleScroll = () => {
-        let styleObject = {};
-        if (window.scrollY <= 10) {
-            styleObject['display'] = 'none';
-        } else {
-            styleObject['display'] = 'block';
-        }
-        this.setState(styleObject)
-    };
-
-
-    toggleMobileMenu() {
+    toggleMobileMenu(e) {
         this.setState({
             mobileMenuOpened: !this.state.mobileMenuOpened,
         });
@@ -89,35 +78,10 @@ class HeaderNavbar extends Component {
     }
 
     closeModal() {
+        document.body.style.overflowY = `scroll`;
+
         this.setState({
             isOpen: false,
-        });
-    }
-
-    /**
-     * Change font family in
-     */
-    setCustomStyles(lng) {
-        document.body.classList.remove("lang-ru");
-        document.body.classList.remove("lang-en");
-
-        document.body.classList.add(`lang-${lng}`);
-    }
-
-    changeLanguage(name) {
-        this.setCustomStyles(name);
-
-        this.setState({
-            activeLng: name
-        });
-
-
-        i18next.changeLanguage(name, (err, t) => {
-            localStorage.setItem(`lang`, name);
-
-            if (err) return console.log('something went wrong loading', err);
-
-            // t('key'); // -> same as i18next.t
         });
     }
 
@@ -139,19 +103,21 @@ class HeaderNavbar extends Component {
         return (
             <>
                 <Navbar expand="md" className="navbar-dark container">
-                    <Link style={{display: this.state.display}} to='/' className="navbar-brand siteLogo">
+                    <Link to='/' className="navbar-brand siteLogo">
                         <img src={Logo} alt="Brand Logo"/>
-                        <small className="pl-4">+1 (678) 534 8794</small>
+                        <span className="phone-number">+1 (678) 534 8794</span>
                     </Link>
 
-                    <div className={`toggleButton d-md-none ${mobileMenuClass}`} onClick={this.toggleMobileMenu}>
+                    <div className={`toggleButton ${mobileMenuClass}`} onClick={this.toggleMobileMenu}>
                         <span/>
                         <span/>
                         <span/>
                     </div>
 
                     <div className={`navbar-collapse justify-content-end ${mobileMenuClass}`}
-                         id="navbarSupportedContent">
+                         id="navbarSupportedContent"
+                         onClick={(e) => e.stopPropagation()}
+                    >
                         <Nav navbar className="mr-0">
                             {
                                 navbarItems.map((row, index) => {
@@ -173,18 +139,6 @@ class HeaderNavbar extends Component {
                                     )
 
                                 })
-                            }
-                            {
-                                <div className="language-content">
-                                    {languages.map((lng, index) => {
-                                        return (
-                                            this.state.activeLng !== lng.name ? (
-                                                <div key={index} className="language"
-                                                     onClick={() => lng.cb(lng.name)}>{lng.name.toUpperCase()}</div>) : null
-
-                                        )
-                                    })}
-                                </div>
                             }
                         </Nav>
 

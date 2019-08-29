@@ -26,39 +26,41 @@ class ContactForm extends Component {
         this.changeInputVal = this.changeInputVal.bind(this);
     }
 
-    async sendMail(e) {
-        this.setState({
-            disabled: true,
-        });
+    /*async*/ sendMail(e) {
+        // this.setState({
+        //     disabled: true,
+        // });
+        //
+        // e.preventDefault();
+        //
+        // const {name, email, message} = this.state;
+        // const response = await fetch(SEND_MAIL_URL, {
+        //     method: "POST",
+        //     body: `name=${name}&email=${email}&message=${message}`,
+        //     headers: {
+        //         'Accept': 'application/json',
+        //         'Content-Type': 'application/x-www-form-urlencoded',
+        //     },
+        // });
+        //
+        // const data = await response.json();
+        // if (data.status == "success") {
+        //     this.props.msgSending();
+        // } else {
+        //     this.setState({
+        //         disabled:false
+        //     });
+        //     const { errors } = data;
+        //
+        //     const stateItems = {};
+        //     Object.keys(errors).forEach(error => {
+        //         stateItems[error + "Err"] = errors[error];
+        //     });
+        //
+        //     this.setState(stateItems);
+        // }
 
-        e.preventDefault();
-
-        const {name, email, message} = this.state;
-        const response = await fetch(SEND_MAIL_URL, {
-            method: "POST",
-            body: `name=${name}&email=${email}&message=${message}`,
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-        });
-
-        const data = await response.json();
-        if (data.status == "success") {
-            this.props.msgSending();
-        } else {
-            this.setState({
-                disabled:false
-            });
-            const { errors } = data;
-
-            const stateItems = {};
-            Object.keys(errors).forEach(error => {
-                stateItems[error + "Err"] = errors[error];
-            });
-
-            this.setState(stateItems);
-        }
+        this.props.msgSending();
 
     }
 

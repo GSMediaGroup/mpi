@@ -46,12 +46,7 @@ class HeroTitle extends Component {
         return (
             <>
                 <div className="hero-main  d-flex flex-wrap">
-                    <Link style={{ display: this.state.display }} to='/' className="navbar-brand siteLogo">
-                        <img src={Logo} alt="Brand Logo" />
-                        <small className="pl-4">+1 (678) 534 8794</small>
-                    </Link>
                     <div className="heroTitle d-flex flex-wrap align-content-center">
-
                         <h1>{this.props.t('HERO_TITLE_HEADER')}</h1>
                         <p className="pb-1 pb-md-4">{this.props.t('HERO_TITLE_DESCRIPTION')}</p>
                         <Link className="more" to="#" onClick={this.scrollToAbout}>{this.props.t('HERO_TITLE_MORE_BUTTON')}</Link>

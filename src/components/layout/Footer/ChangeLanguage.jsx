@@ -1,28 +1,71 @@
 import React, {Component} from "react";
-import {withTranslate} from "react-i18next";
+import {withTranslation} from "react-i18next";
+import i18next from 'i18next';
 import {Col, Row} from "reactstrap";
 import logoEn from "../../../images/en_.jpg";
 import logoRu from "../../../images/ru.png";
 
 class ChangeLanguage extends Component {
+
+    state = {
+        lang: `en`,
+    };
+
     constructor(props) {
         super(props);
+
+        this.changeLng = this.changeLng.bind(this);
+    }
+
+    componentDidMount() {
+        let lang = localStorage.getItem(`lang`);
+
+        if (lang) {
+            this.setState({
+                lang: lang
+            });
+        }
+    }
+
+    changeLng() {
+        let changeTo = `ru`;
+
+        if (i18next.language === `ru`) {
+            changeTo = `en`;
+        }
+
+        this.setState({
+            lang: changeTo,
+        });
+
+        i18next.changeLanguage(changeTo, () => {
+            localStorage.setItem('lang', changeTo);
+        });
+
+
+        document.body.classList.remove("lang-ru");
+        document.body.classList.remove("lang-en");
+
+        document.body.classList.add(`lang-${changeTo}`);
+    }
+
+    langIcon() {
+        let lang = (this.state.lang === `en` ? `ru` : `en`);
+
+        return lang.toUpperCase();
     }
 
     render() {
-        const languages = [
-            {imageSrc: logoEn, name: "en", cb: this.changeLanguage},
-            {imageSrc: logoRu, name: "ru", cb: this.changeLanguage},
-        ];
-
 
         return (
-            <Col className="changeLng" lg={{ size: 3 }} md={{ size: 3 }}>
-                <Row className="lng" onClick={this}>
-                    <p>{ activeLng }</p>
+            <Col className="main-content" lg={{size: 3}} md={{size: 3}}>
+                <Row className="pb-1 col-md-12 col-lg-12 m-0">
+                    <span className="change-lng"  onClick={this.changeLng}>{this.langIcon()}</span>
                 </Row>
                 <Row>
-                    <Col lg={{ size: 12 }} md={{ size: 12 }} className="for-hover-description">{this.props.t('FOOTER_CHANGE_LANGUAGE')}</Col>
+                    <Col lg={12} md={12} className="changeLngText">
+                        <span onClick={this.changeLng}>{this.props.t('FOOTER_CHANGE_LANGUAGE')}</span>
+                    </Col>
                 </Row>
 
             </Col>
@@ -30,4 +73,4 @@ class ChangeLanguage extends Component {
     }
 }
 
-export default withTranslate()(ChangeLanguage);
+export default withTranslation()(ChangeLanguage);

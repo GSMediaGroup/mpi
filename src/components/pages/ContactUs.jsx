@@ -25,6 +25,10 @@ class ContactUs extends Component {
         this.setState({
             content : <SendingAlert />
         });
+
+        setTimeout(() => {
+            this.props.onClose()
+        }, 2000);
     }
 
     componentDidMount() {

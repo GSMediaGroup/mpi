@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import { withTranslation } from 'react-i18next';
+import {withTranslation} from 'react-i18next';
 
 class HeroServices extends Component {
 
-    constructor (props) {
+    constructor(props) {
         super(props);
     }
 
-    render () {
+    render() {
         const {src, alt, header} = this.props;
         const btnText = 'HERO_SERVICES_DETAILS_BUTTON';
 
@@ -18,7 +18,7 @@ class HeroServices extends Component {
                     <img className="pb-3" src={src} alt={alt}/>
                     <h6>{this.props.t(header)}</h6>
                 </div>
-                <div className=" pt-4 bottomPart">
+                <div className="bottomPart">
                     <Link to="#" onClick={this.props.onTypeChange}>{this.props.t(btnText)}</Link>
                 </div>
             </div>

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { withTranslation } from "react-i18next";
+import React, {Component} from "react";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {withTranslation} from "react-i18next";
 import i18next from 'i18next';
 
 import Header from "./layout/Header";
@@ -19,7 +19,6 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.setHeaderInfo = this.setHeaderInfo.bind(this);
         this.renderComponent = this.renderComponent.bind(this);
 
         let lang = localStorage.getItem("lang");
@@ -34,25 +33,21 @@ class App extends Component {
         document.body.classList.add(`lang-${lang}`);
     }
 
-    setHeaderInfo(image, text) {
-        this.setState({
-            headerBg: image,
-            headerText: text,
-        });
+    changeLanguage(lang) {
+
     }
 
     renderComponent(Component, hasLayout) {
         return (props) => {
-            const { headerBg, headerText } = this.state;
 
             if (!hasLayout) {
                 return <Component {...props} />;
             } else {
                 return (
                     <>
-                        <Header image={headerBg} text={headerText} />
+                        <Header/>
                         <Component {...props} />
-                        <Footer />
+                        <Footer/>
                     </>
                 );
             }
@@ -64,9 +59,11 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route exact={true} path="/" render={this.renderComponent(Home, true)} />
-                    <Route exact={true} path="/services" render={this.renderComponent(Services, true)} />
-                    <Route path="*" render={this.renderComponent(Error404, false)} />
+                    <Route exact={true} path="/" render={this.renderComponent(Home, true)}/>
+                    <Route exact={true} path="/services" render={this.renderComponent(Services, true)}/>
+                    <Route exact={true} path="/en" render={this.changeLanguage(`en`)}/>
+                    <Route exact={true} path="/ru" render={this.changeLanguage(`ru`)}/>
+                    <Route path="*" render={this.renderComponent(Error404, false)}/>
                 </Switch>
             </BrowserRouter>
         )

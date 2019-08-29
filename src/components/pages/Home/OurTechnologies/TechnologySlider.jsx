@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import Slider from "../../../react-slick";
 
 export default class Technologies extends Component {
+    state = {
+        slidesToShow : (window.innerWidth <= 992 ? 2 : 4),
+    };
+
     constructor(props) {
         super(props);
     }
@@ -14,7 +18,7 @@ export default class Technologies extends Component {
             infinite: true,
             speed: 500,
             arrows: false,
-            slidesToShow: 4,
+            slidesToShow: this.state.slidesToShow,
             slidesToScroll: 3,
             autoplay: false,
         };

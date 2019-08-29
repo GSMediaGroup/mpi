@@ -64,19 +64,19 @@ class About extends Component {
                                 <li><span className="number">3</span><span className="about-option">{this.props.t(rows['3'])}</span></li>
                             </ul>
                         </Col>
-                        <Col className="col-12 col-md-7 offset-md-1 videoPlay p-0" onClick={this.playVideo}>
+                        <Col className="col-12 col-xl-7 offset-xl-1 videoPlay" onClick={this.playVideo}>
                             <img src={MPIVideoBg} alt="MPI Video"/>
                         </Col>
                     </Row>
                 </div>
                 {this.state.isOpen && (
                     <VideoModal isOpen={true} onClose={this.onClose}>
-                        <Container>
+                        <Container className="p-0">
                             <Player autoPlay
                                     playsInline
                                     onPlay={this.playVideo}
-                                    width={975}
-                                    height={550}
+                                    width={900}
+                                    height={507}
                                     fluid={false}>
                                 <source src={MPIVideoMp4} type="video/mp4"/>
                                 <source src={MPIVideoWebM} type="video/webm"/>

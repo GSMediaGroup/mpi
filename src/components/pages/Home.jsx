@@ -15,6 +15,7 @@ export default class Home extends Component {
         type: MOBILE_DEVELOPMENT,
     };
 
+
     constructor (props) {
         super(props);
 

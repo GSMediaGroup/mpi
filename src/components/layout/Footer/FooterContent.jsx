@@ -44,6 +44,8 @@ class FooterContent extends Component {
     }
 
     onClose () {
+        document.body.style.overflowY = `scroll`;
+
         this.setState({
             openModal : false,
             modalContent : ``,
@@ -87,7 +89,6 @@ class FooterContent extends Component {
                                 )
                             })
                         }
-
                        <ChangeLanguage />
                     </Row>
                 </Col>
