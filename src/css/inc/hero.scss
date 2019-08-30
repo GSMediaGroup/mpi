@@ -1,3 +1,13 @@
+/**
+  * RESPONSIVE
+    * WIDTH
+      * 1024px
+      * 992px
+      * 500px & 636px
+      * 360px & 499px
+      * > 359px
+ */
+
 $hero_bg_color: #353b5b;
 $hero_text_color: #fff;
 
@@ -133,22 +143,23 @@ $hero_text_color: #fff;
 
   }
 
-  @media (max-width:1024px) {
+  @media (max-width: 1024px) {
+
     .heroContent {
       flex-direction: column;
 
       .container {
-        height:63%;
+        height: 63%;
       }
 
       .heroService {
-        display:flex;
-        max-width:100%;
+        display: flex;
+        max-width: 100%;
         position: absolute;
         bottom: 0;
 
         .serviceItem {
-          height:250px;
+          height: 250px;
         }
       }
     }
@@ -170,7 +181,7 @@ $hero_text_color: #fff;
     }
 
     .heroService {
-      width: 100% !important;
+      //width: 100% !important;
 
 
       .serviceItem {
@@ -183,15 +194,16 @@ $hero_text_color: #fff;
     }
   }
 
-  @media (min-width:500px ) and (max-width:636px) {
+  @media (min-width: 500px) and (max-width: 636px) {
     .hero-main {
       .heroTitle {
-        width: 230px;
-        height: 230px;
-        font-size:13px;
+        max-width: 230px;
+        max-height: 230px;
+        font-size: 13px;
+        padding: 35px;
 
         h1 {
-          font-size:28px;
+          font-size: 28px;
         }
 
         .more {
@@ -205,7 +217,7 @@ $hero_text_color: #fff;
       .heroService {
 
         .serviceItem {
-          height:180px;
+          max-height: 150px;
 
           .topPart {
 
@@ -217,14 +229,15 @@ $hero_text_color: #fff;
           }
 
           .bottomPart {
-            font-size:13px;
+            font-size: 13px;
+
             a {
               padding: 1px 16px;
             }
           }
 
           h6 {
-            font-size:14px;
+            font-size: 14px;
           }
         }
       }
@@ -232,16 +245,16 @@ $hero_text_color: #fff;
   }
 
 
-  @media (min-width:360px) and (max-width:499px) {
+  @media (min-width: 360px) and (max-width: 499px) {
     .hero-main {
       .heroTitle {
         width: 200px;
         height: 200px;
-        font-size:13px;
+        font-size: 13px;
         padding: 21px;
 
         h1 {
-          font-size:28px;
+          font-size: 28px;
         }
 
         .more {
@@ -253,16 +266,16 @@ $hero_text_color: #fff;
     .heroContent {
 
       .container {
-        height:75%;
+        height: 75%;
       }
 
       .heroService {
         //flex-direction:row;
 
         .serviceItem {
-          height:unset;
+          height: unset;
           padding: 15px 0;
-          width:100%;
+          width: 100%;
 
 
           .topPart {
@@ -284,52 +297,57 @@ $hero_text_color: #fff;
           }
 
           h6 {
-            font-size:12px;
+            font-size: 12px;
           }
         }
       }
     }
   }
 
-  @media (max-width:320px) {
+  @media (max-width: 359px) {
     .hero-main {
 
       .heroTitle {
-        position: relative;
         width: 200px;
         height: 200px;
-        margin-left: 0;
-        background: #3db9d1;
-        border-radius: 50%;
-        white-space: nowrap;
-        padding: 1px 0 0 20px;
-        z-index: 2;
+        padding: 30px;
 
+        a,
         p {
-          font-size:14px;
+          font-size: 14px;
+        }
+
+        h1 {
+          font-size: 30px;
         }
 
         .bottomPart {
-          height:unset;
+          height: unset;
           width: 0;
         }
 
         a {
-          padding: 2px 16px;
+          padding: 2px 12px;
         }
       }
     }
 
     .heroService {
-      flex-direction:column;
+      //flex-direction:column;
 
       .serviceItem {
-        height:unset !important;
-        justify-content: center;
-        padding-top:13px;
+        height: unset !important;
+        //justify-content: center;
+        padding-top: 13px;
 
-        .topPart img {
-          width: 40px;
+        .topPart {
+          img {
+            max-width: 30px;
+          }
+
+          h6 {
+            font-size: 14px;
+          }
         }
 
 

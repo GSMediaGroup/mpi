@@ -42,13 +42,18 @@ class HeroTitle extends Component {
 
 
     render() {
+        const description = window.innerWidth > 500
+            ? 'HERO_TITLE_DESCRIPTION'
+            : 'HERO_TITLE_DESCRIPTION_MOBILE';
+
+        // console.log({ description, a: window.innerWidth })
 
         return (
             <>
                 <div className="hero-main  d-flex flex-wrap">
                     <div className="heroTitle d-flex flex-wrap align-content-center">
                         <h1>{this.props.t('HERO_TITLE_HEADER')}</h1>
-                        <p className="pb-1 pb-md-4">{this.props.t('HERO_TITLE_DESCRIPTION')}</p>
+                        <p className="pb-1 pb-md-4" dangerouslySetInnerHTML={{ __html: this.props.t(description) }} />
                         <Link className="more" to="#" onClick={this.scrollToAbout}>{this.props.t('HERO_TITLE_MORE_BUTTON')}</Link>
                     </div>
                 </div>

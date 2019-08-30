@@ -1,4 +1,4 @@
-$title : h1, h2, h3, h4, h5, h6;
+$title: h1, h2, h3, h4, h5, h6;
 
 
 .lang-en {
@@ -8,27 +8,27 @@ $title : h1, h2, h3, h4, h5, h6;
   }
 
   .hero-title {
-     &:first-child {
-        font-size:50px;
-     }
+    &:first-child {
+      font-size: 50px;
+    }
   }
 
   .circle {
-      line-height: unset;
+    line-height: unset;
 
-      :first-child {
-        font-size: 50px !important;
-      }
+    :first-child {
+      font-size: 50px !important;
+    }
 
   }
 
   .about-option {
-    font-size:24px;
+    font-size: 24px;
   }
 
   .iosTitle {
-    width:100%;
-    margin:0;
+    width: 100%;
+    margin: 0;
   }
 }
 
@@ -38,10 +38,10 @@ $title : h1, h2, h3, h4, h5, h6;
     font-weight: bold;
   }
 
-  .hero-title {
+
+  .heroTitle {
     h1 {
-      //not working
-      font-size: 40px !important;
+      font-size: 40px;
     }
   }
 
@@ -55,12 +55,26 @@ $title : h1, h2, h3, h4, h5, h6;
   }
 
   .about-option {
-      font-size:20px;
+    font-size: 20px;
   }
 
   .iosTitle {
-    width:72%;
-    margin:0 auto;
+    width: 72%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 360px) and (max-width: 499px) {
+    .heroTitle {
+      h1 {
+        font-size: 20px !important;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+
   }
 }
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
-import VideoModal from '../../Modal/Modal';
+import Modal from '../../Modal/Modal';
+import { changeWidth } from '../../../Services/changeWidth';
 
 import {Player, BigPlayButton} from 'video-react';
 
@@ -19,6 +20,7 @@ import {withTranslation} from 'react-i18next';
 class About extends Component {
     state = {
         isOpen: false,
+        width : ``
     };
 
     constructor(props) {
@@ -26,6 +28,25 @@ class About extends Component {
 
         this.playVideo = this.playVideo.bind(this);
         this.onClose = this.onClose.bind(this);
+        this.generateWidth = this.generateWidth.bind(this);
+    }
+
+    generateWidth () {
+        const width = changeWidth();
+
+        this.setState({
+            width : width
+        });
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.generateWidth);
+        window.addEventListener('orientationchange', this.generateWidth);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.generateWidth);
+        window.removeEventListener('orientationchange', this.generateWidth);
     }
 
     playVideo() {
@@ -41,6 +62,8 @@ class About extends Component {
     }
 
     render() {
+        const { width } = this.state;
+
         const title = "ABOUT_TITLE";
         const description = "ABOUT_DESCRIPTION";
         const rows = {
@@ -70,13 +93,12 @@ class About extends Component {
                     </Row>
                 </div>
                 {this.state.isOpen && (
-                    <VideoModal isOpen={true} onClose={this.onClose}>
+                    <Modal isOpen={true} onClose={this.onClose}>
                         <Container className="p-0">
                             <Player autoPlay
                                     playsInline
                                     onPlay={this.playVideo}
-                                    width={900}
-                                    height={507}
+                                    width={ width }
                                     fluid={false}>
                                 <source src={MPIVideoMp4} type="video/mp4"/>
                                 <source src={MPIVideoWebM} type="video/webm"/>
@@ -85,7 +107,7 @@ class About extends Component {
 
                             </Player>
                         </Container>
-                    </VideoModal>
+                    </Modal>
                 )}
             </section>
         );

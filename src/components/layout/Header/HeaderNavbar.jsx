@@ -17,8 +17,6 @@ import Logo from '../../../images/mpi.png';
 class HeaderNavbar extends Component {
     state = {
         mobileMenuOpened: false,
-        display: 'none',
-        activeLng: 'en',
         isOpen: false,
     };
 
@@ -30,31 +28,25 @@ class HeaderNavbar extends Component {
 
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.scrollToSection = this.scrollToSection.bind(this);
+        this.closeNav = this.closeNav.bind(this);
     }
 
-    // componentDidMount() {
-    //     console.log('sda');
-    //
-    //     const lang = localStorage.getItem(`lang`);
-    //
-    //     if(lang) {
-    //        this.setState({
-    //            activeLng : lang,
-    //        }) ;
-    //     }
-    //
-    //     if(this.state.mobileMenuOpened) {
-    //         window.addEventListener('click', this.toggleMobileMenu);
-    //     }
-    // }
-    //
-    // componentWillUnmount() {
-    //     window.removeEventListener('click', this.toggleMobileMenu);
-    // }
+    closeNav() {
+        this.setState({
+            mobileMenuOpened: !this.state.mobileMenuOpened
+        })
+    }
 
     toggleMobileMenu(e) {
         this.setState({
-            mobileMenuOpened: !this.state.mobileMenuOpened,
+            mobileMenuOpened: !this.state.mobileMenuOpened
+        }, () => {
+            let isOpened = this.state.mobileMenuOpened;
+
+            if (isOpened) window.addEventListener('click', this.closeNav);
+
+            else window.removeEventListener(`click`, this.closeNav);
+
         });
     }
 
@@ -86,10 +78,7 @@ class HeaderNavbar extends Component {
     }
 
     render() {
-
-        const isOpen = this.state.isOpen;
-
-        const mobileMenuOpened = this.state.mobileMenuOpened;
+        const {mobileMenuOpened, isOpen, navPos} = this.state;
         const mobileMenuClass = mobileMenuOpened ? "opened" : "closed";
 
         const navbarItems = [
@@ -108,17 +97,21 @@ class HeaderNavbar extends Component {
                         <span className="phone-number">+1 (678) 534 8794</span>
                     </Link>
 
-                    <div className={`toggleButton ${mobileMenuClass}`} onClick={this.toggleMobileMenu}>
+                    <div className={`toggleButton ${mobileMenuClass}`}
+                         onClick={ (e) => {
+                             e.stopPropagation();
+                             this.toggleMobileMenu()
+                         }}>
                         <span/>
                         <span/>
                         <span/>
                     </div>
 
-                    <div className={`navbar-collapse justify-content-end ${mobileMenuClass}`}
+                    <div className={`navbar-collapse justify-content-end  ${mobileMenuClass}`}
                          id="navbarSupportedContent"
                          onClick={(e) => e.stopPropagation()}
                     >
-                        <Nav navbar className="mr-0">
+                        <Nav navbar>
                             {
                                 navbarItems.map((row, index) => {
 

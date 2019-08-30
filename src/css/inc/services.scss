@@ -134,6 +134,28 @@
 
   }
 
+  @media (min-width:360px) and (max-width:499px) {
+    .serviceContent {
+
+      .deskContent {
+
+        .progTech {
+
+          img {
+            width:35px;
+          }
+
+          p {
+            font-size:10px;
+          }
+
+        }
+
+
+      }
+    }
+  }
+
   @media (max-width: 976px) {
     .serviceContent {
       height: unset;

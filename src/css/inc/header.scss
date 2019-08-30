@@ -8,14 +8,14 @@ header {
   }
 
   .siteLogo {
-    display: none;
-    //display: flex;
+    display: flex;
     width: 70px;
+    height: 37px;
     object-fit: contain;
 
     img {
       width: 100%;
-      height: auto;
+      height: 37px;
       transition: 0.4s ease transform;
     }
 
@@ -79,8 +79,17 @@ header {
       }
     }
 
+    @media (min-width: 1025px) and (max-width: 1700px) {
+      $nav_margin_right: 175px;
+
+      ul {
+        margin-right: $nav_margin_right !important;
+
+      }
+    }
+
     //NAV
-    @media (max-width:1024px) {
+    @media (max-width: 1024px) {
       justify-content: space-between !important;
 
       .closed {
@@ -121,76 +130,5 @@ header {
         }
       }
     }
-
-    //.opened {
-    //  span {
-    //    position: absolute;
-    //    margin-top: 0;
-    //    transition: 0.6s ease;
-    //
-    //    &:first-child {
-    //      transform: rotate(36deg);
-    //      transform-origin: center;
-    //    }
-    //
-    //    &:nth-child(2) {
-    //      display: none;
-    //    }
-    //
-    //    &:last-child {
-    //      transform: rotate(-36deg);
-    //      transform-origin: center;
-    //    }
-    //  }
-    //
-    //}
-    //
-    //.closed {
-    //  transition: 0.9s ease-in-out;
-    //
-    //  span {
-    //    &:first-child {
-    //      transform: rotate(0deg);
-    //    }
-    //
-    //    &:last-child {
-    //      transform: rotate(0deg)
-    //    }
-    //
-    //  }
-    //
-    //  &:not(:first-child) {
-    //    margin-top: 10px;
-    //  }
-    //
-    //  &:not(.closed) {
-    //    display: none;
-    //  }
-    //
-    //}
-    //
-    //#navbarSupportedContent {
-    //  display: block !important;
-    //}
-    //
-    //@media (max-width:1024px) {
-    //  .toggleButton {
-    //    display: block;
-    //  }
-    //
-    //  #navbarSupportedContent {
-    //    background: rgba(9, 148, 36, 0.2);
-    //    padding: 10px;
-    //
-    //    &:not(.opened) {
-    //      display: none;
-    //    }
-    //  }
-    //
-    //  ul li:before {
-    //    width: 100%;
-    //    background: #434343;
-    //  }
-    //}
   }
 }
