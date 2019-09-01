@@ -2,12 +2,10 @@ import React, {Component} from "react";
 import Slider from "../../../react-slick";
 import Popup from "./Popup.component";
 import PopupView from "./PopupView.component";
+import {NextArrow, PrevArrow} from './CustomArrow';
+
 import "../../../slider/slick/slick.scss";
 import "../../../slider/slick/slick-theme.scss";
-
-
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
 export default class MultipleItems extends Component {
     state = {
@@ -21,11 +19,15 @@ export default class MultipleItems extends Component {
         this.windowSizeChange = this.windowSizeChange.bind(this);
     }
 
+    componentDidMount() {
+        this.windowSizeChange();
+    }
+
     /**
      * Check and return responsive images view
      * @param {*} e
      */
-    windowSizeChange(e) {
+    windowSizeChange() {
         if (window.innerWidth <= 992) {
             this.setState({
                 slidesToShow: 1
@@ -41,7 +43,7 @@ export default class MultipleItems extends Component {
      * This function close the popup
      * And set state empty
      */
-    closeImage = () => {
+    closeImage()  {
         window.document.body.style.overflowY = "scroll";
         this.setState({
             isOpen: false,
@@ -55,7 +57,7 @@ export default class MultipleItems extends Component {
      * This function open the current image in popup
      * And set state isOpen: true
      */
-    openImage = (index, images) => {
+    openImage (index, images)  {
         window.document.body.style.overflow = "hidden";
         this.setState({
             isOpen: true,
@@ -72,8 +74,8 @@ export default class MultipleItems extends Component {
             slidesToShow: this.state.slidesToShow,
             slidesToScroll: 1,
             autoplay: false,
-            nextArrow: <div><FontAwesomeIcon icon={faChevronRight}/></div>,
-            prevArrow: <div><FontAwesomeIcon icon={faChevronLeft}/></div>,
+            nextArrow: <NextArrow />,
+            prevArrow: <PrevArrow />,
         };
 
         const {gallery} = this.props;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Modal from '../../Modal/Modal';
-import { changeWidth } from '../../../Services/changeWidth';
+import AdaptiveWidth from '../../../Services/AdaptiveWidth';
 
 import {Player, BigPlayButton} from 'video-react';
 
@@ -20,7 +20,7 @@ import {withTranslation} from 'react-i18next';
 class About extends Component {
     state = {
         isOpen: false,
-        width : ``
+        width: null
     };
 
     constructor(props) {
@@ -31,23 +31,36 @@ class About extends Component {
         this.generateWidth = this.generateWidth.bind(this);
     }
 
-    generateWidth () {
-        const width = changeWidth();
-
-        this.setState({
-            width : width
-        });
-    }
-
     componentDidMount() {
         window.addEventListener('resize', this.generateWidth);
         window.addEventListener('orientationchange', this.generateWidth);
+
+        this.generateWidth();
     }
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.generateWidth);
         window.removeEventListener('orientationchange', this.generateWidth);
     }
+
+    generateWidth() {
+        let width = window.innerWidth;
+
+        if (width <= 720) width = (width * 90) / 100;
+
+        else width = (width * 60) / 100;
+
+        this.setState({
+            width : width,
+        });
+    }
+
+    // updateWidth(state) {
+    //     this.setState(
+    //         state
+    //     );
+    // }
+
 
     playVideo() {
         this.setState({
@@ -62,7 +75,7 @@ class About extends Component {
     }
 
     render() {
-        const { width } = this.state;
+        const {width} = this.state;
 
         const title = "ABOUT_TITLE";
         const description = "ABOUT_DESCRIPTION";
@@ -82,29 +95,32 @@ class About extends Component {
                         <Col className="col-12 col-md pb-4 pb-md-0">
                             <p>{this.props.t(description)}</p>
                             <ul className="workProcess pt-2">
-                                <li><span className="number">1</span><span className="about-option">{this.props.t(rows['1'])}</span></li>
-                                <li><span className="number">2</span><span className="about-option">{this.props.t(rows['2'])}</span></li>
-                                <li><span className="number">3</span><span className="about-option">{this.props.t(rows['3'])}</span></li>
+                                <li><span className="number">1</span><span
+                                    className="about-option">{this.props.t(rows['1'])}</span></li>
+                                <li><span className="number">2</span><span
+                                    className="about-option">{this.props.t(rows['2'])}</span></li>
+                                <li><span className="number">3</span><span
+                                    className="about-option">{this.props.t(rows['3'])}</span></li>
                             </ul>
                         </Col>
                         <Col className="col-12 col-xl-7 offset-xl-1 videoPlay" onClick={this.playVideo}>
-                            <img src={MPIVideoBg} alt="MPI Video"/>
+                            <img src={MPIVideoBg} alt={ imageAlt }/>
                         </Col>
                     </Row>
                 </div>
                 {this.state.isOpen && (
                     <Modal isOpen={true} onClose={this.onClose}>
                         <Container className="p-0">
+                            {/*<AdaptiveWidth onChangeWidth={this.updateWidth}/>*/}
                             <Player autoPlay
                                     playsInline
                                     onPlay={this.playVideo}
-                                    width={ width }
+                                    width={width}
                                     fluid={false}>
                                 <source src={MPIVideoMp4} type="video/mp4"/>
                                 <source src={MPIVideoWebM} type="video/webm"/>
                                 <source src={MPIVideoOgg} type="video/ogg"/>
                                 <BigPlayButton position="center"/>
-
                             </Player>
                         </Container>
                     </Modal>
