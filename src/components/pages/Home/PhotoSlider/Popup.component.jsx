@@ -23,9 +23,6 @@ class Popup extends React.Component {
         return (
                 <div className="popup-backdrop" onClick={this.props.onClose}>
                     <div className="popup">
-                        <span className="popup-close">
-                            <FontAwesomeIcon icon={ faTimes } />
-                        </span>
                         {this.props.children}
                     </div>
                 </div>

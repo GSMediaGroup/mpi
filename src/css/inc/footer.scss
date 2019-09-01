@@ -1,10 +1,10 @@
 footer {
-  color:$footer-text-color;
+  color: $footer-text-color;
 
   &#footer {
     background-color: #353b5b;
 
-    .main-content{
+    .main-content {
       cursor: pointer;
       margin: 40px 0;
       text-align: center;
@@ -16,51 +16,58 @@ footer {
       .phone,
       .email,
       .location {
-         img{
-           width: 30px;
-           height: 30px;
-           opacity: 0.5;
+        img {
+          width: 30px;
+          height: 30px;
+          opacity: 0.5;
 
-         }
+        }
       }
-      .icon-description{
+
+      .icon-description {
         font-size: 13px;
         color: rgba(173, 171, 171, 0.7);
       }
     }
 
     .change-lng {
-      border:1px solid rgba(173, 171, 171, 0.5);
-      width:30px;
-      height:30px;
-      margin:0 auto;
-      border-radius:100%;
-      line-height:30px;
-      transition:0.6s ease;
-      font-size:12px;
+      border: 1px solid rgba(173, 171, 171, 0.5);
+      width: 30px;
+      height: 30px;
+      margin: 0 auto;
+      border-radius: 100%;
+      line-height: 30px;
+      transition: 0.6s ease;
+      font-size: 12px;
 
       &:hover {
-        color:white;
-        border-color:white;
+        color: white;
+        border-color: white;
       }
     }
 
     .changeLngText {
-      font-size:12px;
+      font-size: 12px;
     }
-    
+
+    @media (max-width: 767px) {
+      .main-content {
+        border-right:unset !important;
+      }
+    }
+
   }
 
 }
 
-.mapouter{
-  position:relative;
-  text-align:right;
+.mapouter {
+  position: relative;
+  text-align: right;
   //height:500px;
 
   .gmap_canvas {
-    overflow:hidden;
-    background:none!important;
+    overflow: hidden;
+    background: none !important;
     //height:500px;
   }
 

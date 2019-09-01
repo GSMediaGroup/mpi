@@ -148,6 +148,14 @@ $hero_text_color: #fff;
     .heroContent {
       flex-direction: column;
 
+      .hero-main {
+
+        .heroTitle {
+          max-width:300px;
+          max-height:300px;
+        }
+      }
+
       .container {
         height: 63%;
       }
@@ -159,7 +167,7 @@ $hero_text_color: #fff;
         bottom: 0;
 
         .serviceItem {
-          height: 250px;
+          height: 200px;
         }
       }
     }
@@ -197,8 +205,8 @@ $hero_text_color: #fff;
   @media (min-width: 500px) and (max-width: 636px) {
     .hero-main {
       .heroTitle {
-        max-width: 230px;
-        max-height: 230px;
+        width: 200px;
+        height: 200px;
         font-size: 13px;
         padding: 35px;
 
@@ -270,6 +278,7 @@ $hero_text_color: #fff;
       }
 
       .heroService {
+        width:100%;
         //flex-direction:row;
 
         .serviceItem {

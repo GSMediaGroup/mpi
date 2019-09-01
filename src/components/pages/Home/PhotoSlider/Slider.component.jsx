@@ -9,7 +9,7 @@ import "../../../slider/slick/slick-theme.scss";
 
 export default class MultipleItems extends Component {
     state = {
-        slidesToShow: (window.innerWidth <= 992 ? 1 : 3),
+        slidesToShow: null,
         isOpen: false
     };
 
@@ -17,15 +17,17 @@ export default class MultipleItems extends Component {
         super(props);
 
         this.windowSizeChange = this.windowSizeChange.bind(this);
+        this.closeImage = this.closeImage.bind(this);
     }
 
     componentDidMount() {
+        window.addEventListener('resize', this.windowSizeChange);
+
         this.windowSizeChange();
     }
 
     /**
      * Check and return responsive images view
-     * @param {*} e
      */
     windowSizeChange() {
         if (window.innerWidth <= 992) {
@@ -40,11 +42,24 @@ export default class MultipleItems extends Component {
     }
 
     /**
+     * This function open the current image in popup
+     * And set state isOpen: true
+     */
+    openImage (index, images)  {
+        document.body.style.overflow = "hidden";
+        this.setState({
+            isOpen: true,
+            index, images
+        });
+    }
+
+    /**
      * This function close the popup
      * And set state empty
      */
     closeImage()  {
-        window.document.body.style.overflowY = "scroll";
+        document.body.style.overflowY = "scroll";
+
         this.setState({
             isOpen: false,
             index: null,
@@ -53,25 +68,15 @@ export default class MultipleItems extends Component {
 
     }
 
-    /**
-     * This function open the current image in popup
-     * And set state isOpen: true
-     */
-    openImage (index, images)  {
-        window.document.body.style.overflow = "hidden";
-        this.setState({
-            isOpen: true,
-            index, images
-        });
-    }
-
     render() {
+        const count = this.state.slidesToShow;
+        console.log(count);
         const settings = {
             dots: false,
             infinite: true,
             speed: 500,
             arrows: true,
-            slidesToShow: this.state.slidesToShow,
+            slidesToShow: count,
             slidesToScroll: 1,
             autoplay: false,
             nextArrow: <NextArrow />,
@@ -98,6 +103,7 @@ export default class MultipleItems extends Component {
                     <PopupView images={this.state.images}
                                index={this.state.index}
                                isOpen={this.state.isOpen}
+                               onClose={this.closeImage}
                     />
                 </Popup>
             </>

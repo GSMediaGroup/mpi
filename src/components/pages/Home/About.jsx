@@ -51,7 +51,7 @@ class About extends Component {
         else width = (width * 60) / 100;
 
         this.setState({
-            width : width,
+            width: width,
         });
     }
 
@@ -70,7 +70,8 @@ class About extends Component {
 
     onClose() {
         this.setState({
-            isOpen: false,
+            isOpen: false
+
         });
     }
 
@@ -104,7 +105,7 @@ class About extends Component {
                             </ul>
                         </Col>
                         <Col className="col-12 col-xl-7 offset-xl-1 videoPlay" onClick={this.playVideo}>
-                            <img src={MPIVideoBg} alt={ imageAlt }/>
+                            <img src={MPIVideoBg} alt={imageAlt}/>
                         </Col>
                     </Row>
                 </div>

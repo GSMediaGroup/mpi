@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import {faChevronRight, faChevronLeft, faTimes} from '@fortawesome/free-solid-svg-icons';
 
 
 /**
@@ -19,35 +19,36 @@ export default class PopupView extends Component {
     constructor(props) {
         super(props);
 
-        // this.generateWidth =  this.generateWidth.bind(this)
+        this.generateWidth =  this.generateWidth.bind(this);
+        this.changeImage = this.changeImage.bind(this);
     }
 
-    // componentDidMount() {
-    //     window.addEventListener('resize', this.generateWidth);
-    //     window.addEventListener('orientationchange', this.generateWidth);
-    //
-    //     this.generateWidth();
-    // }
-    //
-    // componentWillUnmount() {
-    //     window.removeEventListener('resize', this.generateWidth);
-    //     window.removeEventListener('orientationchange', this.generateWidth);
-    // }
-    //
-    // generateWidth() {
-    //     let width = window.innerWidth;
-    //
-    //     if (width <= 720) width = (width * 90) / 100;
-    //
-    //     else width = (width * 60) / 100;
-    //
-    //     this.setState({
-    //         width : width,
-    //     });
-    // }
+    componentDidMount() {
+        window.addEventListener('resize', this.generateWidth);
+        window.addEventListener('orientationchange', this.generateWidth);
+
+        this.generateWidth();
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.generateWidth);
+        window.removeEventListener('orientationchange', this.generateWidth);
+    }
+
+    generateWidth() {
+        let width = window.innerWidth;
+
+        if (width <= 720) width = (width * 80) / 100;
+
+        else width = (width * 60) / 100;
+
+        this.setState({
+            width : width,
+        });
+    }
 
 
-    changeImage = (isNext, index, images) => {
+    changeImage (isNext, index, images)  {
         if (isNext) {
             if (images[index + 1]) {
                 this.setState({
@@ -85,9 +86,18 @@ export default class PopupView extends Component {
 
         return (
             <div className="popupView" onClick={(e) => e.stopPropagation()}>
-                <div className="prev " onClick={() => this.changeImage(false, index, images)}><FontAwesomeIcon icon={ faChevronLeft } /></div>
-                <div><img src={images[index]} alt="Team Images" style={{maxWidth : `${width}px`}} /></div>
-                <div className="next " onClick={() => this.changeImage(true, index, images)}><FontAwesomeIcon icon={ faChevronRight } /></div>
+                <div className="prev " onClick={() => this.changeImage(false, index, images)}>
+                    <FontAwesomeIcon icon={ faChevronLeft } />
+                </div>
+                <div className="popupImage">
+                    <span className="popup-close" onClick={this.props.onClose}>
+                            <FontAwesomeIcon icon={ faTimes } />
+                    </span>
+                    <img src={images[index]} alt="Team Images" style={{maxWidth : `${width}px`}} />
+                </div>
+                <div className="next " onClick={() => this.changeImage(true, index, images)}>
+                    <FontAwesomeIcon icon={ faChevronRight } />
+                </div>
             </div>
         );
     }

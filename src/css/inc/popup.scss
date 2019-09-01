@@ -10,23 +10,26 @@
     align-items: center;
     .popup{
         margin: 0 auto;
-        .popup-close{
-            background: rgba(0, 0, 0, 0);
-            color: white;
-            font-size: 20px;
-            outline: none;
-            transition: 0.3s ease-in-out;
-            cursor: pointer;
-            position: absolute;
-            right: 190px;
-            border: 1px solid;
-            padding: 0.01px 10px;
-            border-radius: 3px;
+        .popupImage {
+            position:relative;
 
-            &:hover{
-                color:#3db9d1;
+            .popup-close {
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: #999;
+                font-size: 20px;
+                outline: none;
+                transition: 0.3s ease-in-out;
+                cursor: pointer;
+                border: 1px solid;
+                padding: 0.01px 10px;
+                border-radius: 3px;
+
+                &:hover {
+                    color: #3db9d1;
+                }
             }
         }
-
     }
 }

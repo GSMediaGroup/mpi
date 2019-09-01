@@ -3,24 +3,26 @@ import Slider from "../../../react-slick";
 
 export default class Technologies extends Component {
     state = {
-        slidesToShow : (window.innerWidth <= 992 ? 2 : 4),
+        slidesToShow: null
     };
 
     constructor(props) {
         super(props);
     }
 
+
+
     render() {
-        const { gallery, currentClass } = this.props;
+        const {gallery, currentClass} = this.props;
 
         const settings = {
             dots: true,
             infinite: true,
             speed: 500,
             arrows: false,
-            slidesToShow: this.state.slidesToShow,
+            slidesToShow: 5,
             slidesToScroll: 3,
-            autoplay: false,
+            autoplay: true,
         };
 
         return (
@@ -29,7 +31,7 @@ export default class Technologies extends Component {
                     {
                         gallery.map((i, index) => {
                             return (
-                                <img src={i} key={index} className={`${currentClass} pt-5`} />
+                                <img src={i} key={index} className={`${currentClass} pt-5`}/>
                             )
                         })
                     }

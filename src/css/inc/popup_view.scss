@@ -2,15 +2,14 @@
     text-align: center;
     .prev, .next {
         position: absolute;
-        top: calc(50% - 100px);
+        top: 45%;
         color: white;
-        font-size: 35px;
+        font-size: 30px;
         border: none;
         align-items: center;
         outline: none;
         width: 50px;
         cursor: pointer;
-        //transform: translateY(35%);
     }
     .prev{
         left: 0;
