@@ -13,7 +13,7 @@ class SendingAlert extends Component {
         return (
             <Container className="sendingAlert text-center">
                 <div className="imageBlock pb-4">
-                    <img src={ SendingAlertImg } alt="Sending Alert Image"/>
+                    <img src={ SendingAlertImg } alt="Sending Alert"/>
                 </div>
                 <div>
                     <h3 className="pb-3">{ this.props.t(title)}</h3>

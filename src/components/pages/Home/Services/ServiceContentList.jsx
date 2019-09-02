@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Row, Col} from "reactstrap";
 
 import WebDevelopment from './components/WebDevelopment';
 import MobileDevelopment from './components/MobileDevelopment';

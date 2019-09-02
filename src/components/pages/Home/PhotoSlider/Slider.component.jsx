@@ -30,22 +30,23 @@ export default class MultipleItems extends Component {
      * Check and return responsive images view
      */
     windowSizeChange() {
-        if (window.innerWidth <= 992) {
-            this.setState({
-                slidesToShow: 1
-            })
-        } else {
-            this.setState({
-                slidesToShow: 3
-            })
-        }
+        const width = window.innerWidth;
+        let showCount = null;
+
+        if (width <= 992) showCount = 1;
+        else showCount = 3;
+
+
+        this.setState({
+            slidesToShow: showCount
+        })
     }
 
     /**
      * This function open the current image in popup
      * And set state isOpen: true
      */
-    openImage (index, images)  {
+    openImage(index, images) {
         document.body.style.overflow = "hidden";
         this.setState({
             isOpen: true,
@@ -57,7 +58,7 @@ export default class MultipleItems extends Component {
      * This function close the popup
      * And set state empty
      */
-    closeImage()  {
+    closeImage() {
         document.body.style.overflowY = "scroll";
 
         this.setState({
@@ -70,7 +71,6 @@ export default class MultipleItems extends Component {
 
     render() {
         const count = this.state.slidesToShow;
-        console.log(count);
         const settings = {
             dots: false,
             infinite: true,
@@ -79,8 +79,8 @@ export default class MultipleItems extends Component {
             slidesToShow: count,
             slidesToScroll: 1,
             autoplay: false,
-            nextArrow: <NextArrow />,
-            prevArrow: <PrevArrow />,
+            nextArrow: <NextArrow/>,
+            prevArrow: <PrevArrow/>,
         };
 
         const {gallery} = this.props;
@@ -92,8 +92,9 @@ export default class MultipleItems extends Component {
                         {
                             gallery.map((i, index) => {
                                 return (
-                                        <img src={i} key={index} onClick={() => this.openImage(index, gallery)} alt="Team Images"/>
-                                    )
+                                    <img src={i} key={index} onClick={() => this.openImage(index, gallery)}
+                                         alt="Team Images"/>
+                                )
                             })
                         }
                     </Slider>

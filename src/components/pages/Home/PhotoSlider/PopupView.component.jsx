@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AdaptiveSize from '../../../../Services/AdaptiveSize'
+
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronRight, faChevronLeft, faTimes} from '@fortawesome/free-solid-svg-icons';
 
 
@@ -11,44 +13,28 @@ import {faChevronRight, faChevronLeft, faTimes} from '@fortawesome/free-solid-sv
  */
 export default class PopupView extends Component {
 
-    state  = {
-        index : null,
-        images: null
+    state = {
+        index: null,
+        images: null,
+        width: null,
+        height: null
     };
 
     constructor(props) {
         super(props);
 
-        this.generateWidth =  this.generateWidth.bind(this);
+        this.updateSize = this.updateSize.bind(this);
         this.changeImage = this.changeImage.bind(this);
     }
 
-    componentDidMount() {
-        window.addEventListener('resize', this.generateWidth);
-        window.addEventListener('orientationchange', this.generateWidth);
-
-        this.generateWidth();
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.generateWidth);
-        window.removeEventListener('orientationchange', this.generateWidth);
-    }
-
-    generateWidth() {
-        let width = window.innerWidth;
-
-        if (width <= 720) width = (width * 80) / 100;
-
-        else width = (width * 60) / 100;
-
-        this.setState({
-            width : width,
-        });
+    updateSize(size) {
+        this.setState(
+            size
+        )
     }
 
 
-    changeImage (isNext, index, images)  {
+    changeImage(isNext, index, images) {
         if (isNext) {
             if (images[index + 1]) {
                 this.setState({
@@ -59,7 +45,7 @@ export default class PopupView extends Component {
                     index: 0
                 })
             }
-        }else{
+        } else {
             if (images[index - 1]) {
                 this.setState({
                     index: index - 1
@@ -74,29 +60,30 @@ export default class PopupView extends Component {
     }
 
     render() {
-        const { width } = this.state;
+        const {width} = this.state;
 
         let {
             index, images
         } = this.props;
 
-        if(this.state.index !== null) {
+        if (this.state.index !== null) {
             index = this.state.index;
         }
 
         return (
             <div className="popupView" onClick={(e) => e.stopPropagation()}>
+                <AdaptiveSize onChangeSize={this.updateSize}/>
                 <div className="prev " onClick={() => this.changeImage(false, index, images)}>
-                    <FontAwesomeIcon icon={ faChevronLeft } />
+                    <FontAwesomeIcon icon={faChevronLeft}/>
                 </div>
                 <div className="popupImage">
                     <span className="popup-close" onClick={this.props.onClose}>
-                            <FontAwesomeIcon icon={ faTimes } />
+                            <FontAwesomeIcon icon={faTimes}/>
                     </span>
-                    <img src={images[index]} alt="Team Images" style={{maxWidth : `${width}px`}} />
+                    <img src={images[index]} alt="Team Images" style={{maxWidth: `${width}px`}}/>
                 </div>
                 <div className="next " onClick={() => this.changeImage(true, index, images)}>
-                    <FontAwesomeIcon icon={ faChevronRight } />
+                    <FontAwesomeIcon icon={faChevronRight}/>
                 </div>
             </div>
         );

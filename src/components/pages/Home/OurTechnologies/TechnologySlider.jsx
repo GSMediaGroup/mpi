@@ -20,7 +20,7 @@ export default class Technologies extends Component {
             infinite: true,
             speed: 500,
             arrows: false,
-            slidesToShow: 5,
+            slidesToShow: 4,
             slidesToScroll: 3,
             autoplay: true,
         };
@@ -31,7 +31,7 @@ export default class Technologies extends Component {
                     {
                         gallery.map((i, index) => {
                             return (
-                                <img src={i} key={index} className={`${currentClass} pt-5`}/>
+                                <img src={i} key={index} className={`${currentClass} pt-5`} alt="Our Technologies" />
                             )
                         })
                     }

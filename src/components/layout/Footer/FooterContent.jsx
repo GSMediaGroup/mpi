@@ -71,7 +71,7 @@ class FooterContent extends Component {
                                 let text = ( item.iconClassName === 'phone' ) ? <a href={`tel:${item.text}`}>{ item.text }</a> : item.text;
 
                                 return (
-                                    <Col className="main-content hover-main-content" lg={{size: 3}} md={{size: 3}}
+                                    <Col className="main-content hover-main-content col" lg={{size: 3}} md={{size: 3}}
                                          key={index} onClick={item.cb}>
                                         <Row>
                                             <Col className="pb-1" lg={{size: 12}} md={{size: 12}}>
@@ -80,7 +80,7 @@ class FooterContent extends Component {
                                                 </Link>
                                             </Col>
                                         </Row>
-                                        <Row>
+                                        <Row className="footerIconText ">
                                             <Col className={item.textClassName} lg={{size: 12}}
                                                  md={{size: 12}}>{ text }
                                             </Col>

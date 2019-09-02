@@ -63,11 +63,6 @@ $contact_info_text_color: #999;
     font-size: 12px;
   }
 
-  // .submit-btn:hover {
-  //     background: white;
-  //     color: #3db9d1;
-  //     font-weight: 300;
-  //   }
 }
 
 .contact-information {
@@ -119,25 +114,41 @@ $contact_info_text_color: #999;
 .sendingAlert {
   background: white;
   padding: 20px 80px;
-  box-shadow: 0 0 22px rgba(0,255,255,0.1);
+  box-shadow: 0 0 22px rgba(0, 255, 255, 0.1);
 
   h3 {
     color: $contact_color_focused;
   }
 
   p {
-    font-size:14px;
-    color:#999;
+    font-size: 14px;
+    color: #999;
   }
 
   .imageBlock {
-    width:130px;
-    margin:0 auto;
+    width: 130px;
+    margin: 0 auto;
 
 
     img {
-      width:100%;
-      object-fit:cover;
+      width: 100%;
+      object-fit: cover;
     }
+  }
+}
+
+@media (max-width: 991px) {
+  #ContactUs {
+    padding: 15px;
+
+    .form {
+      input:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .contact-information {
+    display: none;
   }
 }

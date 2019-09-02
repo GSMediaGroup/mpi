@@ -26,12 +26,12 @@ class WebDevelopment extends Component {
         return (
             <div className="serviceContent">
                 <Row>
-                    <Col md={5} className="align-self-center col-12">
+                    <Col lg={5} className="align-self-center col-12">
                         <div className="imgContent mx-auto mt-4 mt-md-0">
-                            <img src={MobileDesc} alt="Service Content Image" />
+                            <img src={MobileDesc} alt="Service Content" />
                         </div>
                     </Col>
-                    <Col md={7} className="deskContent col-12">
+                    <Col lg={7} className="deskContent col-12">
                         <h3 className="text-center pb-1 pt-3 pt-md-0">{this.props.t(title)}</h3>
                         <p className="pb-4 pt-4 service-content-description">{this.props.t(description)}</p>
 

@@ -34,7 +34,9 @@ class HeaderNavbar extends Component {
     closeNav() {
         this.setState({
             mobileMenuOpened: !this.state.mobileMenuOpened
-        })
+        });
+
+        window.removeEventListener(`click`, this.closeNav);
     }
 
     toggleMobileMenu(e) {
@@ -44,8 +46,6 @@ class HeaderNavbar extends Component {
             let isOpened = this.state.mobileMenuOpened;
 
             if (isOpened) window.addEventListener('click', this.closeNav);
-
-            else window.removeEventListener(`click`, this.closeNav);
 
         });
     }
@@ -78,7 +78,7 @@ class HeaderNavbar extends Component {
     }
 
     render() {
-        const {mobileMenuOpened, isOpen, navPos} = this.state;
+        const {mobileMenuOpened, isOpen} = this.state;
         const mobileMenuClass = mobileMenuOpened ? "opened" : "closed";
 
         const navbarItems = [

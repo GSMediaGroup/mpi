@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import AdaptiveSize from '../../../Services/AdaptiveSize';
 
 class GoogleMap extends Component {
 
@@ -10,45 +11,22 @@ class GoogleMap extends Component {
     constructor(props) {
         super(props);
 
-        this.generateWidth = this.generateWidth.bind(this);
+        this.updateSize= this.updateSize.bind(this);
     }
 
-    componentDidMount() {
-        window.addEventListener('resize', this.generateWidth);
-        window.addEventListener('orientationchange', this.generateWidth);
-
-        this.generateWidth();
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.generateWidth);
-        window.removeEventListener('orientationchange', this.generateWidth);
-    }
-
-    generateWidth() {
-        let width = window.innerWidth,
-            height = window.innerHeight;
-
-
-        if (width <= 720) {
-            width = (width * 90) / 100;
-            height = (height * 80) / 100;
-        } else {
-            width = (width * 70) / 100;
-            height = (height * 60) / 100;
-        }
-
-        this.setState({
-            width: width,
-            height: height
-        });
+    updateSize (size) {
+        this.setState(
+            size
+        )
     }
 
     render() {
         const {width, height} = this.state;
+
         return (
             <div className="mapouter">
                 <div className="gmap_canvas">
+                    <AdaptiveSize onChangeSize={this.updateSize} />
                     <iframe width={width}
                             height={height}
                             id="gmap_canvas"

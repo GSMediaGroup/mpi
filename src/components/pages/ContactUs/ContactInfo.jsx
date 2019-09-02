@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
-import {Col, Row, Container} from 'reactstrap';
+import {Col, Container} from 'reactstrap';
 import {withTranslation} from "react-i18next";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

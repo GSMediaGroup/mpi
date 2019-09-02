@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Modal from '../../Modal/Modal';
-import AdaptiveWidth from '../../../Services/AdaptiveWidth';
+import AdaptiveSize from '../../../Services/AdaptiveSize';
 
 import {Player, BigPlayButton} from 'video-react';
 
@@ -28,38 +28,15 @@ class About extends Component {
 
         this.playVideo = this.playVideo.bind(this);
         this.onClose = this.onClose.bind(this);
-        this.generateWidth = this.generateWidth.bind(this);
+        this.updateSize = this.updateSize.bind(this)
     }
 
-    componentDidMount() {
-        window.addEventListener('resize', this.generateWidth);
-        window.addEventListener('orientationchange', this.generateWidth);
 
-        this.generateWidth();
+    updateSize(state) {
+        this.setState(
+            state
+        );
     }
-
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.generateWidth);
-        window.removeEventListener('orientationchange', this.generateWidth);
-    }
-
-    generateWidth() {
-        let width = window.innerWidth;
-
-        if (width <= 720) width = (width * 90) / 100;
-
-        else width = (width * 60) / 100;
-
-        this.setState({
-            width: width,
-        });
-    }
-
-    // updateWidth(state) {
-    //     this.setState(
-    //         state
-    //     );
-    // }
 
 
     playVideo() {
@@ -112,7 +89,7 @@ class About extends Component {
                 {this.state.isOpen && (
                     <Modal isOpen={true} onClose={this.onClose}>
                         <Container className="p-0">
-                            {/*<AdaptiveWidth onChangeWidth={this.updateWidth}/>*/}
+                            <AdaptiveSize onChangeSize={this.updateSize}/>
                             <Player autoPlay
                                     playsInline
                                     onPlay={this.playVideo}

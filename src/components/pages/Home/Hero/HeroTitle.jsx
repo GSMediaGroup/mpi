@@ -46,7 +46,6 @@ class HeroTitle extends Component {
             ? 'HERO_TITLE_DESCRIPTION'
             : 'HERO_TITLE_DESCRIPTION_MOBILE';
 
-        // console.log({ description, a: window.innerWidth })
 
         return (
             <>

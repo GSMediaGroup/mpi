@@ -2,8 +2,6 @@ import React, {Component} from "react";
 import {withTranslation} from "react-i18next";
 import i18next from 'i18next';
 import {Col, Row} from "reactstrap";
-import logoEn from "../../../images/en_.jpg";
-import logoRu from "../../../images/ru.png";
 
 class ChangeLanguage extends Component {
 
@@ -58,12 +56,12 @@ class ChangeLanguage extends Component {
     render() {
 
         return (
-            <Col className="main-content" lg={{size: 3}} md={{size: 3}}>
+            <Col className="main-content col" lg={{size: 3}} md={{size: 3}}>
                 <Row className="pb-1 col-md-12 col-lg-12 m-0">
                     <span className="change-lng"  onClick={this.changeLng}>{this.langIcon()}</span>
                 </Row>
                 <Row>
-                    <Col lg={12} md={12} className="changeLngText">
+                    <Col lg={12} md={12} className="changeLngText footerIconText">
                         <span onClick={this.changeLng}>{this.props.t('FOOTER_CHANGE_LANGUAGE')}</span>
                     </Col>
                 </Row>
