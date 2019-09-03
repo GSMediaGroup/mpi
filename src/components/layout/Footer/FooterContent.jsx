@@ -110,4 +110,4 @@ class FooterContent extends Component {
         );
     }
 }
-export default withTranslation()(FooterContent);
+export default withTranslation()(FooterContent)
