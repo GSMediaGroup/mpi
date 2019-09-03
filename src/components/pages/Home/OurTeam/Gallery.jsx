@@ -14,11 +14,11 @@ import Img_13 from '../../../../images/ourTeam/team_13.jpg';
 import Img_14 from '../../../../images/ourTeam/team_14.jpg';
 import Img_15 from '../../../../images/ourTeam/team_15.jpg';
 import Img_16 from '../../../../images/ourTeam/team_16.jpg';
-import Img_17 from '../../../../images/ourTeam/team_17.jpg';
+// import Img_17 from '../../../../images/ourTeam/team_17.jpg';
 
 const Gallery = [ Img_1, Img_2, Img_3, Img_4, Img_5, Img_6,
                   Img_7, Img_8, Img_9, Img_10, Img_11, Img_12,
-                  Img_13, Img_14, Img_15, Img_16, Img_17,
+                  Img_13, Img_14, Img_15, Img_16
                 ];
 
 export default Gallery;

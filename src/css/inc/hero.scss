@@ -59,6 +59,13 @@ $hero_text_color: #fff;
         border: 1px solid #3db9d1;
       }
     }
+
+    @media (min-width:1330px) {
+      .heroTitle {
+        margin-left:73px;
+      }
+    }
+
   }
 
   .heroContent {
@@ -366,5 +373,25 @@ $hero_text_color: #fff;
       }
     }
   }
+
+  @media (max-width:863px) {
+    @media (orientation : landscape) {
+      height:unset !important;
+      .hero-main {
+        .heroTitle {
+          margin-top: 72px;
+          margin-bottom: 217px;
+        }
+      }
+
+      .heroService {
+
+        .serviceItem {
+          height:150px;
+        }
+      }
+    }
+  }
+
 
 }

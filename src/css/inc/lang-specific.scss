@@ -73,8 +73,17 @@ $title: h1, h2, h3, h4, h5, h6;
         font-size: 12px;
       }
     }
-
-
   }
+
+  @media (max-width: 863px) {
+    @media (orientation: landscape) {
+      .heroTitle {
+        h1 {
+          font-size:35px !important;
+        }
+      }
+    }
+  }
+
 }
 

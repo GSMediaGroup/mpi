@@ -42,7 +42,6 @@ export default class Header extends Component {
         return (
             
             <header className={`${headerBg} fixed-top`} >
-                
                 <Navbar position={navPos} />
             </header>
         );

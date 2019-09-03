@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
 import {withTranslation} from "react-i18next";
 import i18next from 'i18next';
 
@@ -33,8 +33,8 @@ class App extends Component {
         document.body.classList.add(`lang-${lang}`);
     }
 
-    changeLanguage(lang) {
-
+    changeLanguage({ match }) {
+        console.log(match)
     }
 
     renderComponent(Component, hasLayout) {
@@ -61,8 +61,8 @@ class App extends Component {
                 <Switch>
                     <Route exact={true} path="/" render={this.renderComponent(Home, true)}/>
                     <Route exact={true} path="/services" render={this.renderComponent(Services, true)}/>
-                    <Route exact={true} path="/en" render={this.changeLanguage(`en`)}/>
-                    <Route exact={true} path="/ru" render={this.changeLanguage(`ru`)}/>
+                    <Route exact={true} path="/:lang" render={this.changeLanguage}/>
+                    <Route exact={true} path="/:lang" render={this.changeLanguage}/>
                     <Route path="*" render={this.renderComponent(Error404, false)}/>
                 </Switch>
             </BrowserRouter>

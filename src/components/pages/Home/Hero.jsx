@@ -82,8 +82,13 @@ const particlesOption = {
 
 class Hero extends Component {
 
+    state = {
+        changeOrientation : `orientationChange`,
+    };
+
     constructor(props) {
         super(props);
+
     }
 
 
@@ -101,7 +106,7 @@ class Hero extends Component {
         ];
 
         return (
-            <section id="hero" className="vh-100">
+            <section id="hero" className={`vh-100`}>
                 <div className="h-100 d-flex heroContent">
                     <div className="container">
                         <HeroTitle />

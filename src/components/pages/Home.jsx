@@ -14,6 +14,8 @@ import GoHome from '../pages/Home/GoHome';
 export default class Home extends Component {
     state = {
         type: MOBILE_DEVELOPMENT,
+        loadingBlock : null,
+        load : true
     };
 
 
@@ -22,6 +24,35 @@ export default class Home extends Component {
 
         this.onServiceTypeChange = this.onServiceTypeChange.bind(this);
         this.updateServiceType = this.updateServiceType.bind(this);
+
+        this.loading = this.loading.bind(this);
+    }
+
+    componentDidMount() {
+        // this.loading();
+    }
+
+    loading () {
+        document.body.style.overflowY = `hidden`;
+
+        let {load} = this.state;
+
+        if(load) {
+            this.setState({
+                loadingBlock : <div className="loading">
+                                    <span />
+                               </div>
+            });
+
+            setTimeout(() => {
+                document.body.style.overflowY = `scroll`;
+
+                this.setState({
+                    loadingBlock : null,
+                    load : false
+                });
+            }, 2000);
+        }
     }
 
     onServiceTypeChange(type) {
@@ -38,8 +69,11 @@ export default class Home extends Component {
     }
 
     render() {
+        const { loadingBlock } = this.state;
+
         return (
             <>
+                {/*{ loadingBlock }*/}
                 <Hero onServiceTypeChange={this.onServiceTypeChange}/>
                 <About/>
                 <Services activeType={this.state.type} updateServiceType={this.updateServiceType}/>
