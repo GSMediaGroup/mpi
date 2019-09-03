@@ -27,6 +27,12 @@ class FooterContent extends Component {
         this.openMap = this.openMap.bind(this);
         this.openContact = this.openContact.bind(this);
         this.onClose = this.onClose.bind(this);
+        this.openTel = this.openTel.bind(this);
+    }
+
+    openTel () {
+        console.log(`right`);
+        window.open(`tel:+1 (678) 534 8794`, `_parent`)
     }
 
     openMap () {
@@ -58,7 +64,7 @@ class FooterContent extends Component {
         const footerItems = [
             { text: this.props.t('FOOTER_ADDRESS'), icon: marker, textClassName: "icon-description", iconClassName: "location", cb : this.openMap },
             { text: "haruta@myperfectidea.net", icon: message, textClassName: "icon-description", iconClassName: "email", cb : this.openContact},
-            { text: "+1 (678) 534 8794", icon: phone, textClassName: "icon-description", iconClassName: "phone"},
+            { text: "+1 (678) 534 8794", icon: phone, textClassName: "icon-description", iconClassName: "phone", cb : this.openTel},
         ];
 
 
@@ -68,7 +74,7 @@ class FooterContent extends Component {
                     <Row>
                         {
                             footerItems.map((item, index) => {
-                                let text = ( item.iconClassName === 'phone' ) ? <a href={`tel:${item.text}`}>{ item.text }</a> : item.text;
+                                // let text = ( item.iconClassName === 'phone' ) ? <a href={`tel:${item.text}`}>{ item.text }</a> : item.text;
 
                                 return (
                                     <Col className="main-content hover-main-content col" lg={{size: 3}} md={{size: 3}}
@@ -82,7 +88,7 @@ class FooterContent extends Component {
                                         </Row>
                                         <Row className="footerIconText ">
                                             <Col className={item.textClassName} lg={{size: 12}}
-                                                 md={{size: 12}}>{ text }
+                                                 md={{size: 12}}>{ item.text }
                                             </Col>
                                         </Row>
                                     </Col>
