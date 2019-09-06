@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Container, Row, Col} from 'reactstrap';
 
-import AgileImgEn from '../../../images/agileDevelopment.png';
-import AgileImgRu from '../../../images/agileDevelopment-russian.png'
+import AgileImgEn from '../../../media/images/agileDevelopment.png';
+import AgileImgRu from '../../../media/images/agileDevelopment-russian.png'
 
 import { withTranslation } from 'react-i18next';
 

@@ -31,10 +31,10 @@ class AdaptiveSize extends Component {
 
 
         if (width <= 720) {
-            width = (width * 90) / 100;
+            width = (width * 80) / 100;
             height = (height * 80) / 100;
         } else {
-            width = (width * 60) / 100;
+            width = (width * 55) / 100;
             height = (height * 60) / 100;
         }
 

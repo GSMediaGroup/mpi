@@ -1,6 +1,6 @@
 header {
   &.headerBg {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.40);
   }
 
   &.fixed-top .navbar {
@@ -10,13 +10,11 @@ header {
   .siteLogo {
     display: flex;
     width: 79px;
-    //height: 80px;
     object-fit: contain;
 
     img {
       width: 100%;
       height: 52px;
-      transition: 0.4s ease transform;
     }
 
     .phone-number {
@@ -24,10 +22,6 @@ header {
       line-height: 52px;
       padding: 0 0 0 20px;
       font-size: 14px;
-    }
-
-    &:hover img {
-      transform: scale(1.03);
     }
   }
 
@@ -79,12 +73,20 @@ header {
       }
     }
 
-    @media (min-width: 1025px) and (max-width: 1700px) {
-      $nav_margin_right: 175px;
+    @media (min-width: 1025px) and (max-width: 1399px) {
+      $nav_margin_right: 180px;
 
       ul {
         margin-right: $nav_margin_right !important;
 
+      }
+    }
+
+    @media (min-width:1400px) and (max-width:1700px) {
+      $nav_margin_right: 120px;
+
+      ul {
+        margin-right:$nav_margin_right !important;
       }
     }
 

@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import { Row, Col} from 'reactstrap';
 
-import WebDesc from '../../../../../images/webDesc.png';
+import WebDesc from '../../../../../media/images/webDesc.png';
 
-import Frontend from '../../../../../images/services/frontend.png';
-import Backend from '../../../../../images/services/backend.png';
-import Optimize from '../../../../../images/services/optimize.png';
+import Frontend from '../../../../../media/images/services/frontend.png';
+import Backend from '../../../../../media/images/services/backend.png';
+import Optimize from '../../../../../media/images/services/optimize.png';
 import { withTranslation } from 'react-i18next';
 
 class WebDevelopment extends Component {

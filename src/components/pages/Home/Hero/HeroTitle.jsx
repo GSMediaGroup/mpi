@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Logo from '../../../../images/mpi.png';
-
 import { withTranslation } from 'react-i18next';
 
 

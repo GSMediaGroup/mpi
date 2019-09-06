@@ -28,26 +28,41 @@ footer {
         font-size: 13px;
         color: rgba(173, 171, 171, 0.7);
       }
-    }
 
-    .change-lng {
-      border: 1px solid rgba(173, 171, 171, 0.5);
-      width: 30px;
-      height: 30px;
-      margin: 0 auto;
-      border-radius: 100%;
-      line-height: 30px;
-      transition: 0.6s ease;
-      font-size: 12px;
-
-      &:hover {
-        color: white;
-        border-color: white;
+      &.hover-main-content {
+        .icon-description {
+          transition:all 0.6s ease;
+        }
+        &:hover {
+          .icon-description {
+            color:white;
+          }
+        }
       }
     }
 
-    .changeLngText {
-      font-size: 12px;
+    .changeLangBlock {
+      .change-lng {
+        border: 1px solid rgba(173, 171, 171, 0.5);
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+        border-radius: 100%;
+        line-height: 30px;
+        transition: 0.6s ease;
+        font-size: 12px;
+      }
+
+      .changeLngText {
+        font-size: 12px;
+        transition: 0.6s ease;
+      }
+
+      &:hover {
+        .changeLngText {
+          color:white;
+        }
+      }
     }
 
     @media (max-width: 767px) {

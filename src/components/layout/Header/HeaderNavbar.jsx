@@ -12,7 +12,7 @@ import {withTranslation} from "react-i18next";
 import Modal from '../../Modal/Modal';
 import ContactUs from '../../pages/ContactUs';
 
-import Logo from '../../../images/mpi.png';
+import Logo from '../../../media/images/mpi.png';
 
 class HeaderNavbar extends Component {
     state = {
@@ -52,8 +52,9 @@ class HeaderNavbar extends Component {
 
     scrollToSection(id) {
         return (e) => {
-            const elem = (id !== 'services') ? document.getElementById(id) : document.getElementsByClassName(`serviceIcon`)[0];
             e.preventDefault();
+
+            const elem = (id !== 'services') ? document.getElementById(id) : document.getElementsByClassName(`serviceIcon`)[0];
 
             elem.scrollIntoView({behavior: 'smooth'});
         };

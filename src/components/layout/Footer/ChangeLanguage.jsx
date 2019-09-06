@@ -56,7 +56,7 @@ class ChangeLanguage extends Component {
     render() {
 
         return (
-            <Col className="main-content col" lg={{size: 3}} md={{size: 3}}>
+            <Col className="main-content col changeLangBlock" lg={{size: 3}} md={{size: 3}}>
                 <Row className="pb-1 col-md-12 col-lg-12 m-0">
                     <span className="change-lng"  onClick={this.changeLng}>{this.langIcon()}</span>
                 </Row>

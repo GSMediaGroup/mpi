@@ -5,12 +5,12 @@ import AdaptiveSize from '../../../Services/AdaptiveSize';
 
 import {Player, BigPlayButton} from 'video-react';
 
-import MPIVideoMp4 from '../../../videos/mpi-video.mp4';
-import MPIVideoWebM from '../../../videos/mpi-video.webm';
-import MPIVideoOgg from '../../../videos/mpi-video.ogg';
+import MPIVideoMp4 from '../../../media/videos/as/mpi-video.mp4';
+import MPIVideoWebM from '../../../media/videos/as/mpi-video.webm';
+import MPIVideoOgg from '../../../media/videos/as/mpi-video.ogg';
 
 
-import MPIVideoBg from '../../../images/mpiVideoBg.jpg';
+import MPIVideoBg from '../../../media/images/mpiVideoBg.jpg';
 
 import {Row, Col, Container} from 'reactstrap';
 

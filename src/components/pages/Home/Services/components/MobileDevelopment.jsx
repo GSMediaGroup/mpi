@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'reactstrap';
 
-import MobileDesc from '../../../../../images/mobileDesc.png';
+import MobileDesc from '../../../../../media/images/mobileDesc.png';
 
-import Android from '../../../../../images/Android3.png';
-import Hybrid from '../../../../../images/Hybrid3.png';
-import IOS from '../../../../../images/IOS3.png';
+import Android from '../../../../../media/images/Android3.png';
+import Hybrid from '../../../../../media/images/Hybrid3.png';
+import IOS from '../../../../../media/images/IOS3.png';
 import { withTranslation } from 'react-i18next';
 
 class WebDevelopment extends Component {

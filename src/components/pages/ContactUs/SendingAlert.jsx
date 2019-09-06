@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 
-import SendingAlertImg from '../../../images/sendingMsg.png';
+import SendingAlertImg from '../../../media/images/sendingMsg.png';
 import {withTranslation} from "react-i18next";
 
 class SendingAlert extends Component {

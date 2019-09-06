@@ -69,8 +69,6 @@ export default class Home extends Component {
     }
 
     render() {
-        const { loadingBlock } = this.state;
-
         return (
             <>
                 {/*{ loadingBlock }*/}

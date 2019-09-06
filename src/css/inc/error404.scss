@@ -8,7 +8,7 @@
 
 
   .error404 {
-    background-image: url("../images/error404.png");
+    background-image: url("../media/images/error404.png");
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
@@ -16,8 +16,7 @@
     width: 90%;
 
     .content {
-      width: 600px;
-      //border: 1px solid red;
+      max-width: 600px;
       float: right;
       text-align: center;
       color: white;

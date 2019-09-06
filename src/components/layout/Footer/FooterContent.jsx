@@ -9,9 +9,9 @@ import ChangeLanguage from '../../layout/Footer/ChangeLanguage';
 import { withTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import marker from "../../../images/footer/marker.png";
-import message from "../../../images/footer/message.png";
-import phone from "../../../images/footer/phone.png";
+import marker from "../../../media/images/footer/marker.png";
+import message from "../../../media/images/footer/message.png";
+import phone from "../../../media/images/footer/phone.png";
 
 
 class FooterContent extends Component {

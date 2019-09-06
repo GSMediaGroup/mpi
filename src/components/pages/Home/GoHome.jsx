@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import VerticalScroll from '../../../images/vertical-scroll.png';
+import VerticalScroll from '../../../media/images/vertical-scroll.png';
 
 
 export default class GoHome  extends Component{

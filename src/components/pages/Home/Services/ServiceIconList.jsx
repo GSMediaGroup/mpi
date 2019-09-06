@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {Row, Col} from 'reactstrap';
 
-import webDev from '../../../../images/devService.png';
-import mobileDev from '../../../../images/mobileService.png';
-import design from '../../../../images/designService.png';
+import webDev from '../../../../media/images/devService.png';
+import mobileDev from '../../../../media/images/mobileService.png';
+import design from '../../../../media/images/designService.png';
 
-import webDevBg from '../../../../images/devServiceBg.png';
-import mobileDevBg from '../../../../images/mobileServiceBg.png';
-import designBg from '../../../../images/designServiceBg.png';
+import webDevBg from '../../../../media/images/devServiceBg.png';
+import mobileDevBg from '../../../../media/images/mobileServiceBg.png';
+import designBg from '../../../../media/images/designServiceBg.png';
 
 import {DESIGN, MOBILE_DEVELOPMENT, WEB_DEVELOPMENT} from "./ServiceContentList";
 

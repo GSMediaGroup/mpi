@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 
-import star from '../../../images/star-solid.svg';
+import star from '../../../media/images/star-solid.svg';
 
 import HeroTitle from './Hero/HeroTitle';
 import HeroServices from './Hero/HeroServices';
 
-import WebDev from '../../../images/service_1.png';
-import MobileDev from '../../../images/service_2.png';
-import ProductDesign from '../../../images/service_3.png';
+import WebDev from '../../../media/images/service_1.png';
+import MobileDev from '../../../media/images/service_2.png';
+import ProductDesign from '../../../media/images/service_3.png';
 import {withTranslation} from "react-i18next";
 import {WEB_DEVELOPMENT, MOBILE_DEVELOPMENT, DESIGN} from "./Services/ServiceContentList";
 
