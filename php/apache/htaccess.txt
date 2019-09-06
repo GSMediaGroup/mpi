@@ -9,3 +9,5 @@
 
 ErrorDocument 403 /
 ErrorDocument 404 /
+
+Options -Indexes
