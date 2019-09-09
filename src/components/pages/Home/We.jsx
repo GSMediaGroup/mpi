@@ -1,22 +1,16 @@
 import React, {Component} from "react";
 import {Container, Row} from 'reactstrap';
 import Video from './We/Video';
-import Citad from './We/Quotes';
+import Quotes from './We/Quotes';
 
 class We extends Component {
-    constructor(props) {
-        super(props);
-
-        //this.event = this.event.bind(this)
-    }
-
     render() {
         return (
-            <section id="we" className="">
+            <section id="we">
                 <Container>
                     <Row>
                         <Video />
-                        <Citad />
+                        <Quotes />
                     </Row>
                 </Container>
             </section>

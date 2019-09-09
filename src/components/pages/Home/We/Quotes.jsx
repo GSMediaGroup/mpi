@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from "react";
+import React, {Component} from "react";
 import {Col} from "reactstrap";
 
 import {withTranslation} from 'react-i18next';
@@ -55,8 +55,8 @@ class Quotes extends Component {
         const {activeQuotes} = this.state;
 
         return (
-            <Col className="col-12 col-xl-4 offset-xl-2 pt-4 pt-xl-0">
-                <div className="comma">
+            <Col className="col-12 col-xl-4 offset-xl-2 pt-5 pt-xl-0">
+                <div className="comma pt-2 pt-xl-0">
                     <img src={Comma} alt="Comma"/>
                 </div>
 
