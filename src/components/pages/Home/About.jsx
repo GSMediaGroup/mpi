@@ -3,14 +3,13 @@ import React, {Component} from 'react';
 import Modal from '../../Modal/Modal';
 import AdaptiveSize from '../../../Services/AdaptiveSize';
 
-import {Player, BigPlayButton} from 'video-react';
+import {BigPlayButton, Player} from 'video-react';
 
-import MPIVideoMp4 from '../../../media/videos/as/mpi-video.mp4';
-import MPIVideoWebM from '../../../media/videos/as/mpi-video.webm';
-import MPIVideoOgg from '../../../media/videos/as/mpi-video.ogg';
+import We from "../../../media/images/we.jpg";
 
-
-import MPIVideoBg from '../../../media/images/mpiVideoBg.jpg';
+import WeVideoMP4 from "../../../media/videos/we.mp4";
+import WeVideoWebm from "../../../media/videos/we.webm";
+import WeVideoOgg from "../../../media/videos/we.ogg";
 
 import {Row, Col, Container} from 'reactstrap';
 
@@ -20,7 +19,8 @@ import {withTranslation} from 'react-i18next';
 class About extends Component {
     state = {
         isOpen: false,
-        width: null
+        width: null,
+        height: null
     };
 
     constructor(props) {
@@ -28,7 +28,8 @@ class About extends Component {
 
         this.playVideo = this.playVideo.bind(this);
         this.onClose = this.onClose.bind(this);
-        this.updateSize = this.updateSize.bind(this)
+        this.updateSize = this.updateSize.bind(this);
+        this._onReady = this._onReady.bind(this);
     }
 
 
@@ -52,6 +53,10 @@ class About extends Component {
         });
     }
 
+    _onReady (e) {
+       e.target.pauseVideo()
+    }
+
     render() {
         const {width} = this.state;
 
@@ -70,7 +75,7 @@ class About extends Component {
                     <h2 className="text-left pb-5">{this.props.t(title)}</h2>
 
                     <Row className="align-items-center">
-                        <Col className="col-12 col-md pb-4 pb-md-0">
+                        <Col className="col-12 col-xl pb-4 pb-md-0">
                             <p>{this.props.t(description)}</p>
                             <ul className="workProcess pt-2">
                                 <li><span className="number">1</span><span
@@ -81,8 +86,8 @@ class About extends Component {
                                     className="about-option">{this.props.t(rows['3'])}</span></li>
                             </ul>
                         </Col>
-                        <Col className="col-12 col-xl-7 offset-xl-1 videoPlay" onClick={this.playVideo}>
-                            <img src={MPIVideoBg} alt={imageAlt}/>
+                        <Col className="col-12 col-xl-6 offset-xl-1 videoPlay" onClick={this.playVideo}>
+                            <img src={We} alt={imageAlt}/>
                         </Col>
                     </Row>
                 </div>
@@ -95,9 +100,9 @@ class About extends Component {
                                     onPlay={this.playVideo}
                                     width={width}
                                     fluid={false}>
-                                <source src={MPIVideoMp4} type="video/mp4"/>
-                                <source src={MPIVideoWebM} type="video/webm"/>
-                                <source src={MPIVideoOgg} type="video/ogg"/>
+                                <source src={WeVideoMP4} type="video/mp4"/>
+                                <source src={WeVideoWebm} type="video/webm"/>
+                                <source src={WeVideoOgg} type="video/ogg"/>
                                 <BigPlayButton position="center"/>
                             </Player>
                         </Container>

@@ -10,6 +10,7 @@ import Slider from './Home/OurTeam';
 import HashTag from '../pages/Home/HashTag';
 import OurTechnologies from '../pages/Home/OurTechnologies';
 import GoHome from '../pages/Home/GoHome';
+import Video from "./Home/We";
 
 export default class Home extends Component {
     state = {
@@ -77,6 +78,7 @@ export default class Home extends Component {
                 <Services activeType={this.state.type} updateServiceType={this.updateServiceType}/>
                 <Agile/>
                 <OurTechnologies/>
+                <Video />
                 <HashTag/>
                 <Slider/>
                 <GoHome/>

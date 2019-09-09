@@ -71,6 +71,17 @@
     "HASHTAGS_TITLE" : "МЫ ЗАБОТИМСЯ ",
     "HASHTAGS_DESCRIPTION" : "О ВАШИХ ПРОЕКТАХ",
 
+    "WE_QUOTES_1_TEXT": "Without continual <span>growth</span> and <span>progress<span>, such words as improvement, achievement, and success have no meaning. ",
+    "WE_QUOTES_1_AUTHOR": "Benjamin Franklin",
+    "WE_QUOTES_2_TEXT": "The price of success is hard work, dedication to the job at hand, and the determination that whether we win or lose, we have applied <span>the best of ourselves</span> to the task at hand. ",
+    "WE_QUOTES_2_AUTHOR": "Vince Lombardi",
+    "WE_QUOTES_3_TEXT": "The will to win, the desire to succeed, the urge to reach your full potential... these are the <span>keys</span> that will unlock the door to <span>personal excellence</span>. ",
+    "WE_QUOTES_3_AUTHOR": "Confucius",
+    "WE_QUOTES_4_TEXT" : "Individual commitment to a <span>group effort</span> - that is what makes a team work, a company work, a society work, a civilization work. ",
+    "WE_QUOTES_4_AUTHOR" : "Vince Lombardi",
+    "WE_QUOTES_5_TEXT" : "Coming together is a <span>beginning</span>; keeping together is <span>progress</span>; working together is <span>success</span>",
+    "WE_QUOTES_5_AUTHOR" : "Henry Ford",
+
     "CONTACT_FORM_TITLE" : "Связаться с Нами",
     "CONTACT_FORM_FIELD_NAME" : "Имя",
     "CONTACT_FORM_FIELD_EMAIL" : "Email",
