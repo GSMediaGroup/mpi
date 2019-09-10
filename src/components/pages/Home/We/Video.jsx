@@ -10,9 +10,9 @@ import AdaptiveSize from "../../../../Services/AdaptiveSize";
 
 import {BigPlayButton, Player} from "video-react";
 
-import MPIVideoMp4 from "../../../../media/videos/as/mpi-video.mp4";
-import MPIVideoWebM from "../../../../media/videos/as/mpi-video.webm";
-import MPIVideoOgg from "../../../../media/videos/as/mpi-video.ogg";
+import MPIVideoMp4 from "../../../../media/videos/mpi-video.mp4";
+import MPIVideoWebM from "../../../../media/videos/mpi-video.webm";
+import MPIVideoOgg from "../../../../media/videos/mpi-video.ogg";
 
 class Video extends Component {
     state = {

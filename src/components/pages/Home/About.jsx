@@ -3,13 +3,9 @@ import React, {Component} from 'react';
 import Modal from '../../Modal/Modal';
 import AdaptiveSize from '../../../Services/AdaptiveSize';
 
-import {BigPlayButton, Player} from 'video-react';
+import ReactPlayer from "react-player/lib/players/YouTube";
 
 import We from "../../../media/images/we.jpg";
-
-import WeVideoMP4 from "../../../media/videos/we.mp4";
-import WeVideoWebm from "../../../media/videos/we.webm";
-import WeVideoOgg from "../../../media/videos/we.ogg";
 
 import {Row, Col, Container} from 'reactstrap';
 
@@ -58,7 +54,8 @@ class About extends Component {
     }
 
     render() {
-        const {width} = this.state;
+        const {width, height} = this.state;
+        const url = `https://youtu.be/vB7GKEaycbI`;
 
         const title = "ABOUT_TITLE";
         const description = "ABOUT_DESCRIPTION";
@@ -95,16 +92,16 @@ class About extends Component {
                     <Modal isOpen={true} onClose={this.onClose}>
                         <Container className="p-0">
                             <AdaptiveSize onChangeSize={this.updateSize}/>
-                            <Player autoPlay
-                                    playsInline
-                                    onPlay={this.playVideo}
-                                    width={width}
-                                    fluid={false}>
-                                <source src={WeVideoMP4} type="video/mp4"/>
-                                <source src={WeVideoWebm} type="video/webm"/>
-                                <source src={WeVideoOgg} type="video/ogg"/>
-                                <BigPlayButton position="center"/>
-                            </Player>
+                            <ReactPlayer
+                                url={url}
+                                youtubeConfig={{
+                                    playerVars : {showInfo : 1}
+                                }}
+                                controls
+                                playing
+                                width={width - 5}
+                                height={height}
+                            />
                         </Container>
                     </Modal>
                 )}
