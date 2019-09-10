@@ -94,12 +94,16 @@ class About extends Component {
                             <AdaptiveSize onChangeSize={this.updateSize}/>
                             <ReactPlayer
                                 url={url}
-                                youtubeConfig={{
-                                    playerVars : {showInfo : 1}
+                                config={{
+                                    youtube : {
+                                    playerVars : {
+                                        showInfo : 1,
+                                        controls: 1,
+                                        autoplay : 1
+                                    }
                                 }}
-                                controls
-                                playing
-                                width={width - 5}
+                                }
+                                width={width}
                                 height={height}
                             />
                         </Container>

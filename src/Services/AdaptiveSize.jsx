@@ -34,8 +34,8 @@ class AdaptiveSize extends Component {
             width = (width * 80) / 100;
             height = (height * 80) / 100;
         } else {
-            width = (width * 55) / 100;
-            height = (height * 60) / 100;
+            width = (width * 54) / 100;
+            height = (height * 59) / 100;
         }
 
         this.props.onChangeSize({

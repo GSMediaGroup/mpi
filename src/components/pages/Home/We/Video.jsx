@@ -8,11 +8,8 @@ import Modal from "../../../Modal/Modal";
 
 import AdaptiveSize from "../../../../Services/AdaptiveSize";
 
-import {BigPlayButton, Player} from "video-react";
+import ReactPlayer from "react-player";
 
-import MPIVideoMp4 from "../../../../media/videos/mpi-video.mp4";
-import MPIVideoWebM from "../../../../media/videos/mpi-video.webm";
-import MPIVideoOgg from "../../../../media/videos/mpi-video.ogg";
 
 class Video extends Component {
     state = {
@@ -47,7 +44,8 @@ class Video extends Component {
     }
 
     render() {
-        const {isOpen, width} = this.state;
+        const {isOpen, width, height} = this.state;
+        const url = `https://youtu.be/fjWdfewDMnM`;
 
         return (
             <Fragment>
@@ -60,16 +58,20 @@ class Video extends Component {
                         <Modal isOpen={true} onClose={this.onClose}>
                             <Container className="p-0">
                                 <AdaptiveSize onChangeSize={this.updateSize}/>
-                                <Player autoPlay
-                                        playsInline
-                                        onPlay={this.playVideo}
-                                        width={width}
-                                        fluid={false}>
-                                    <source src={MPIVideoMp4} type="video/mp4"/>
-                                    <source src={MPIVideoWebM} type="video/webm"/>
-                                    <source src={MPIVideoOgg} type="video/ogg"/>
-                                    <BigPlayButton position="center"/>
-                                </Player>
+                                <ReactPlayer
+                                    url={url}
+                                    config={{
+                                        youtube : {
+                                            playerVars: {
+                                                showinfo: 1,
+                                                autoplay : 1,
+                                                controls : 1
+                                            }
+                                        },
+                                    }}
+                                    width={width}
+                                    height={height}
+                                />
                             </Container>
                         </Modal>
                     )
