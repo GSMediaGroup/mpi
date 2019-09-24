@@ -7,11 +7,6 @@ import Gallery from './OurTeam/Gallery';
 
 
 export default class Slider extends Component {
-
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const Title = "PHOTO_SLIDER_TITLE";
         const Description = `PHOTO_SLIDER_DESCRIPTION`;

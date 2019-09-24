@@ -9,9 +9,6 @@ import Adaptive from '../../../../../media/images/services/adaptive.png';
 import { withTranslation } from 'react-i18next';
 
 class WebDevelopment extends Component {
-    constructor (props) {
-        super(props);
-    }
 
     render () {
         const programingTech = [

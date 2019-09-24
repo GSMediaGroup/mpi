@@ -9,10 +9,6 @@ class HeroTitle extends Component {
         display : "block"
     };
 
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll, true);
     }

@@ -79,7 +79,7 @@ export default class MultipleItems extends Component {
             arrows: true,
             slidesToShow: count,
             slidesToScroll: 1,
-            autoplay: false,
+            autoplay: true,
             nextArrow: <NextArrow/>,
             prevArrow: <PrevArrow/>
         };

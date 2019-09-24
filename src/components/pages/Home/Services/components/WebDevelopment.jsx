@@ -9,10 +9,7 @@ import Optimize from '../../../../../media/images/services/optimize.png';
 import { withTranslation } from 'react-i18next';
 
 class WebDevelopment extends Component {
-    constructor (props) {
-        super(props);
-    }
-
+    
     render () {
         const programingTech = [
             {src: Frontend, alt: `OUR_SERVICES_BLOCK_1_LOGO_1_DESCRIPTION_ALT`, text: `OUR_SERVICES_BLOCK_1_LOGO_1_DESCRIPTION`},

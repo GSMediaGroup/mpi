@@ -10,12 +10,6 @@ import {faMapMarkerAlt, faPhoneAlt, faEnvelope} from '@fortawesome/free-solid-sv
 import { faFacebookF, faGoogle, faInstagram, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 class ContactInfo extends Component {
-
-    constructor (props) {
-        super(props);
-
-    }
-
     render () {
         const address = "FOOTER_ADDRESS",
                contactInfoTitle = `CONTACT_INFO_TITLE`;

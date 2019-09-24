@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Container} from 'reactstrap';
 
 import SliderTitleComponent from './PhotoSlider/SliderTitle.component';
@@ -7,14 +7,8 @@ import TechnologySlider from './OurTechnologies/TechnologySlider';
 import Gallery from '../Home/OurTechnologies/SlideImages';
 import { withTranslation } from 'react-i18next';
 
- class Slider extends Component {
-
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        const Title = "TECHNOLOGIES_SLIDER_TITLE";
+const Slider = () => {
+    const Title = "TECHNOLOGIES_SLIDER_TITLE";
         const Description = `TECHNOLOGIES_SLIDER_DESCRIPTION`;
 
         return (
@@ -27,7 +21,6 @@ import { withTranslation } from 'react-i18next';
                 </div>
             </section>
         );
-    }
 }
 
 export default withTranslation()(Slider)

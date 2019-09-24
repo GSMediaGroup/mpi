@@ -8,9 +8,6 @@ import { withTranslation } from 'react-i18next';
  * ---Description---
  */
 class SliderTitle extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         
