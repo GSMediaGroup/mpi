@@ -50,7 +50,8 @@ export default class MultipleItems extends Component {
         document.body.style.overflow = "hidden";
         this.setState({
             isOpen: true,
-            index, images
+            index, 
+            images
         });
     }
 
@@ -80,10 +81,10 @@ export default class MultipleItems extends Component {
             slidesToScroll: 1,
             autoplay: false,
             nextArrow: <NextArrow/>,
-            prevArrow: <PrevArrow/>,
+            prevArrow: <PrevArrow/>
         };
 
-        const {gallery} = this.props;
+        let {gallery} = this.props;
 
         return (
             <>
@@ -92,7 +93,7 @@ export default class MultipleItems extends Component {
                         {
                             gallery.map((i, index) => {
                                 return (
-                                    <img src={i} key={index} onClick={() => this.openImage(index, gallery)}
+                                    <img src={i.icon} key={index} onClick={() => this.openImage(index, gallery.map(i => i.image))}
                                          alt="Team Images"/>
                                 )
                             })

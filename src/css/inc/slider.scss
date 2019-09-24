@@ -43,3 +43,9 @@
     width: 80%;
     margin: 0 auto;
 }
+
+@media screen and (max-width : 582px) {
+    #our-team {
+      padding-top: 80px !important;
+    }
+  }
