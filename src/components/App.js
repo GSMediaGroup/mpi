@@ -2,8 +2,6 @@ import React, {Component, Fragment} from "react";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import {withTranslation} from "react-i18next";
 
-import ScrollArea from 'react-scrollbar';
-
 import i18next from 'i18next';
 
 import Header from "./layout/Header";
@@ -55,15 +53,9 @@ class App extends Component {
             }
             
             return (
-                <ScrollArea
-                    speed={0.8}
-                    className="scrollArea"
-                    contentClassName="scrollContent"
-                    horizontal={false}
-                    smoothScrolling={true}
-                >
+                <Fragment>
                     { page }
-                </ScrollArea>  
+                </Fragment>  
             )
 
         };
