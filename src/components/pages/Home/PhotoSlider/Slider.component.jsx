@@ -34,6 +34,9 @@ export default class MultipleItems extends Component {
         let showCount = null;
 
         if (width <= 992) showCount = 1;
+        
+        // else if (width <= 800) showCount = 1;
+
         else showCount = 3;
 
 

@@ -1,6 +1,9 @@
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import {withTranslation} from "react-i18next";
+
+import ScrollArea from 'react-scrollbar';
+
 import i18next from 'i18next';
 
 import Header from "./layout/Header";
@@ -39,18 +42,30 @@ class App extends Component {
 
     renderComponent(Component, hasLayout) {
         return (props) => {
+            const page = (
+                <Fragment>
+                    <Header/>
+                    <Component {...props} />
+                    <Footer/>
+                </Fragment>
+            );
 
             if (!hasLayout) {
-                return <Component {...props} />;
-            } else {
-                return (
-                    <>
-                        <Header/>
-                        <Component {...props} />
-                        <Footer/>
-                    </>
-                );
+                page = <Component {...props} />
             }
+            
+            return (
+                <ScrollArea
+                    speed={0.8}
+                    className="scrollArea"
+                    contentClassName="scrollContent"
+                    horizontal={false}
+                    smoothScrolling={true}
+                >
+                    { page }
+                </ScrollArea>  
+            )
+
         };
     }
 
@@ -61,8 +76,8 @@ class App extends Component {
                 <Switch>
                     <Route exact={true} path="/" render={this.renderComponent(Home, true)}/>
                     <Route exact={true} path="/services" render={this.renderComponent(Services, true)}/>
-                    {/*<Route exact={true} path="/:lang" render={this.changeLanguage}/>*/}
-                    {/*<Route exact={true} path="/:lang" render={this.changeLanguage}/>*/}
+                    <Route exact={true} path="/:lang" render={this.changeLanguage}/>
+                    <Route exact={true} path="/:lang" render={this.changeLanguage}/>
                     <Route path="*" render={this.renderComponent(Error404, false)}/>
                 </Switch>
             </BrowserRouter>
