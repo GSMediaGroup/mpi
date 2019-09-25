@@ -2,15 +2,13 @@ import React, {Component, Fragment} from "react";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import {withTranslation} from "react-i18next";
 
-import ScrollArea from 'react-scrollbar';
-
 import i18next from 'i18next';
 
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 
 import Home from "./pages/Home";
-import Services from "./pages/Services";
+// import Services from "./pages/Services";
 import Error404 from "./pages/Error404";
 
 class App extends Component {
@@ -55,15 +53,9 @@ class App extends Component {
             }
             
             return (
-                <ScrollArea
-                    speed={0.8}
-                    className="scrollArea"
-                    contentClassName="scrollContent"
-                    horizontal={false}
-                    smoothScrolling={true}
-                >
+                <Fragment>
                     { page }
-                </ScrollArea>  
+                </Fragment>  
             )
 
         };
@@ -74,8 +66,7 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route exact={true} path="/" render={this.renderComponent(Home, true)}/>
-                    <Route exact={true} path="/services" render={this.renderComponent(Services, true)}/>
+                    <Route exact={true} path="/" render={this.renderComponent(Home, true)}/>                
                     <Route exact={true} path="/:lang" render={this.changeLanguage}/>
                     <Route exact={true} path="/:lang" render={this.changeLanguage}/>
                     <Route path="*" render={this.renderComponent(Error404, false)}/>
