@@ -54,7 +54,7 @@ export default class ServiceIconList extends Component {
                         let imgSrc = images[type].srcMain,
                             bottomBorder = ``;
 
-                          if(activeType == type) {
+                          if (activeType === type) {
                               imgSrc = images[type].srcActive;
                               bottomBorder = `bottomBorder`;
                           }

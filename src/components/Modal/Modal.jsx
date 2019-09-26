@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 import {withTranslation} from "react-i18next";
 
@@ -22,7 +22,7 @@ const customStyles = {
 
 ReactModal.setAppElement(document.getElementById('app'));
 
-class Modal extends React.Component {
+class Modal extends Component {
     state = {
         modalIsOpen: false,
     };

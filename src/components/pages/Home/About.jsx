@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
-
-import Modal from '../../Modal/Modal';
-import AdaptiveSize from '../../../Services/AdaptiveSize';
-
 import ReactPlayer from "react-player/lib/players/YouTube";
-
-import We from "../../../media/images/we.jpg";
-
 import {Row, Col, Container} from 'reactstrap';
-
 import {withTranslation} from 'react-i18next';
 
+import Modal from '../../Modal/Modal';
+import AdaptiveSize from '../../../services/AdaptiveSize';
+import We from "../../../media/images/we.jpg";
+
+import VideoPlayer from "../../video/Video";
+import MpiVideoMp4 from "../../../media/videos/mpi-about-full/mpi.mp4";
+import MpiVideoWebm from "../../../media/videos/mpi-about-full/mpi.webm";
 
 class About extends Component {
     state = {
@@ -92,20 +91,22 @@ class About extends Component {
                     <Modal isOpen={true} onClose={this.onClose}>
                         <Container className="p-0">
                             <AdaptiveSize onChangeSize={this.updateSize}/>
-                            <ReactPlayer
-                                url={url}
-                                config={{
-                                    youtube : {
-                                    playerVars : {
-                                        showInfo : 1,
-                                        controls: 1,
-                                        autoplay : 1
-                                    }
-                                }}
-                                }
-                                width={width}
-                                height={height}
-                            />
+                            {/*<ReactPlayer*/}
+                            {/*    url={url}*/}
+                            {/*    config={{*/}
+                            {/*        youtube : {*/}
+                            {/*        playerVars : {*/}
+                            {/*            showInfo : 1,*/}
+                            {/*            controls: 1,*/}
+                            {/*            autoplay : 1*/}
+                            {/*        }*/}
+                            {/*    }}*/}
+                            {/*    }*/}
+                            {/*    width={width}*/}
+                            {/*    height={height}*/}
+                            {/*/>*/}
+
+                            <VideoPlayer id="mpi-full" mp4={MpiVideoMp4} webm={MpiVideoWebm} />
                         </Container>
                     </Modal>
                 )}

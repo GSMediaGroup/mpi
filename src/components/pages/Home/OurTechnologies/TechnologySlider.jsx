@@ -6,12 +6,6 @@ export default class Technologies extends Component {
         slidesToShow: null
     };
 
-    constructor(props) {
-        super(props);
-    }
-
-
-
     render() {
         const {gallery, currentClass} = this.props;
 

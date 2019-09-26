@@ -10,6 +10,7 @@
 
 $hero_bg_color: #353b5b;
 $hero_text_color: #fff;
+$right_service_width: 300px;
 
 #hero {
   position: relative;
@@ -31,7 +32,8 @@ $hero_text_color: #fff;
       width: 350px;
       height: 350px;
       margin-left: 0;
-      background: #3db9d1;
+       background: #3db9d1; // blue
+      //background: #7974794d; // gray
       border-radius: 50%;
       white-space: nowrap;
       padding: 1px 80px 0 80px;
@@ -50,7 +52,7 @@ $hero_text_color: #fff;
       padding: 7px 30px;
       border-radius: 30px;
       border: 1px solid;
-      transition: 0.6s ease-in-out;
+      transition: 0.3s ease-in-out;
 
       &:hover {
         background: white;
@@ -60,9 +62,9 @@ $hero_text_color: #fff;
       }
     }
 
-    @media (min-width:1330px) {
+    @media (min-width: 1330px) {
       .heroTitle {
-        margin-left:73px;
+        margin-left: 73px;
       }
     }
 
@@ -72,7 +74,7 @@ $hero_text_color: #fff;
 
     .heroService {
       position: relative;
-      max-width: 300px;
+      max-width: $right_service_width;
       z-index: 2;
 
       .serviceItem {
@@ -101,15 +103,15 @@ $hero_text_color: #fff;
         }
 
         &:first-child {
-          background: #52d3eb;
+          background: $color-light;
         }
 
         &:nth-child(2) {
-          background: #42bad0;
+          background: $color-medium;
         }
 
         &:last-child {
-          background: #2d95a9;
+          background: $color-dark;
         }
 
         a {
@@ -119,7 +121,7 @@ $hero_text_color: #fff;
           height: 35px;
           line-height: 35px;
           display: inline-block;
-          transition: 0.75s ease-out;
+          transition: 0.3s ease-out;
 
           &:hover {
             border: 1px solid;
@@ -156,7 +158,6 @@ $hero_text_color: #fff;
       flex-direction: column;
 
       .hero-main {
-
         .heroTitle {
           max-width: 300px;
           max-height: 300px;
@@ -180,9 +181,7 @@ $hero_text_color: #fff;
     }
   }
 
-
   @media (max-width: 992px) {
-
     .heroTitle {
       margin: 15% 0;
 
@@ -228,14 +227,11 @@ $hero_text_color: #fff;
     }
 
     .heroContent {
-
       .heroService {
-
         .serviceItem {
           max-height: 150px;
 
           .topPart {
-
             img {
               width: 55px;
               height: 55px;
@@ -259,7 +255,6 @@ $hero_text_color: #fff;
     }
   }
 
-
   @media (min-width: 360px) and (max-width: 499px) {
     .hero-main {
       .heroTitle {
@@ -279,7 +274,6 @@ $hero_text_color: #fff;
     }
 
     .heroContent {
-
       .container {
         height: 75%;
       }
@@ -293,9 +287,7 @@ $hero_text_color: #fff;
           padding: 15px 0;
           width: 100%;
 
-
           .topPart {
-
             img {
               width: 55px;
               height: 55px;
@@ -322,14 +314,12 @@ $hero_text_color: #fff;
 
   @media (max-width: 359px) {
     .hero-main {
-
       .heroTitle {
         width: 200px;
         height: 200px;
         padding: 30px;
 
-        a,
-        p {
+        a, p {
           font-size: 14px;
         }
 
@@ -365,7 +355,6 @@ $hero_text_color: #fff;
           }
         }
 
-
         a {
           padding: 0 14px !important;
           font-size: 14px;
@@ -374,9 +363,9 @@ $hero_text_color: #fff;
     }
   }
 
-  @media (max-width:863px) {
-    @media (orientation : landscape) {
-      height:unset !important;
+  @media (max-width: 863px) {
+    @media (orientation: landscape) {
+      height: unset !important;
       .hero-main {
         .heroTitle {
           margin-top: 72px;
@@ -385,13 +374,36 @@ $hero_text_color: #fff;
       }
 
       .heroService {
-
         .serviceItem {
-          height:150px;
+          height: 150px;
         }
       }
     }
   }
 
+  .cover-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100vw; //calc(100vw - #{$right_service_width});
+    max-height: 100vh;
+    z-index: -1000;
+    overflow: hidden;
 
+    video {
+      width: 100%;
+    }
+
+    &::after {
+      content: "";
+      background: rgba(62, 57, 57, 0.85);
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 100vw; //calc(100vw - #{$right_service_width});
+      max-height: 100vh;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }

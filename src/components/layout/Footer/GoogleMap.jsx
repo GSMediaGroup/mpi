@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import AdaptiveSize from '../../../Services/AdaptiveSize';
+import AdaptiveSize from '../../../services/AdaptiveSize';
 
 class GoogleMap extends Component {
-
     state = {
         width: null,
         height: null
@@ -11,23 +10,22 @@ class GoogleMap extends Component {
     constructor(props) {
         super(props);
 
-        this.updateSize= this.updateSize.bind(this);
+        this.updateSize = this.updateSize.bind(this);
     }
 
-    updateSize (size) {
-        this.setState(
-            size
-        )
+    updateSize(size) {
+        this.setState(size);
     }
 
     render() {
-        const {width, height} = this.state;
+        const { width, height } = this.state;
 
         return (
             <div className="mapouter">
                 <div className="gmap_canvas">
                     <AdaptiveSize onChangeSize={this.updateSize} />
                     <iframe width={width}
+                            title="Google Map - MPI"
                             height={height}
                             id="gmap_canvas"
                             src="https://maps.google.com/maps?q=IT%20Park%20Business%20Center%20Abelyan%206%2F1%2C%20Yerevan%20Armenia&t=&z=13&ie=UTF8&iwloc=&output=embed"

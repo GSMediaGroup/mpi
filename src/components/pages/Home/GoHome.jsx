@@ -43,16 +43,17 @@ export default class GoHome  extends Component{
     }
 
     render () {
-        const { display } = this.state;
-
-        return (
-            <div
-                className="go-home"
-                style={{display : display}}
-                onClick={this.goHome}
-            >
-                <img src={ VerticalScroll } alt="Scroll Up"/>
-            </div>
-        );
+        return null;
+        // const { display } = this.state;
+        //
+        // return (
+        //     <div
+        //         className="go-home"
+        //         style={{display : display}}
+        //         onClick={this.goHome}
+        //     >
+        //         <img src={ VerticalScroll } alt="Scroll Up"/>
+        //     </div>
+        // );
     }
 }

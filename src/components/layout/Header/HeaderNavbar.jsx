@@ -29,6 +29,7 @@ class HeaderNavbar extends Component {
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.scrollToSection = this.scrollToSection.bind(this);
         this.closeNav = this.closeNav.bind(this);
+        this.onIconClick = this.onIconClick.bind(this);
     }
 
     closeNav() {
@@ -78,6 +79,14 @@ class HeaderNavbar extends Component {
         });
     }
 
+    onIconClick() {
+        window.scrollTo({
+            left: 0,
+            top: 0,
+            behavior: `smooth`
+        });
+    }
+
     render() {
         const {mobileMenuOpened, isOpen} = this.state;
         const mobileMenuClass = mobileMenuOpened ? "opened" : "closed";
@@ -93,7 +102,7 @@ class HeaderNavbar extends Component {
         return (
             <>
                 <Navbar expand="md" className="navbar-dark container">
-                    <Link to='/' className="navbar-brand siteLogo">
+                    <Link to='/' className="navbar-brand siteLogo" onClick={this.onIconClick}>
                         <img src={Logo} alt="Brand Logo"/>
                         <span className="phone-number">+1 (678) 534 8794</span>
                     </Link>

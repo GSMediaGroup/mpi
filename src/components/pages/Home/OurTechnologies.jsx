@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container} from 'reactstrap';
 
-import SliderTitleComponent from './PhotoSlider/SliderTitle.component';
+import SliderTitleComponent from './PhotoSlider/SliderTitle';
 import TechnologySlider from './OurTechnologies/TechnologySlider';
 
 import Gallery from '../Home/OurTechnologies/SlideImages';
@@ -21,6 +21,6 @@ const Slider = () => {
                 </div>
             </section>
         );
-}
+};
 
 export default withTranslation()(Slider)

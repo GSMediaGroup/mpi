@@ -8,7 +8,6 @@ const SEND_MAIL_URL = "http://myperfectidea.net/sendmail/sendmail.php";    // lo
 // const SEND_MAIL_URL = "/sendmail/sendmail.php";                            // live
 
 class ContactForm extends Component {
-
     state = {
         name: "",
         nameErr: ``,
@@ -44,7 +43,7 @@ class ContactForm extends Component {
         });
 
         const data = await response.json();
-        if (data.status == "success") {
+        if (data.status === "success") {
             this.props.msgSending();
         } else {
             this.setState({

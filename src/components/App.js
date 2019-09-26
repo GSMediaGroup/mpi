@@ -1,7 +1,6 @@
 import React, {Component, Fragment} from "react";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
-import {withTranslation} from "react-i18next";
-
+import { withTranslation } from "react-i18next";
 import i18next from 'i18next';
 
 import Header from "./layout/Header";
@@ -20,27 +19,35 @@ class App extends Component {
     constructor(props) {
         super(props);
 
+        this.onWindowResize = this.onWindowResize.bind(this);
         this.renderComponent = this.renderComponent.bind(this);
 
         let lang = localStorage.getItem("lang");
 
         if (!lang) {
             lang = "en";
-            localStorage.getItem(lang)
+            localStorage.getItem(lang);
         }
-
 
         i18next.changeLanguage(lang);
         document.body.classList.add(`lang-${lang}`);
     }
 
-    changeLanguage() {
+    componentDidMount() {
+        window.addEventListener("resize", this.onWindowResize);
+    }
 
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.onWindowResize);
+    }
+
+    onWindowResize() {
+        this.forceUpdate();
     }
 
     renderComponent(Component, hasLayout) {
         return (props) => {
-            const page = (
+            let page = (
                 <Fragment>
                     <Header/>
                     <Component {...props} />
@@ -52,17 +59,11 @@ class App extends Component {
                 page = <Component {...props} />
             }
             
-            return (
-                <Fragment>
-                    { page }
-                </Fragment>  
-            )
-
+            return page;
         };
     }
 
     render() {
-
         return (
             <BrowserRouter>
                 <Switch>
@@ -73,7 +74,7 @@ class App extends Component {
                     <Route path="*" render={this.renderComponent(Error404, false)}/>
                 </Switch>
             </BrowserRouter>
-        )
+        );
     }
 }
 

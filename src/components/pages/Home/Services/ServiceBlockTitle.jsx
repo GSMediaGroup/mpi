@@ -3,14 +3,8 @@ import {Row, Col} from 'reactstrap';
 import { withTranslation } from 'react-i18next';
 
 class ServiceBlockTitle extends Component {
-
-    constructor (props) {
-        super (props);
-    }
-
     render () {
-        const title = 'OUR_SERVICES_TITLE',
-            text = 'OUR_SERVICES_DESCRIPTION';
+        const title = 'OUR_SERVICES_TITLE', text = 'OUR_SERVICES_DESCRIPTION';
         return (
             <Row className="serviceTitle">
                 <Col md={6} className="mx-auto text-center col-12">

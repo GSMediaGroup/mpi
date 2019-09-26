@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { Row, Col} from 'reactstrap';
+import { withTranslation } from 'react-i18next';
 
 import DesignDesc from '../../../../../media/images/designDesc.png';
 
 import UX from '../../../../../media/images/services/ux.png';
 import UI from '../../../../../media/images/services/ui.png';
 import Adaptive from '../../../../../media/images/services/adaptive.png';
-import { withTranslation } from 'react-i18next';
 
 class WebDevelopment extends Component {
 

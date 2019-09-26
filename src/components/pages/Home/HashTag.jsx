@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import HashTag from '../HashTags/HashTag.component';
+import HashTag from '../HashTags/HashTag';
 
 class Tags extends Component {
-
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const Title = "HASHTAGS_TITLE";
         const Description = "HASHTAGS_DESCRIPTION";
@@ -22,6 +17,7 @@ class Tags extends Component {
             "helfulteam",
             "clearcoding"
         ];
+
         return (
             <section id="tags" className="sectionPaddingTop mt-5">
                 <div className="m-0 h-100">

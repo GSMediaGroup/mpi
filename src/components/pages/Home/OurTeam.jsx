@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import SliderTitleComponent from './PhotoSlider/SliderTitle.component';
-import SliderComponent from './PhotoSlider/Slider.component';
+import SliderTitleComponent from './PhotoSlider/SliderTitle';
+import SliderComponent from './PhotoSlider/Slider';
 
 import Gallery from './OurTeam/Gallery';
 

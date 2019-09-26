@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactModal from 'react-modal';
 import {withTranslation} from "react-i18next";
 import {Row} from 'reactstrap';
@@ -26,10 +26,9 @@ const customStyles = {
     }
 };
 
-
 ReactModal.setAppElement(document.getElementById('hero'));
 
-class Modal4 extends React.Component {
+class Modal4 extends Component {
     constructor(props) {
         super(props);
 

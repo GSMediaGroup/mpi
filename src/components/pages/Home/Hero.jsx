@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
+import {withTranslation} from "react-i18next";
 
 import star from '../../../media/images/star-solid.svg';
 
 import HeroTitle from './Hero/HeroTitle';
 import HeroServices from './Hero/HeroServices';
-
 import WebDev from '../../../media/images/service_1.png';
 import MobileDev from '../../../media/images/service_2.png';
 import ProductDesign from '../../../media/images/service_3.png';
-import {withTranslation} from "react-i18next";
 import {WEB_DEVELOPMENT, MOBILE_DEVELOPMENT, DESIGN} from "./Services/ServiceContentList";
 
 const particlesOption = {
@@ -80,19 +79,15 @@ const particlesOption = {
     "retina_detect": false
 };
 
-class Hero extends Component {
+// import MpiCoverVideoMp4 from "../../../media/videos/mpi-about-cover/mpi.mp4";
+// import MpiCoverVideoWebm from "../../../media/videos/mpi-about-cover/mpi.webm";
 
+class Hero extends Component {
     state = {
         changeOrientation : `orientationChange`,
     };
 
-    constructor(props) {
-        super(props);
-
-    }
-
-
-    typeChange (type) {
+    typeChange(type) {
         return () => {
             this.props.onServiceTypeChange(type);
         };
@@ -111,6 +106,12 @@ class Hero extends Component {
                     <div className="container">
                         <HeroTitle />
                         <Particles params={particlesOption} className="particles" />
+                        {/*<div className="cover-video">*/}
+                        {/*    <video autoPlay={true} loop={true}>*/}
+                        {/*        <source src={MpiCoverVideoMp4} type="video/mp4" />*/}
+                        {/*        <source src={MpiCoverVideoWebm} type="video/webm" />*/}
+                        {/*    </video>*/}
+                        {/*</div>*/}
                     </div>
                     <div className="heroService pr-0">
                         {
@@ -124,7 +125,6 @@ class Hero extends Component {
                                 />
                             ))
                         }
-
                     </div>
                 </div>
             </section>

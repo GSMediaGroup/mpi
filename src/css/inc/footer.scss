@@ -2,7 +2,7 @@ footer {
   color: $footer-text-color;
 
   &#footer {
-    background-color: #353b5b;
+    background-color: $color-sliderfooter;
 
     .main-content {
       cursor: pointer;
@@ -31,7 +31,7 @@ footer {
 
       &.hover-main-content {
         .icon-description {
-          transition:all 0.6s ease;
+          transition:all 0.3s ease;
         }
         &:hover {
           .icon-description {
@@ -49,13 +49,13 @@ footer {
         margin: 0 auto;
         border-radius: 100%;
         line-height: 30px;
-        transition: 0.6s ease;
+        transition: 0.3s ease;
         font-size: 12px;
       }
 
       .changeLngText {
         font-size: 12px;
-        transition: 0.6s ease;
+        transition: 0.3s;
       }
 
       &:hover {

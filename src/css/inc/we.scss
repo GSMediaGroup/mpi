@@ -1,38 +1,38 @@
 #we {
-  margin-top:200px;
-  padding:50px;
-  background:#353b5b;
-  color:white;
+  margin-top: 200px;
+  padding: 50px;
+  background: $color-sliderfooter;
+  color: white;
 
   .comma {
-    max-width:100px;
+    max-width: 100px;
 
     img {
-      width:100%;
-      object-fit:cover;
+      width: 100%;
+      object-fit: cover;
     }
   }
 
   .quotesText {
-    margin-top:60px;
+    margin-top: 60px;
 
     p {
       span {
-        color:$color-yellow;
-        font-weight:bold;
+        color: $color-yellow;
+        font-weight: bold;
       }
     }
   }
 
   .quotesAuthor {
-    max-width:150px;
-    margin-top:30px;
+    max-width: 150px;
+    margin-top: 30px;
     padding-top: 20px;
-    border-top:1px solid #ffffff29;
-    font-weight:bold;
+    border-top: 1px solid #ffffff29;
+    font-weight: bold;
 
     p {
-      width:100%;
+      width: 100%;
     }
   }
 }

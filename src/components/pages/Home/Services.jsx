@@ -6,9 +6,7 @@ import ServiceIconList from './Services/ServiceIconList';
 import Dots from './Services/Dots';
 import ServiceContentList from './Services/ServiceContentList';
 
-
 export default class Services extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -17,7 +15,7 @@ export default class Services extends Component {
     }
 
     static getDerivedStateFromProps(newProps, oldState) {
-        if (oldState.serviceType != newProps.activeType) {
+        if (oldState.serviceType !== newProps.activeType) {
             return {
                 serviceType: newProps.activeType,
             };
@@ -27,7 +25,7 @@ export default class Services extends Component {
     }
 
     render() {
-        const {serviceType} = this.state;
+        const { serviceType } = this.state;
 
         return (
             <section id="services" className="sectionPaddingTop">

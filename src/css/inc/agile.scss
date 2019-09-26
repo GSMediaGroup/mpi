@@ -1,13 +1,12 @@
 @import "../variables";
 
-$bg_color: #3db9d1;
 $text-color: #fff;
 
 #agile {
   margin-top: calc(#{$service-list-height} / 2);
   padding-top: calc(#{$service-list-height} / 2 + 250px);
   padding-bottom: 40px;
-  background: $bg_color;
+  background: $color--agile;
   color: $text-color;
 
   h2 {
